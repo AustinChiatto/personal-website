@@ -1,95 +1,89 @@
-import Image from 'next/image'
-import styles from './page.module.css'
+import Typography from '@/components/Typography/Typography';
+import styles from './page.module.css';
 
 export default function Home() {
   return (
     <main className={styles.main}>
-      <div className={styles.description}>
-        <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>src/app/page.tsx</code>
-        </p>
-        <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+      <section
+        className={styles.basePanel}
+        style={{ left: 0 }}
+      >
+        <div className={styles.panelIntro}>
+          <Typography
+            level={2}
+            variant={'title'}
           >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+            👋 Hey
+          </Typography>
+          <Typography
+            variant={'body'}
+            color={'secondary'}
+          >
+            I&apos;m Austin, a frontend JavaScript developer who loves using code, animation, and
+            interactivity to solve problems.
+          </Typography>
         </div>
-      </div>
-
-      <div className={styles.center}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className={styles.grid}>
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
+        <div className={styles.panelContent}>content</div>
+        <div className={styles.panelFooter}>footer</div>
+      </section>
+      <section
+        className={styles.panel}
+        style={{ left: '100px' }}
+      >
+        <Typography
+          level={2}
+          variant={'title'}
         >
-          <h2>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p>Find in-depth information about Next.js features and API.</p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
+          2
+        </Typography>
+      </section>
+      <section
+        className={styles.panel}
+        style={{ left: '200px' }}
+      >
+        <Typography
+          level={2}
+          variant={'title'}
         >
-          <h2>
-            Learn <span>-&gt;</span>
-          </h2>
-          <p>Learn about Next.js in an interactive course with&nbsp;quizzes!</p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
+          3
+        </Typography>
+      </section>
+      <section
+        className={styles.panel}
+        style={{ left: '300px' }}
+      >
+        <Typography
+          level={2}
+          variant={'title'}
         >
-          <h2>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p>Explore starter templates for Next.js.</p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
+          4
+        </Typography>
+      </section>
+      <section
+        className={styles.panel}
+        style={{ left: '400px' }}
+      >
+        <Typography
+          level={2}
+          variant={'title'}
         >
-          <h2>
-            Deploy <span>-&gt;</span>
-          </h2>
-          <p>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
+          5
+        </Typography>
+      </section>
     </main>
-  )
+  );
 }
+
+// panel logic
+
+// 1 panel: centered in vp
+// 2 panels: both centered in vp
+// 3 panels:
+// panel 1: left 0
+// panel 2: right 0 + panel width
+// panel 3: right 0
+
+// width of tab == x
+// new panels: left i * x
+
+// panel components
