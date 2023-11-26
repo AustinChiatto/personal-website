@@ -5,37 +5,62 @@
   display: flex;
   overflow-x: auto;
   overflow-y: hidden;
+  /* justify-content: center; */
 }
 
-.basePanel,
-.panel {
-  min-height: 100%;
-  min-width: 48vw;
-  max-width: 48vw;
+.basePanel {
+  height: 100%;
+  width: 48vw;
+  max-width: 42rem;
   flex: 0 0 auto;
   position: sticky;
   padding-block: 2.25rem;
   padding-inline: 3rem;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.basePanel {
+  padding-top: 3.25rem;
+}
+
+.introContentWrapper {
+  display: flex;
+  flex-direction: column;
   gap: 4.5rem;
 }
 
-.panel {
-  border-radius: 1rem 0 0 1rem;
-  background: rgba(18, 18, 18, 0.5);
-  backdrop-filter: blur(16px);
-  box-shadow: -6px 0px 12px 0px rgba(0, 0, 0, 0.15);
+.panelFooter {
+  display: flex;
+  justify-content: space-between;
 }
 
-.panel::after {
-  content: '';
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  position: absolute;
-  z-index: -1;
-  background: rgba(5, 5, 5, 0.5);
-  backdrop-filter: blur(1px);
+.categoryButton {
+  display: flex;
+  gap: 1rem;
+  margin-right: 2rem;
+  /* width: 80%; */
+  /* todo: adjust right margin */
+  padding: 1rem 1rem 1rem 0;
+  border-radius: var(--border-radius-sm);
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: all cubic-bezier(0.175, 0.885, 0.32, 1.275) 250ms;
+}
+
+.categoryButton:hover {
+  border: 1px solid var(--color-gray-50);
+  padding: 1rem;
+}
+
+.categoryButtonIcon {
+  align-self: center;
+  aspect-ratio: 1/1;
+}
+
+.panelIntro > * + * {
+  margin-top: 0.5rem;
 }
