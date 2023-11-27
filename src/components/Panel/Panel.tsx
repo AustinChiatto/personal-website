@@ -15,24 +15,34 @@ const Panel = ({ title, description, children, footer }: PanelProps) => {
       className={styles.panel}
       style={{ left: '40px' }}
     >
-      <div className={styles.panelIntro}>
-        <Typography
-          level={2}
-          variant={'title'}
-        >
-          {title}
-        </Typography>
-        <Typography
-          variant={'body'}
-          color={'secondary'}
-        >
-          {description}
-        </Typography>
+      <div className={styles.introContentWrapper}>
+        <div className={styles.panelIntro}>
+          <Typography
+            level={2}
+            variant={'title'}
+          >
+            {title}
+          </Typography>
+          <Typography
+            variant={'body'}
+            color={'secondary'}
+          >
+            {description}
+          </Typography>
+        </div>
+        <div className={styles.panelContent}>{children}</div>
       </div>
-      <div className={styles.panelContent}>{children}</div>
-      {footer && <div className={styles.panelFooter}>footer</div>}
+      {footer && <div className={styles.panelFooter}>{footer}</div>}
     </section>
   );
 };
 
 export default Panel;
+
+// Needs to be given
+// Title: string
+// Description: string
+// Content: component
+// footer: component
+
+// so each button needs to pass tab, title, desc, content, footer to the panel

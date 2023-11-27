@@ -11,102 +11,75 @@ import aboutIcon from '@/assets/images/about-icon.svg';
 import Image from 'next/image';
 import { useState } from 'react';
 
-const workPanelData = [
-  {
-    intro: {
-      title: 'Work',
-      desc: 'Deserunt sunt laboris ullamco culpa irure aliqua aliqua cupidatat proident.'
-    },
-    content: 'content',
-    footer: 'footer'
-  }
-];
-
-const projectsPanelData = [
-  {
-    intro: {
-      title: 'Projects',
-      desc: 'Deserunt sunt laboris ullamco culpa irure aliqua aliqua cupidatat proident.'
-    },
-    content: 'content',
-    footer: 'footer'
-  }
-];
-
-const notesPanelData = [
-  {
-    intro: {
-      title: 'Notes',
-      desc: 'Deserunt sunt laboris ullamco culpa irure aliqua aliqua cupidatat proident.'
-    },
-    content: 'content',
-    footer: 'footer'
-  }
-];
-
-const aboutPanelData = [
-  {
-    intro: {
-      title: 'About Me',
-      desc: 'Deserunt sunt laboris ullamco culpa irure aliqua aliqua cupidatat proident.'
-    },
-    content: 'content',
-    footer: 'footer'
-  }
-];
+import { workListData, projectListData, noteListData, aboutListData } from '@/data/panelData';
 
 const categoryButtonData = [
   {
+    level: 1,
     icon: workIcon,
     iconAlt: 'Squiggly doodle of a star',
     categoryTitle: 'Work',
     categoryDesc: 'Deserunt sunt laboris ullamco culpa irure aliqua aliqua cupidatat proident.',
-    panelData: workPanelData
+    panelData: workListData
   },
   {
+    level: 1,
     icon: projectsIcon,
     iconAlt: 'Squiggly doodle of a diamond',
     categoryTitle: 'Projects',
     categoryDesc: "A collection of things I've built with the goal of learning something new.",
-    panelData: projectsPanelData
+    panelData: projectListData
   },
   {
+    level: 1,
     icon: notesIcon,
     iconAlt: 'Squiggly circle doodle',
     categoryTitle: 'Notes',
     categoryDesc:
       "A mix of my thoughts and cool stuff I've found during my adventures across the internet.",
-    panelData: notesPanelData
+    panelData: noteListData
   },
   {
+    level: 1,
     icon: aboutIcon,
     iconAlt: 'Squiggly asterisk doodle',
     categoryTitle: 'More About Me',
     categoryDesc: 'Deserunt sunt laboris ullamco culpa irure aliqua aliqua cupidatat proident.',
-    panelData: aboutPanelData
+    panelData: aboutListData
   }
 ];
 
 type PanelProps = {
   title: string;
   description: string;
-  footer: string;
+  footer?: string;
   children: React.ReactNode;
+  level: number;
 };
 
 export default function Home() {
   const [panels, setPanels] = useState<PanelProps[]>([]);
 
-  const handleClick = (title: string, desc: string, footer: string) => {
-    setPanels((prevPanels) => [
-      ...prevPanels,
-      {
-        title: title,
-        description: desc,
-        children: 'hi',
-        footer: footer
-      }
-    ]);
+  const handleClick = (index: number) => {
+    const panelData = categoryButtonData[index].panelData[0];
+    const panelLevel = categoryButtonData[index].level;
+
+    setPanels((prev) => {
+      // If a panel with the same level is found, remove it from the array
+      const filteredPanels = prev.filter((panel) => panel.level !== panelLevel);
+      // todo: remove all panels attached in the hierarchy to the previous one.
+
+      return [
+        ...filteredPanels,
+        {
+          level: panelLevel,
+          title: panelData.intro.title,
+          description: panelData.intro.desc,
+          footer: panelData.footer,
+          children: panelData.content
+        }
+      ];
+    });
   };
 
   return (
@@ -133,17 +106,11 @@ export default function Home() {
           </div>
           <div className={styles.panelContent}>
             <ul>
-              {categoryButtonData.map((e, index) => (
+              {categoryButtonData.map((e, i) => (
                 <li
                   className={styles.categoryButton}
-                  key={index}
-                  onClick={() =>
-                    handleClick(
-                      e.panelData[0].intro.title,
-                      e.panelData[0].intro.desc,
-                      e.panelData[0].footer
-                    )
-                  }
+                  key={i}
+                  onClick={() => handleClick(i)}
                 >
                   <div className={styles.categoryButtonIcon}>
                     <Image
@@ -167,16 +134,18 @@ export default function Home() {
           <Typography color={'tertiary'}>▲</Typography>
         </div>
       </section>
-      {panels.map((panel, index) => (
-        <Panel
-          title={panel.title}
-          description={panel.description}
-          footer={panel.footer}
-          key={index}
-        >
-          {panel.children}
-        </Panel>
-      ))}
+      {panels.map((panel, index) =>
+        panel ? (
+          <Panel
+            title={panel.title}
+            description={panel.description}
+            footer={panel.footer}
+            key={index}
+          >
+            {panel.children}
+          </Panel>
+        ) : null
+      )}
     </main>
   );
 }
