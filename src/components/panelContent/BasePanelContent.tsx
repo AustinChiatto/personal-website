@@ -1,17 +1,10 @@
-'use client';
-
-import Typography from '@/components/Typography/Typography';
-import styles from './page.module.css';
-import Panel from '@/components/Panel/Panel';
-import Link from 'next/link';
 import workIcon from '@/assets/images/work-icon.svg';
 import projectsIcon from '@/assets/images/projects-icon.svg';
 import notesIcon from '@/assets/images/notes-icon.svg';
 import aboutIcon from '@/assets/images/about-icon.svg';
-import Image from 'next/image';
-import { useState } from 'react';
-
 import { workListData, projectListData, noteListData, aboutListData } from '@/data/panelData';
+import Typography from '../Typography/Typography';
+import Image from 'next/image';
 
 const categoryButtonData = [
   {
@@ -49,39 +42,9 @@ const categoryButtonData = [
   }
 ];
 
-type PanelProps = {
-  title: string;
-  description: string;
-  children: React.ReactNode;
-  level: number;
-};
-
-export default function Home() {
-  const [panels, setPanels] = useState<PanelProps[]>([]);
-
-  const handleClick = (index: number) => {
-    const panelData = categoryButtonData[index].panelData[0];
-    const panelLevel = categoryButtonData[index].level;
-
-    setPanels((prev) => {
-      // If a panel with the same level is found, remove it from the array
-      const filteredPanels = prev.filter((panel) => panel.level !== panelLevel);
-      // todo: remove all panels attached in the hierarchy to the previous one.
-
-      return [
-        ...filteredPanels,
-        {
-          level: panelLevel,
-          title: panelData.intro.title,
-          description: panelData.intro.desc,
-          children: panelData.content
-        }
-      ];
-    });
-  };
-
+const BasePanelContent = () => {
   return (
-    <main className={styles.main}>
+    <>
       <section
         className={styles.basePanel}
         style={{ left: 0 }}
@@ -132,37 +95,8 @@ export default function Home() {
           <Typography color={'tertiary'}>▲</Typography>
         </div>
       </section>
-      {panels.map((panel, index) =>
-        panel ? (
-          <Panel
-            title={panel.title}
-            description={panel.description}
-            key={index}
-          >
-            {panel.children}
-          </Panel>
-        ) : null
-      )}
-    </main>
+    </>
   );
-}
+};
 
-// ! panel logic
-// todo: open & close panels
-// todo: open link from previous panel (close all panels, open one new panel)
-// todo: close panels? - should this even be a thing?
-// 1 panel: centered in vp
-// 2 panels: both centered in vp
-// 3 panels:
-// panel 1: left 0
-// panel 2: right 0 + panel width
-// panel 3: right 0
-
-// todo: new panels: left i * x
-// width of tab == x
-
-// todo: new panels::after - background++
-// todo: need better drop shadow or border between panels
-
-// opening and closing panel logic
-// give clickable items a context function to open a panel, pass function the panel info?
+export default BasePanelContent;

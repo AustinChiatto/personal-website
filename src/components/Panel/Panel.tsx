@@ -6,10 +6,9 @@ type PanelProps = {
   title: string;
   description?: string;
   children?: ReactNode;
-  footer?: ReactNode | string;
 };
 
-const Panel = ({ title, description, children, footer }: PanelProps) => {
+const Panel = ({ title, description, children }: PanelProps) => {
   return (
     <section
       className={styles.panel}
@@ -32,7 +31,6 @@ const Panel = ({ title, description, children, footer }: PanelProps) => {
         </div>
         <div className={styles.panelContent}>{children}</div>
       </div>
-      {footer && <div className={styles.panelFooter}>{footer}</div>}
     </section>
   );
 };

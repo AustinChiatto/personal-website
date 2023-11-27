@@ -11,7 +11,7 @@
 .basePanel {
   height: 100%;
   width: 48vw;
-  max-width: 42rem;
+  max-width: 43rem;
   flex: 0 0 auto;
   position: sticky;
   padding-block: 2.25rem;
