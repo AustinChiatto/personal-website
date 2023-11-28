@@ -1,0 +1,6 @@
+/* ! Todo: this temp file is for styling during the creation of panel content and must be removed before deployment */
+
+.chipList {
+  display: flex;
+  gap: 0.5rem;
+}

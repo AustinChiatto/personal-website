@@ -1,46 +1,46 @@
-import { ReactNode } from 'react';
+import { ForwardedRef, ReactNode, forwardRef } from 'react';
 import Typography from '../Typography/Typography';
 import styles from './panel.module.css';
 
 type PanelProps = {
+  ref: React.RefObject<HTMLDivElement>;
+  level: number;
   title: string;
   description?: string;
   children?: ReactNode;
 };
 
-const Panel = ({ title, description, children }: PanelProps) => {
-  return (
+const Panel = forwardRef<HTMLDivElement, PanelProps>(
+  ({ level, title, description, children }, ref) => (
     <section
       className={styles.panel}
-      style={{ left: '40px' }}
+      ref={ref}
+      style={{ left: level * 40 }}
     >
-      <div className={styles.introContentWrapper}>
-        <div className={styles.panelIntro}>
-          <Typography
-            level={2}
-            variant={'title'}
-          >
-            {title}
-          </Typography>
-          <Typography
-            variant={'body'}
-            color={'secondary'}
-          >
-            {description}
-          </Typography>
+      <aside className={styles.panelTab}></aside>
+      <div className={styles.panelBody}>
+        <div className={styles.introContentWrapper}>
+          <div className={styles.panelIntro}>
+            <Typography
+              level={2}
+              variant={'title'}
+            >
+              {title}
+            </Typography>
+            <Typography
+              variant={'body'}
+              color={'secondary'}
+            >
+              {description}
+            </Typography>
+          </div>
+          <div className={styles.panelContent}>{children}</div>
         </div>
-        <div className={styles.panelContent}>{children}</div>
       </div>
     </section>
-  );
-};
+  )
+);
+
+Panel.displayName = 'Panel';
 
 export default Panel;
-
-// Needs to be given
-// Title: string
-// Description: string
-// Content: component
-// footer: component
-
-// so each button needs to pass tab, title, desc, content, footer to the panel

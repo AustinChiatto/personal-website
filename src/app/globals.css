@@ -31,7 +31,8 @@
   --large-title: clamp(36px, calc(44px + (52 - 44) * ((100vw - 320px) / (1920 - 320))), 44px);
   --line-height-xl: calc(var(--base-unit) * 6);
 
-  --color-body: #050505;
+  --color-body: #0c0c0c;
+  /* --color-body: #050505; */
   --color-text-primary: #e0e0e0;
   --color-text-secondary: #8d8d92;
   --color-text-tertiary: #47474a;
