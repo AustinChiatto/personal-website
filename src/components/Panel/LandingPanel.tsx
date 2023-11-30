@@ -1,50 +1,57 @@
-import { workListData, projectListData, noteListData, aboutListData } from '@/data/panelData';
-import workIcon from '@/assets/images/work-icon.svg';
-import projectsIcon from '@/assets/images/projects-icon.svg';
-import notesIcon from '@/assets/images/notes-icon.svg';
-import aboutIcon from '@/assets/images/about-icon.svg';
+// import { workListData, projectListData, noteListData, aboutListData } from '@/data/panelData';
+import workIcon from '@/assets/icons/work-icon.svg';
+import projectsIcon from '@/assets/icons/projects-icon.svg';
+import notesIcon from '@/assets/icons/notes-icon.svg';
+import aboutIcon from '@/assets/icons/about-icon.svg';
 import Image from 'next/image';
 import Typography from '../Typography/Typography';
 import Link from 'next/link';
 import styles from './panel.module.css';
-import usePanels from '@/hooks/usePanels';
-import { PanelProps } from '@/data/panelData';
 import PanelsContext from '@/context/PanelsContext';
 import { useContext } from 'react';
+import { panelDataObject, PanelProps } from '@/data/panelData';
+import { componentMap } from '@/data/componentMap';
 
-const categoryButtonData = [
+const categoryList: {
+  icon: string;
+  iconAlt: string;
+  categoryTitle: string;
+  categoryDesc: string;
+  panelData: PanelProps;
+}[] = [
   {
     icon: workIcon,
     iconAlt: 'Squiggly doodle of a star',
     categoryTitle: 'Work',
     categoryDesc: "Code I've written for others or as part of my job.",
-    panelData: workListData
+    panelData: panelDataObject['work']
   },
   {
     icon: projectsIcon,
     iconAlt: 'Squiggly doodle of a diamond',
     categoryTitle: 'Projects',
     categoryDesc: "A collection of things I've built to learn something new.",
-    panelData: projectListData
+    panelData: panelDataObject['projects']
   },
   {
     icon: notesIcon,
     iconAlt: 'Squiggly circle doodle',
     categoryTitle: 'Notes',
     categoryDesc: "Things I've discovered and want to remember.",
-    panelData: noteListData
+    panelData: panelDataObject['notes']
   },
   {
     icon: aboutIcon,
     iconAlt: 'Squiggly asterisk doodle',
     categoryTitle: 'More About Me',
     categoryDesc: 'Why is this always the hardest thing to write?',
-    panelData: aboutListData
+    panelData: panelDataObject['about']
   }
 ];
 
 const LandingPanel = () => {
   const { createPanel } = useContext(PanelsContext);
+
   return (
     <section
       className={styles.basePanel}
@@ -68,11 +75,21 @@ const LandingPanel = () => {
         </div>
         <div className={styles.panelContent}>
           <ul>
-            {categoryButtonData.map((e, i) => (
+            {categoryList.map((e, i) => (
               <li
                 className={styles.categoryButton}
                 key={i}
-                onClick={() => createPanel(e.panelData[0])}
+                // onClick={() => createPanel(e.panelData[0])}
+                onClick={() =>
+                  createPanel({
+                    id: e.panelData.id,
+                    level: e.panelData.level,
+                    intro: e.panelData.intro,
+                    content: componentMap[e.panelData.content as keyof typeof componentMap],
+                    contentProps: e.panelData.contentProps,
+                    childPanels: e.panelData.childPanels
+                  })
+                }
               >
                 <div className={styles.categoryButtonIcon}>
                   <Image

@@ -4,6 +4,7 @@ import Typography from '../Typography/Typography';
 import styles from './projectCard.module.css';
 import PanelsContext from '@/context/PanelsContext';
 import Image from 'next/image';
+import { componentMap } from '@/data/componentMap';
 
 type ProjectCardProps = {
   title: string;
@@ -19,7 +20,16 @@ const ProjectCard = ({ title, desc, image, chips, data }: ProjectCardProps) => {
   return (
     <div
       className={styles.projectCard}
-      onClick={() => createPanel(data[0])}
+      onClick={() =>
+        createPanel({
+          id: data.id,
+          level: data.level,
+          intro: data.intro,
+          content: componentMap[data.content as keyof typeof componentMap],
+          contentProps: data.contentProps,
+          childPanels: data.childPanels
+        })
+      }
     >
       <div>
         <Typography

@@ -33,6 +33,3 @@ export default function Home() {
     </PanelsContext.Provider>
   );
 }
-
-// opening and closing panel logic
-// give clickable items a context function to open a panel, pass function the panel info?

@@ -2,7 +2,7 @@ import { ForwardedRef, ReactNode, forwardRef } from 'react';
 import Typography from '../Typography/Typography';
 import styles from './panel.module.css';
 
-type PanelProps = {
+type PanelComponentProps = {
   ref: React.RefObject<HTMLDivElement>;
   level: number;
   title: string;
@@ -10,14 +10,21 @@ type PanelProps = {
   children?: ReactNode;
 };
 
-const Panel = forwardRef<HTMLDivElement, PanelProps>(
+const Panel = forwardRef<HTMLDivElement, PanelComponentProps>(
   ({ level, title, description, children }, ref) => (
     <section
       className={styles.panel}
       ref={ref}
-      style={{ left: level * 40 }}
+      style={{ left: level * 48 }}
     >
-      <aside className={styles.panelTab}></aside>
+      <aside className={styles.panelTab}>
+        <Typography
+          variant={'caption'}
+          color={'tertiary'}
+        >
+          ⌘ {title}
+        </Typography>
+      </aside>
       <div className={styles.panelBody}>
         <div className={styles.introContentWrapper}>
           <div className={styles.panelIntro}>

@@ -1,22 +1,48 @@
-.panel {
-  /* min-height: 100%; */
+.panel,
+.basePanel {
   width: 48vw;
   max-width: 43rem;
   flex: 0 0 auto;
   position: sticky;
-  padding-block: 2.25rem;
-  padding-inline: 3rem;
   display: flex;
-  flex-direction: column;
-  gap: 4.5rem;
-
   justify-content: space-between;
   overflow-x: hidden;
   overflow-y: auto;
-  /* background: rgba(32, 32, 32, 1); */
+}
+
+.panel {
   background: #121212;
-  /* backdrop-filter: blur(12px); */
   box-shadow: -6px 0px 12px 0px rgba(0, 0, 0, 0.15);
+}
+
+.basePanel {
+  height: 100%;
+  padding-block: 3.25rem 2.25rem;
+  padding-inline: 3rem;
+  flex-direction: column;
+}
+
+.panelTab {
+  height: 100%;
+  max-width: 48px;
+  display: flex;
+  justify-content: center;
+  padding-inline: 0.5rem;
+  padding-block: 0.75rem;
+}
+
+.panelTab > * {
+  writing-mode: vertical-rl;
+}
+
+.panelBody {
+  display: flex;
+  flex-grow: 1;
+  flex-direction: column;
+  gap: 4.5rem;
+  padding-block: 2.25rem;
+  padding-right: 3rem;
+  margin-left: 0.5rem;
 }
 
 .panelIntro > * + * {
@@ -27,39 +53,6 @@
   display: flex;
   flex-direction: column;
   gap: 4.5rem;
-}
-
-/* .panel::after {
-  content: '';
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  position: absolute;
-  z-index: -1;
-  background: rgba(6, 6, 6, 0.1);
-  backdrop-filter: blur(12px);
-} */
-
-/* --- */
-
-.basePanel {
-  height: 100%;
-  width: 48vw;
-  max-width: 43rem;
-  flex: 0 0 auto;
-  position: sticky;
-  padding-block: 2.25rem;
-  padding-inline: 3rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  overflow-x: hidden;
-  overflow-y: auto;
-}
-
-.basePanel {
-  padding-top: 3.25rem;
 }
 
 .panelFooter {

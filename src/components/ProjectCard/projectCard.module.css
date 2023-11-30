@@ -8,6 +8,7 @@
 
 .picture {
   width: 100%;
+  max-width: 100%;
   overflow: hidden;
   aspect-ratio: 16/9;
   /* border: 1px solid blue; */

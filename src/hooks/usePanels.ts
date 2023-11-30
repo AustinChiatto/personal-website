@@ -1,16 +1,5 @@
 import React, { createRef, useEffect, useRef, useState } from 'react';
-
-type IntroProps = {
-  title: string;
-  desc: string;
-};
-
-type PanelProps = {
-  level: number;
-  intro: IntroProps;
-  content: React.ReactNode;
-  panelRef?: React.RefObject<HTMLDivElement>;
-};
+import { PanelProps } from '@/data/panelData';
 
 export default function usePanels() {
   const [panels, setPanels] = useState<PanelProps[]>([]);
@@ -27,7 +16,6 @@ export default function usePanels() {
 
       return [...filteredPanels, panel];
     });
-    console.log(newPanelRef.current);
   };
 
   useEffect(() => {
