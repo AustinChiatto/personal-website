@@ -12,14 +12,12 @@
 
 .panel {
   background: #121212;
-  box-shadow: -6px 0px 12px 0px rgba(0, 0, 0, 0.15);
+  scrollbar-width: none;
+  border-left: 1px solid #181818;
 }
 
-.basePanel {
-  height: 100%;
-  padding-block: 3.25rem 2.25rem;
-  padding-inline: 3rem;
-  flex-direction: column;
+.panel::-webkit-scrollbar {
+  display: none;
 }
 
 .panelTab {
@@ -38,32 +36,38 @@
 .panelBody {
   display: flex;
   flex-grow: 1;
+  height: fit-content;
   flex-direction: column;
   gap: 4.5rem;
   padding-block: 2.25rem;
-  padding-right: 3rem;
+  padding-right: 2rem;
   margin-left: 0.5rem;
+}
+
+.basePanel {
+  height: 100%;
+  padding-top: 1rem;
+  padding-inline: 3rem;
+  flex-direction: column;
+}
+
+.basePanel > .panelBody {
+  padding-right: 0;
 }
 
 .panelIntro > * + * {
   margin-top: 0.5rem;
 }
 
-.introContentWrapper {
-  display: flex;
-  flex-direction: column;
-  gap: 4.5rem;
-}
-
 .panelFooter {
   display: flex;
   justify-content: space-between;
+  padding-block: 3rem;
 }
 
 .categoryButton {
   display: flex;
   gap: 1rem;
-  margin-right: 3.25rem;
   padding: 1rem 2rem 1rem 0;
   border-radius: var(--border-radius-sm);
   border: 1px solid transparent;

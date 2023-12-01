@@ -26,23 +26,21 @@ const Panel = forwardRef<HTMLDivElement, PanelComponentProps>(
         </Typography>
       </aside>
       <div className={styles.panelBody}>
-        <div className={styles.introContentWrapper}>
-          <div className={styles.panelIntro}>
-            <Typography
-              level={2}
-              variant={'title'}
-            >
-              {title}
-            </Typography>
-            <Typography
-              variant={'body'}
-              color={'secondary'}
-            >
-              {description}
-            </Typography>
-          </div>
-          <div className={styles.panelContent}>{children}</div>
+        <div className={styles.panelIntro}>
+          <Typography
+            level={2}
+            variant={'title'}
+          >
+            {title}
+          </Typography>
+          <Typography
+            variant={'body'}
+            color={'secondary'}
+          >
+            {description}
+          </Typography>
         </div>
+        <div className={styles.panelContent}>{children}</div>
       </div>
     </section>
   )

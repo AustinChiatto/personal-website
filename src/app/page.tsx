@@ -13,7 +13,7 @@ export default function Home() {
     <PanelsContext.Provider value={{ panels, createPanel }}>
       <main
         className={styles.main}
-        style={panels.length <= 1 ? { justifyContent: 'space-evenly' } : {}}
+        style={panels.length <= 1 ? { justifyContent: 'center' } : {}}
       >
         <LandingPanel />
         {panels.map((panel, i) => {
@@ -25,7 +25,7 @@ export default function Home() {
               description={panel.intro.desc}
               key={i}
             >
-              {panel.content}
+              {panel.childComponent}
             </Panel>
           );
         })}

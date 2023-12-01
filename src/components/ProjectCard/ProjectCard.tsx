@@ -10,7 +10,7 @@ type ProjectCardProps = {
   title: string;
   index: number;
   desc: string;
-  image: any; // todo: add correct typing before deployment
+  image: string; // todo: add correct typing before deployment
   chips: string[];
   data: any; // todo: add correct typing before deployment
 };
@@ -25,7 +25,7 @@ const ProjectCard = ({ title, desc, image, chips, data }: ProjectCardProps) => {
           id: data.id,
           level: data.level,
           intro: data.intro,
-          content: componentMap[data.content as keyof typeof componentMap],
+          childComponent: componentMap[data.childComponent as keyof typeof componentMap],
           contentProps: data.contentProps,
           childPanels: data.childPanels
         })
@@ -42,7 +42,7 @@ const ProjectCard = ({ title, desc, image, chips, data }: ProjectCardProps) => {
       </div>
       <div className={styles.picture}>
         <Image
-          src={image.src}
+          src={image}
           alt="testing"
           width={1174}
           height={660}

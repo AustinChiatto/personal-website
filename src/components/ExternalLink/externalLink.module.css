@@ -1,0 +1,23 @@
+.externalLink {
+  display: flex;
+  align-items: center;
+  padding: 0.375rem;
+  border-radius: 0.5rem;
+  background: var(--color-chip-background, #202020);
+}
+
+.externalLink > * + * {
+  margin-left: 0.75rem;
+  padding-right: 0.475rem;
+}
+
+.externalLink:hover {
+  background: var(--color-gray-60);
+}
+
+.linkThumbnail {
+  background: grey;
+  aspect-ratio: 1/1;
+  border-radius: 0.25rem;
+  width: 1.125rem;
+}

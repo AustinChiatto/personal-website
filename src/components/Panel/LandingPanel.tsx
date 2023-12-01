@@ -57,7 +57,7 @@ const LandingPanel = () => {
       className={styles.basePanel}
       style={{ left: 0 }}
     >
-      <div className={styles.introContentWrapper}>
+      <div className={styles.panelBody}>
         <div className={styles.panelIntro}>
           <Typography
             level={2}
@@ -79,13 +79,13 @@ const LandingPanel = () => {
               <li
                 className={styles.categoryButton}
                 key={i}
-                // onClick={() => createPanel(e.panelData[0])}
                 onClick={() =>
                   createPanel({
                     id: e.panelData.id,
                     level: e.panelData.level,
                     intro: e.panelData.intro,
-                    content: componentMap[e.panelData.content as keyof typeof componentMap],
+                    childComponent:
+                      componentMap[e.panelData.childComponent as keyof typeof componentMap],
                     contentProps: e.panelData.contentProps,
                     childPanels: e.panelData.childPanels
                   })

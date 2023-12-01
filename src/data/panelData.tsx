@@ -9,10 +9,8 @@ export type PanelProps = {
   id: string;
   level: number;
   intro: IntroProps;
-  content: keyof typeof componentMap;
-  contentProps: {
-    key: string;
-  };
+  childComponent: keyof typeof componentMap;
+  contentProps: Record<string, any>; //todo: assign correct type
   childPanels?: PanelProps[];
   panelRef?: React.RefObject<HTMLDivElement>;
 };
@@ -26,10 +24,10 @@ export const panelData = [
       title: 'Work',
       desc: 'Work Description'
     },
-    content: 'CategoryContentList',
     contentProps: {
       key: 'value'
     },
+    childComponent: 'CategoryContentList',
     // work - level 2
     childPanels: [
       {
@@ -39,10 +37,11 @@ export const panelData = [
           title: 'Market Maestro',
           desc: 'Market Maestro Description'
         },
-        content: 'WorkDetails',
         contentProps: {
-          key: 'value'
+          image: '/images/market-maestro_work-thumbnail.png',
+          chips: ['JavaScript', 'HTML', 'CSS']
         },
+        childComponent: 'WorkDetails',
         // work - level 3
         childPanels: [
           {
@@ -52,10 +51,10 @@ export const panelData = [
               title: 'Market Maestro Details',
               desc: 'Market Maestro Description'
             },
-            content: 'WorkDetails',
             contentProps: {
               key: 'value'
-            }
+            },
+            childComponent: 'WorkDetails'
           }
         ]
       }
@@ -69,35 +68,63 @@ export const panelData = [
       title: 'Projects',
       desc: 'Projects Description'
     },
-    content: 'CategoryContentList',
     contentProps: {
       key: 'value'
     },
+    childComponent: 'CategoryContentList',
     // projects - level 2
     childPanels: [
       {
-        id: 'projectOne',
+        id: 'AsteroidRun',
         level: 2,
         intro: {
-          title: 'Project One',
-          desc: 'Project One Description'
+          title: 'Asteroid Run',
+          desc: 'A browser-based game I built to teach myself object-oriented programming with JavaScript.'
         },
-        content: 'ProjectDetails',
         contentProps: {
-          key: 'value'
-        }
+          image: '/images/asteroid-run_project-thumbnail.png',
+          chips: ['JavaScript', 'HTML', 'CSS']
+        },
+        childComponent: 'ProjectDetails'
       },
       {
-        id: 'projectTwo',
+        id: 'Code2Image',
         level: 2,
         intro: {
-          title: 'Project Two',
-          desc: 'Project Two Description'
+          title: 'Code2Image',
+          desc: 'Create beautiful images of your code snippets using this app I built to learn more about React, specifically the useRef hook.'
         },
-        content: 'ProjectDetails',
         contentProps: {
-          key: 'value'
-        }
+          image: '/images/code2image_project-thumbnail.png',
+          chips: ['JavaScript', 'HTML', 'CSS']
+        },
+        childComponent: 'ProjectDetails'
+      },
+      {
+        id: 'Shallot',
+        level: 2,
+        intro: {
+          title: 'Shallot',
+          desc: 'Create beautiful images of your code snippets using this app I built to learn more about React, specifically the useRef hook.'
+        },
+        contentProps: {
+          image: '/images/market-maestro_work-thumbnail.png',
+          chips: ['JavaScript', 'HTML', 'CSS']
+        },
+        childComponent: 'ProjectDetails'
+      },
+      {
+        id: 'ReactDeploymentChecklist',
+        level: 2,
+        intro: {
+          title: 'React Deployment Checklist',
+          desc: 'Create beautiful images of your code snippets using this app I built to learn more about React, specifically the useRef hook.'
+        },
+        contentProps: {
+          image: '/images/code2image_project-thumbnail.png',
+          chips: ['JavaScript', 'HTML', 'CSS']
+        },
+        childComponent: 'ProjectDetails'
       }
     ]
   },
@@ -109,10 +136,10 @@ export const panelData = [
       title: 'Notes',
       desc: 'Notes Description'
     },
-    content: 'NoteContentList',
     contentProps: {
       key: 'value'
     },
+    childComponent: 'NoteContentList',
     // notes - level 2
     childPanels: [
       {
@@ -122,10 +149,10 @@ export const panelData = [
           title: 'Note One',
           desc: 'Note One Description'
         },
-        content: 'NoteDetails',
         contentProps: {
           key: 'value'
-        }
+        },
+        childComponent: 'NoteDetails'
       }
     ]
   },
@@ -137,10 +164,10 @@ export const panelData = [
       title: 'About Me',
       desc: 'About Description'
     },
-    content: 'AboutMe',
     contentProps: {
       key: 'value'
     },
+    childComponent: 'AboutMe',
     // about - level 2
     childPanels: [
       {
@@ -150,10 +177,10 @@ export const panelData = [
           title: 'About Me',
           desc: 'About Me Description'
         },
-        content: 'AboutMeDetails',
         contentProps: {
           key: 'value'
-        }
+        },
+        childComponent: 'AboutMeDetails'
       }
     ]
   }

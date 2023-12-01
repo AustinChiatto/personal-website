@@ -15,7 +15,7 @@
   --space-5xl: calc(var(--space-4xl) * var(--spaceIncrement));
 
   /* font-size */
-  --caption: clamp(10px, calc(12px + (14 - 12) * ((100vw - 320px) / (1920 - 320))), 12px);
+  --caption: clamp(12px, calc(14px + (14 - 12) * ((100vw - 320px) / (1920 - 320))), 14px);
   --line-height-xs: calc(var(--base-unit) * 2);
 
   --body: clamp(16px, calc(16px + (17 - 16) * ((100vw - 320px) / (1920 - 320))), 17px);
@@ -36,6 +36,7 @@
   --color-text-primary: #e0e0e0;
   --color-text-secondary: #8d8d92;
   --color-text-tertiary: #47474a;
+  --color-chip-background: #202020;
 
   /* font-weight */
   --font-weight-300: 300;
