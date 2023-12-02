@@ -2,17 +2,17 @@ import Typography from '../Typography/Typography';
 import styles from './chip.module.css';
 
 type ChipProps = {
-  label: string;
+  chipLabel: string;
 };
 
-const Chip = ({ label }: ChipProps) => {
+const Chip = ({ chipLabel }: ChipProps) => {
   return (
     <div className={styles.chip}>
       <Typography
         variant={'caption'}
         color={'secondary'}
       >
-        {label}
+        {chipLabel}
       </Typography>
     </div>
   );

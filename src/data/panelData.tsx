@@ -9,8 +9,8 @@ export type PanelProps = {
   id: string;
   level: number;
   intro: IntroProps;
-  childComponent: keyof typeof componentMap;
-  contentProps: Record<string, any>; //todo: assign correct type
+  panelComponent: keyof typeof componentMap;
+  panelComponentProps: Record<string, any>; //todo: assign correct type
   childPanels?: PanelProps[];
   panelRef?: React.RefObject<HTMLDivElement>;
 };
@@ -24,10 +24,10 @@ export const panelData = [
       title: 'Work',
       desc: 'Work Description'
     },
-    contentProps: {
+    panelComponent: 'CategoryContentList',
+    panelComponentProps: {
       key: 'value'
     },
-    childComponent: 'CategoryContentList',
     // work - level 2
     childPanels: [
       {
@@ -37,11 +37,15 @@ export const panelData = [
           title: 'Market Maestro',
           desc: 'Market Maestro Description'
         },
-        contentProps: {
+        panelComponent: 'WorkDetails',
+        panelComponentProps: {
           image: '/images/market-maestro_work-thumbnail.png',
-          chips: ['JavaScript', 'HTML', 'CSS']
+          technology: [
+            { label: 'JavaScript', desc: 'Used for game logic' },
+            { label: 'HTML Canvas', desc: 'Renders the game to the screen' },
+            { label: 'CSS', desc: 'Used to style the page apart from the renderer' }
+          ]
         },
-        childComponent: 'WorkDetails',
         // work - level 3
         childPanels: [
           {
@@ -51,10 +55,10 @@ export const panelData = [
               title: 'Market Maestro Details',
               desc: 'Market Maestro Description'
             },
-            contentProps: {
+            panelComponent: 'WorkDetails',
+            panelComponentProps: {
               key: 'value'
-            },
-            childComponent: 'WorkDetails'
+            }
           }
         ]
       }
@@ -68,10 +72,10 @@ export const panelData = [
       title: 'Projects',
       desc: 'Projects Description'
     },
-    contentProps: {
+    panelComponent: 'CategoryContentList',
+    panelComponentProps: {
       key: 'value'
     },
-    childComponent: 'CategoryContentList',
     // projects - level 2
     childPanels: [
       {
@@ -81,11 +85,15 @@ export const panelData = [
           title: 'Asteroid Run',
           desc: 'A browser-based game I built to teach myself object-oriented programming with JavaScript.'
         },
-        contentProps: {
+        panelComponent: 'ProjectDetails',
+        panelComponentProps: {
           image: '/images/asteroid-run_project-thumbnail.png',
-          chips: ['JavaScript', 'HTML', 'CSS']
-        },
-        childComponent: 'ProjectDetails'
+          technology: [
+            { label: 'JavaScript', desc: 'Used for game logic' },
+            { label: 'HTML Canvas', desc: 'Renders the game to the screen' },
+            { label: 'CSS', desc: 'Used to style the page apart from the renderer' }
+          ]
+        }
       },
       {
         id: 'Code2Image',
@@ -94,11 +102,15 @@ export const panelData = [
           title: 'Code2Image',
           desc: 'Create beautiful images of your code snippets using this app I built to learn more about React, specifically the useRef hook.'
         },
-        contentProps: {
+        panelComponent: 'ProjectDetails',
+        panelComponentProps: {
           image: '/images/code2image_project-thumbnail.png',
-          chips: ['JavaScript', 'HTML', 'CSS']
-        },
-        childComponent: 'ProjectDetails'
+          technology: [
+            { label: 'JavaScript', desc: 'Used for game logic' },
+            { label: 'HTML Canvas', desc: 'Renders the game to the screen' },
+            { label: 'CSS', desc: 'Used to style the page apart from the renderer' }
+          ]
+        }
       },
       {
         id: 'Shallot',
@@ -107,11 +119,15 @@ export const panelData = [
           title: 'Shallot',
           desc: 'Create beautiful images of your code snippets using this app I built to learn more about React, specifically the useRef hook.'
         },
-        contentProps: {
+        panelComponent: 'ProjectDetails',
+        panelComponentProps: {
           image: '/images/market-maestro_work-thumbnail.png',
-          chips: ['JavaScript', 'HTML', 'CSS']
-        },
-        childComponent: 'ProjectDetails'
+          technology: [
+            { label: 'JavaScript', desc: 'Used for game logic' },
+            { label: 'HTML Canvas', desc: 'Renders the game to the screen' },
+            { label: 'CSS', desc: 'Used to style the page apart from the renderer' }
+          ]
+        }
       },
       {
         id: 'ReactDeploymentChecklist',
@@ -120,11 +136,15 @@ export const panelData = [
           title: 'React Deployment Checklist',
           desc: 'Create beautiful images of your code snippets using this app I built to learn more about React, specifically the useRef hook.'
         },
-        contentProps: {
+        panelComponent: 'ProjectDetails',
+        panelComponentProps: {
           image: '/images/code2image_project-thumbnail.png',
-          chips: ['JavaScript', 'HTML', 'CSS']
-        },
-        childComponent: 'ProjectDetails'
+          technology: [
+            { label: 'JavaScript', desc: 'Used for game logic' },
+            { label: 'HTML Canvas', desc: 'Renders the game to the screen' },
+            { label: 'CSS', desc: 'Used to style the page apart from the renderer' }
+          ]
+        }
       }
     ]
   },
@@ -136,10 +156,10 @@ export const panelData = [
       title: 'Notes',
       desc: 'Notes Description'
     },
-    contentProps: {
+    panelComponent: 'NoteContentList',
+    panelComponentProps: {
       key: 'value'
     },
-    childComponent: 'NoteContentList',
     // notes - level 2
     childPanels: [
       {
@@ -149,10 +169,10 @@ export const panelData = [
           title: 'Note One',
           desc: 'Note One Description'
         },
-        contentProps: {
+        panelComponent: 'NoteDetails',
+        panelComponentProps: {
           key: 'value'
-        },
-        childComponent: 'NoteDetails'
+        }
       }
     ]
   },
@@ -164,10 +184,10 @@ export const panelData = [
       title: 'About Me',
       desc: 'About Description'
     },
-    contentProps: {
+    panelComponent: 'AboutMe',
+    panelComponentProps: {
       key: 'value'
     },
-    childComponent: 'AboutMe',
     // about - level 2
     childPanels: [
       {
@@ -177,10 +197,10 @@ export const panelData = [
           title: 'About Me',
           desc: 'About Me Description'
         },
-        contentProps: {
+        panelComponent: 'AboutMeDetails',
+        panelComponentProps: {
           key: 'value'
-        },
-        childComponent: 'AboutMeDetails'
+        }
       }
     ]
   }

@@ -10,8 +10,8 @@ const CategoryContentList = () => {
           key={i}
           title={e.intro.title}
           desc={e.intro.desc}
-          image={e.contentProps.image}
-          chips={e.contentProps.chips}
+          image={e.panelComponentProps.image}
+          technology={e.panelComponentProps.technology}
           data={e}
           index={i}
         />

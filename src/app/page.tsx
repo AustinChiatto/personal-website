@@ -25,7 +25,7 @@ export default function Home() {
               description={panel.intro.desc}
               key={i}
             >
-              {panel.childComponent}
+              {panel.panelComponent}
             </Panel>
           );
         })}
