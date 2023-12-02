@@ -1,43 +1,28 @@
-import Link from 'next/link';
 import styles from './projectDetails.module.css';
-import Typography from '@/components/Typography/Typography';
 import ExternalLink from '@/components/ExternalLink/ExternalLink';
+import ListCard from '@/components/ListCard/ListCard';
 
-const ProjectDetails = () => {
+type Testing = {
+  content: any;
+};
+
+const ProjectDetails = ({ content }: Testing) => {
+  console.log(content);
+  const externalLinks = content.externalLinks;
   return (
     <>
       <div className={styles.externalLinkList}>
+        {/* todo: use a map */}
         <ExternalLink
-          href="#"
-          label="Live Site"
+          href={externalLinks[0].href}
+          label={externalLinks[0].label}
         />
         <ExternalLink
-          href="#"
-          label="SourceCode"
+          href={externalLinks[1].href}
+          label={externalLinks[1].label}
         />
       </div>
-      {/* --- */}
-      <div className={styles.listCard}>
-        <div>
-          <div className={styles.cardTitle}>
-            <Typography variant={'headline'}>Stack</Typography>
-          </div>
-          <ul className={styles.cardList}>
-            <li>
-              <Typography>JavaScript</Typography>
-              <Typography
-                color={'secondary'}
-                variant={'caption'}
-              >
-                Description
-              </Typography>
-            </li>
-          </ul>
-        </div>
-        <button className={styles.button}>
-          <Typography variant={'caption'}>All Tools</Typography>
-        </button>
-      </div>
+      <ListCard />
       <hr className={styles.hr} />
       <div>Project Development</div>
     </>

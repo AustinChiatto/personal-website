@@ -15,12 +15,22 @@ export type PanelType =
   | 'AboutMe'
   | 'AboutMeDetails';
 
+// export const componentMap: Record<string, any> = {
+//   CategoryContentList: <CategoryContentList />,
+//   WorkDetails: <WorkDetails />,
+//   ProjectDetails: <ProjectDetails />,
+//   NoteContentList: <NoteContentList />,
+//   NoteDetails: <NoteDetails />,
+//   AboutMe: <AboutMe />,
+//   AboutMeDetails: <AboutMeDetails />
+// };
+
 export const componentMap: Record<string, any> = {
-  CategoryContentList: <CategoryContentList />,
-  WorkDetails: <WorkDetails />,
-  ProjectDetails: <ProjectDetails />,
-  NoteContentList: <NoteContentList />,
-  NoteDetails: <NoteDetails />,
-  AboutMe: <AboutMe />,
-  AboutMeDetails: <AboutMeDetails />
+  CategoryContentList: CategoryContentList,
+  WorkDetails: WorkDetails,
+  ProjectDetails: ProjectDetails,
+  NoteContentList: NoteContentList,
+  NoteDetails: NoteDetails,
+  AboutMe: AboutMe,
+  AboutMeDetails: AboutMeDetails
 };

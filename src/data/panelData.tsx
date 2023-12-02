@@ -92,6 +92,10 @@ export const panelData = [
             { label: 'JavaScript', desc: 'Used for game logic' },
             { label: 'HTML Canvas', desc: 'Renders the game to the screen' },
             { label: 'CSS', desc: 'Used to style the page apart from the renderer' }
+          ],
+          externalLinks: [
+            { label: 'Play Game', href: '#' },
+            { label: 'Source Code', href: '#' }
           ]
         }
       },

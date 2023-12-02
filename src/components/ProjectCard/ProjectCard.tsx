@@ -30,7 +30,8 @@ const ProjectCard = ({ title, desc, image, technology, data }: ProjectCardProps)
           id: data.id,
           level: data.level,
           intro: data.intro,
-          panelComponent: componentMap[data.panelComponent as keyof typeof componentMap],
+          // panelComponent: componentMap[data.panelComponent as keyof typeof componentMap],
+          panelComponent: data.panelComponent,
           panelComponentProps: data.panelComponentProps,
           childPanels: data.childPanels
         })

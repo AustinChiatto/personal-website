@@ -84,8 +84,9 @@ const LandingPanel = () => {
                     id: e.panelData.id,
                     level: e.panelData.level,
                     intro: e.panelData.intro,
-                    panelComponent:
-                      componentMap[e.panelData.panelComponent as keyof typeof componentMap],
+                    // panelComponent:
+                    //   componentMap[e.panelData.panelComponent as keyof typeof componentMap],
+                    panelComponent: e.panelData.panelComponent,
                     panelComponentProps: e.panelData.panelComponentProps,
                     childPanels: e.panelData.childPanels
                   })
