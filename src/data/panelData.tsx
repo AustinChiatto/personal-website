@@ -96,6 +96,20 @@ export const panelData = [
           externalLinks: [
             { label: 'Play Game', href: '#' },
             { label: 'Source Code', href: '#' }
+          ],
+          article: [
+            {
+              heading: 'Initialization',
+              image: 'image?',
+              markdown:
+                'l Amet occaecat dolore ad consequat aliquip adipisicing eu. Mollit veniam ut ad aute consectetur elit minim tempor veniam aliquip elit sunt. Adipisicing anim adipisicing adipisicing anim esse non anim ullamco irure velit. Exercitation incididunt enim id consequat incididunt. Non deserunt aliquip commodo ea id aute ullamco ullamco reprehenderit mollit consectetur duis ut do. Ullamco non laboris eiusmod non cillum est non eiusmod veniam labore.'
+            },
+            {
+              heading: 'Static Components',
+              image: 'image?',
+              markdown:
+                'l Amet occaecat dolore ad consequat aliquip adipisicing eu. Mollit veniam ut ad aute consectetur elit minim tempor veniam aliquip elit sunt. Adipisicing anim adipisicing adipisicing anim esse non anim ullamco irure velit. Exercitation incididunt enim id consequat incididunt. Non deserunt aliquip commodo ea id aute ullamco ullamco reprehenderit mollit consectetur duis ut do. Ullamco non laboris eiusmod non cillum est non eiusmod veniam labore.'
+            }
           ]
         }
       },
@@ -157,7 +171,7 @@ export const panelData = [
     id: 'notes',
     level: 1,
     intro: {
-      title: 'Notes',
+      title: 'Just for fun',
       desc: 'Notes Description'
     },
     panelComponent: 'NoteContentList',

@@ -1,7 +1,18 @@
 import Typography from '../Typography/Typography';
 import styles from './listCard.module.css';
 
-const ListCard = () => {
+type TechnologyProps = {
+  label: string;
+  desc: string;
+};
+
+type Testing = {
+  content: any;
+};
+
+const ListCard = ({ content }: Testing) => {
+  const technology: TechnologyProps[] = content.technology;
+
   return (
     <div className={styles.listCard}>
       <div>
@@ -9,15 +20,17 @@ const ListCard = () => {
           <Typography variant={'headline'}>Stack</Typography>
         </div>
         <ul className={styles.cardList}>
-          <li>
-            <Typography>JavaScript</Typography>
-            <Typography
-              color={'secondary'}
-              variant={'caption'}
-            >
-              Description
-            </Typography>
-          </li>
+          {technology.map((e, i) => (
+            <li key={i}>
+              <Typography>{e.label}</Typography>
+              <Typography
+                color={'secondary'}
+                variant={'caption'}
+              >
+                {e.desc}
+              </Typography>
+            </li>
+          ))}
         </ul>
       </div>
       <button className={styles.button}>

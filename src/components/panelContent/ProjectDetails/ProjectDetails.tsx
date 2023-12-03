@@ -1,30 +1,58 @@
 import styles from './projectDetails.module.css';
 import ExternalLink from '@/components/ExternalLink/ExternalLink';
 import ListCard from '@/components/ListCard/ListCard';
+import Typography from '@/components/Typography/Typography';
+
+type ExternalLinkProps = {
+  label: string;
+  href: string;
+};
+
+type ArticleProps = {
+  heading: string;
+  image: string;
+  markdown: string;
+};
 
 type Testing = {
   content: any;
 };
 
 const ProjectDetails = ({ content }: Testing) => {
-  console.log(content);
-  const externalLinks = content.externalLinks;
+  const externalLinks: ExternalLinkProps[] = content.externalLinks;
+  const article: ArticleProps[] = content.article;
+
   return (
     <>
       <div className={styles.externalLinkList}>
-        {/* todo: use a map */}
-        <ExternalLink
-          href={externalLinks[0].href}
-          label={externalLinks[0].label}
-        />
-        <ExternalLink
-          href={externalLinks[1].href}
-          label={externalLinks[1].label}
-        />
+        {externalLinks &&
+          externalLinks.map((e, i) => (
+            <ExternalLink
+              key={i}
+              href={e.href}
+              label={e.label}
+            />
+          ))}
       </div>
-      <ListCard />
+      <ListCard content={content} />
       <hr className={styles.hr} />
-      <div>Project Development</div>
+      <div className={styles.sectionWrapper}>
+        {article &&
+          article.map((e, i) => (
+            <section
+              className={styles.section}
+              key={i}
+            >
+              <Typography
+                level={2}
+                variant={'headline'}
+              >
+                {e.heading}
+              </Typography>
+              <Typography color={'secondary'}>{e.markdown}</Typography>
+            </section>
+          ))}
+      </div>
     </>
   );
 };
