@@ -2,7 +2,6 @@ import { useContext } from 'react';
 import Typography from '../Typography/Typography';
 import styles from './listCard.module.css';
 import PanelsContext from '@/context/PanelsContext';
-import { PanelProps } from '@/data/panelData';
 
 type TechnologyProps = {
   label: string;
@@ -10,14 +9,12 @@ type TechnologyProps = {
 };
 
 type Testing = {
-  content: any;
+  content: any; // todo: assign correct type
 };
 
 const ListCard = ({ content }: Testing) => {
   const { createPanel } = useContext(PanelsContext);
   const technology: TechnologyProps[] = content.panelComponentProps.technology;
-  const projectTechPanel: PanelProps[] = content.childPanels;
-  console.log(projectTechPanel);
 
   return (
     <div className={styles.listCard}>
@@ -43,11 +40,11 @@ const ListCard = ({ content }: Testing) => {
         className={styles.button}
         onClick={() =>
           createPanel({
-            id: projectTechPanel[0].id,
-            level: projectTechPanel[0].level,
-            intro: projectTechPanel[0].intro,
-            panelComponent: projectTechPanel[0].panelComponent,
-            panelComponentProps: projectTechPanel[0].panelComponentProps
+            id: content.childPanels[0].id,
+            level: content.childPanels[0].level,
+            intro: content.childPanels[0].intro,
+            panelComponent: content.childPanels[0].panelComponent,
+            panelComponentProps: content.childPanels[0].panelComponentProps
           })
         }
       >
