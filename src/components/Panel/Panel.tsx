@@ -15,7 +15,7 @@ const Panel = forwardRef<HTMLDivElement, PanelComponentProps>(
     <section
       className={styles.panel}
       ref={ref}
-      style={{ left: level * 48 }}
+      style={{ left: level * 32 }}
     >
       <aside className={styles.panelTab}>
         <Typography

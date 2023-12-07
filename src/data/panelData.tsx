@@ -111,7 +111,21 @@ export const panelData = [
                 'l Amet occaecat dolore ad consequat aliquip adipisicing eu. Mollit veniam ut ad aute consectetur elit minim tempor veniam aliquip elit sunt. Adipisicing anim adipisicing adipisicing anim esse non anim ullamco irure velit. Exercitation incididunt enim id consequat incididunt. Non deserunt aliquip commodo ea id aute ullamco ullamco reprehenderit mollit consectetur duis ut do. Ullamco non laboris eiusmod non cillum est non eiusmod veniam labore.'
             }
           ]
-        }
+        },
+        childPanels: [
+          {
+            id: 'ProjectTech',
+            level: 3,
+            intro: {
+              title: 'Project Technology',
+              desc: 'testing'
+            },
+            panelComponent: 'AboutMe',
+            panelComponentProps: {
+              key: 'value'
+            }
+          }
+        ]
       },
       {
         id: 'Code2Image',

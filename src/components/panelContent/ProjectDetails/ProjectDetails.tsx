@@ -19,8 +19,9 @@ type Testing = {
 };
 
 const ProjectDetails = ({ content }: Testing) => {
-  const externalLinks: ExternalLinkProps[] = content.externalLinks;
-  const article: ArticleProps[] = content.article;
+  const contentData = content.panelComponentProps;
+  const externalLinks: ExternalLinkProps[] = contentData.externalLinks;
+  const article: ArticleProps[] = contentData.article;
 
   return (
     <>

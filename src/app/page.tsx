@@ -28,7 +28,7 @@ export default function Home() {
               key={i}
             >
               {/* {panel.panelComponent} */}
-              <RenderedPanelComponent content={panel.panelComponentProps} />
+              <RenderedPanelComponent content={panel} />
             </Panel>
           );
         })}
@@ -37,6 +37,7 @@ export default function Home() {
   );
 }
 
+// ! todo: double check that data import is the same across components
 // todo: check level of all typography components
 // todo: check alt's for all images
 // todo: check title's for all links

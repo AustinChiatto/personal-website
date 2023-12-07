@@ -1,5 +1,8 @@
+import { useContext } from 'react';
 import Typography from '../Typography/Typography';
 import styles from './listCard.module.css';
+import PanelsContext from '@/context/PanelsContext';
+import { PanelProps } from '@/data/panelData';
 
 type TechnologyProps = {
   label: string;
@@ -11,7 +14,10 @@ type Testing = {
 };
 
 const ListCard = ({ content }: Testing) => {
-  const technology: TechnologyProps[] = content.technology;
+  const { createPanel } = useContext(PanelsContext);
+  const technology: TechnologyProps[] = content.panelComponentProps.technology;
+  const projectTechPanel: PanelProps[] = content.childPanels;
+  console.log(projectTechPanel);
 
   return (
     <div className={styles.listCard}>
@@ -33,7 +39,18 @@ const ListCard = ({ content }: Testing) => {
           ))}
         </ul>
       </div>
-      <button className={styles.button}>
+      <button
+        className={styles.button}
+        onClick={() =>
+          createPanel({
+            id: projectTechPanel[0].id,
+            level: projectTechPanel[0].level,
+            intro: projectTechPanel[0].intro,
+            panelComponent: projectTechPanel[0].panelComponent,
+            panelComponentProps: projectTechPanel[0].panelComponentProps
+          })
+        }
+      >
         <Typography variant={'caption'}>All Tools</Typography>
       </button>
     </div>
