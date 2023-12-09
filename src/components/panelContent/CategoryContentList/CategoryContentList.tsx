@@ -1,17 +1,21 @@
 import ProjectCard from '../../ProjectCard/ProjectCard';
-import { panelDataObject, PanelProps } from '@/data/panelData';
+import { PanelProps } from '@/data/panelData';
 
-const CategoryContentList = () => {
-  const projectList: PanelProps[] = panelDataObject['projects'].childPanels;
+type ContentProps = {
+  content: any;
+};
+
+const CategoryContentList = ({ content }: ContentProps) => {
+  console.log(content);
+  const categoryList: PanelProps[] = content.childPanels;
   return (
     <>
-      {projectList.map((e, i) => (
+      {categoryList.map((e, i) => (
         <ProjectCard
           key={i}
           title={e.intro.title}
-          desc={e.intro.desc}
+          desc={e.panelComponentProps.cardDesc}
           image={e.panelComponentProps.image}
-          technology={e.panelComponentProps.technology}
           data={e}
           index={i}
         />

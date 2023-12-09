@@ -9,7 +9,7 @@ const Chip = ({ chipLabel }: ChipProps) => {
   return (
     <div className={styles.chip}>
       <Typography
-        variant={'caption'}
+        level={6}
         color={'secondary'}
       >
         {chipLabel}

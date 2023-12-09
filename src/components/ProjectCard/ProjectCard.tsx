@@ -4,7 +4,6 @@ import Typography from '../Typography/Typography';
 import styles from './projectCard.module.css';
 import PanelsContext from '@/context/PanelsContext';
 import Image from 'next/image';
-import { componentMap } from '@/data/componentMap';
 
 type TechnologyProps = {
   label: string;
@@ -16,14 +15,15 @@ type ProjectCardProps = {
   index: number;
   desc: string;
   image: string;
-  technology: TechnologyProps[];
   data: any; // todo: add correct typing before deployment
 };
 
-const ProjectCard = ({ title, desc, image, technology, data }: ProjectCardProps) => {
+const ProjectCard = ({ title, desc, image, data }: ProjectCardProps) => {
   const { createPanel } = useContext(PanelsContext);
+  const contentData = data.panelComponentProps;
+  const technology: TechnologyProps[] = contentData.listCards[0];
   return (
-    <div
+    <article
       className={styles.projectCard}
       onClick={() =>
         createPanel({
@@ -37,12 +37,7 @@ const ProjectCard = ({ title, desc, image, technology, data }: ProjectCardProps)
       }
     >
       <div>
-        <Typography
-          level={3}
-          variant={'headline'}
-        >
-          {title}
-        </Typography>
+        <Typography level={3}>{title}</Typography>
         <Typography color={'secondary'}>{desc}</Typography>
       </div>
       <div className={styles.picture}>
@@ -55,13 +50,14 @@ const ProjectCard = ({ title, desc, image, technology, data }: ProjectCardProps)
         />
       </div>
       <ul className={styles.chipList}>
-        {technology.map((e, i) => (
-          <li key={i}>
-            <Chip chipLabel={e.label} />
-          </li>
-        ))}
+        {technology &&
+          technology.map((e, i) => (
+            <li key={i}>
+              <Chip chipLabel={e.label} />
+            </li>
+          ))}
       </ul>
-    </div>
+    </article>
   );
 };
 

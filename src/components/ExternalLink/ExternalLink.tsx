@@ -15,7 +15,7 @@ const ExternalLink = ({ href, thumbnail, label }: ExternalLinkProps) => {
       className={styles.externalLink}
     >
       <div className={styles.linkThumbnail}>{thumbnail}</div>
-      <Typography variant={'caption'}>{label}</Typography>
+      <Typography level={6}>{label}</Typography>
     </Link>
   );
 };

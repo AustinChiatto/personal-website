@@ -3,37 +3,47 @@ import Typography from '../Typography/Typography';
 import styles from './listCard.module.css';
 import PanelsContext from '@/context/PanelsContext';
 
-type TechnologyProps = {
+export type ListCardProps = {
   label: string;
+  icon?: string;
   desc: string;
 };
 
-type Testing = {
+type ContentProps = {
+  cardList: any; // todo: assign correct type
   content: any; // todo: assign correct type
+  index: number;
 };
 
-const ListCard = ({ content }: Testing) => {
+const ListCard = ({ cardList, content, index }: ContentProps) => {
   const { createPanel } = useContext(PanelsContext);
-  const technology: TechnologyProps[] = content.panelComponentProps.technology;
+  const cardListContentArray: ListCardProps[] = cardList;
 
   return (
     <div className={styles.listCard}>
       <div>
         <div className={styles.cardTitle}>
-          <Typography variant={'headline'}>Stack</Typography>
+          <Typography level={3}>{index == 0 ? 'Stack' : 'Team'}</Typography>
         </div>
         <ul className={styles.cardList}>
-          {technology.map((e, i) => (
-            <li key={i}>
-              <Typography>{e.label}</Typography>
-              <Typography
-                color={'secondary'}
-                variant={'caption'}
+          {cardListContentArray &&
+            cardListContentArray.slice(0, 3).map((e, i) => (
+              <li
+                key={i}
+                className={styles.listItem}
               >
-                {e.desc}
-              </Typography>
-            </li>
-          ))}
+                <div className={styles.thumbnail}></div>
+                <div>
+                  <Typography level={5}>{e.label}</Typography>
+                  <Typography
+                    level={6}
+                    color={'secondary'}
+                  >
+                    {e.desc}
+                  </Typography>
+                </div>
+              </li>
+            ))}
         </ul>
       </div>
       <button
@@ -48,7 +58,7 @@ const ListCard = ({ content }: Testing) => {
           })
         }
       >
-        <Typography variant={'caption'}>All Tools</Typography>
+        <Typography level={6}>Details</Typography>
       </button>
     </div>
   );

@@ -1,45 +1,14 @@
 :root {
   --font-family: -apple-system, BlinkMacSystemFont, sans-serif;
 
-  --base-unit: 0.5rem;
-  --spaceIncrement: 2;
-
-  /* spacing */
-  --space-sm: var(--base-unit);
-  --space-md: calc(var(--base-unit) * var(--spaceIncrement));
-  --space-lg: calc(var(--space-md) * var(--spaceIncrement));
-  --space-xl: calc(var(--space-lg) * var(--spaceIncrement));
-  --space-2xl: calc(var(--space-xl) * var(--spaceIncrement));
-  --space-3xl: calc(var(--space-2xl) * var(--spaceIncrement));
-  --space-4xl: calc(var(--space-3xl) * var(--spaceIncrement));
-  --space-5xl: calc(var(--space-4xl) * var(--spaceIncrement));
-
-  /* font-size */
-  --caption: clamp(12px, calc(14px + (14 - 12) * ((100vw - 320px) / (1920 - 320))), 14px);
-  --line-height-xs: calc(var(--base-unit) * 2);
-
-  --body: clamp(16px, calc(16px + (17 - 16) * ((100vw - 320px) / (1920 - 320))), 17px);
-  --line-height-sm: calc(var(--base-unit) * 3);
-
-  --headline: clamp(17px, calc(20px + (24 - 20) * ((100vw - 320px) / (1920 - 320))), 20px);
-
-  --line-height-md: calc(var(--base-unit) * 4);
-
-  --title: clamp(24px, calc(28px + (32 - 28) * ((100vw - 320px) / (1920 - 320))), 32px);
-  --line-height-lg: calc(var(--base-unit) * 5);
-
-  --large-title: clamp(36px, calc(44px + (52 - 44) * ((100vw - 320px) / (1920 - 320))), 44px);
-  --line-height-xl: calc(var(--base-unit) * 6);
-
   --color-body: #0c0c0c;
-  /* --color-body: #050505; */
   --color-text-primary: #e0e0e0;
   --color-text-secondary: #8d8d92;
   --color-text-tertiary: #47474a;
-  --color-chip-background: #202020;
+  --color-chip-background: var(--color-grey-60);
 
   /* font-weight */
-  --font-weight-300: 300;
+  --font-weight-300: 320;
   --font-weight-400: 390;
   --font-weight-600: 590;
   --font-weight-700: 700;
@@ -47,10 +16,10 @@
   --font-weight-900: 900;
 
   /* border-radius */
-  --border-radius-xs: calc(var(--base-unit) / 2);
-  --border-radius-sm: var(--base-unit);
-  --border-radius-md: calc(var(--base-unit) / 2 * 3);
-  --border-radius-lg: calc(var(--base-unit) * 2);
+  --border-radius-xs: 0.25;
+  --border-radius-sm: 0.5rem;
+  --border-radius-md: 0.75rem;
+  --border-radius-lg: 1rem;
 
   /* breakpoints */
   --breakpoint-mobile-sm: 320px;
@@ -61,29 +30,142 @@
   --breakpoint-laptop-lg: 1440px;
   --breakpoint-4k: 2560px;
 
-  --gray-hue: 0;
-  --gray-saturation: 0%;
+  --grey-hue: 0;
+  --grey-saturation: 0%;
 
-  --color-gray-0: hsl(var(--gray-hue), var(--gray-saturation), 100%);
-  --color-gray-5: hsl(var(--gray-hue), var(--gray-saturation), 92%);
-  --color-gray-10: hsl(var(--gray-hue), var(--gray-saturation), 80%);
-  --color-gray-20: hsl(var(--gray-hue), var(--gray-saturation), 64%);
-  --color-gray-30: hsl(var(--gray-hue), var(--gray-saturation), 48%);
-  --color-gray-40: hsl(var(--gray-hue), var(--gray-saturation), 38%);
-  --color-gray-50: hsl(var(--gray-hue), var(--gray-saturation), 25%);
-  --color-gray-60: hsl(var(--gray-hue), var(--gray-saturation), 20%);
-  --color-gray-70: hsl(var(--gray-hue), var(--gray-saturation), 15%);
-  --color-gray-75: hsl(var(--gray-hue), var(--gray-saturation), 10%);
-  --color-gray-80: hsl(var(--gray-hue), var(--gray-saturation), 8%);
-  --color-gray-85: hsl(var(--gray-hue), var(--gray-saturation), 5%);
-  --color-gray-90: hsl(var(--gray-hue), var(--gray-saturation), 3%);
-  --color-gray-95: hsl(var(--gray-hue), var(--gray-saturation), 2%);
-  --color-gray-100: hsl(var(--gray-hue), var(--gray-saturation), 0%);
+  --color-grey-0: hsl(var(--grey-hue), var(--grey-saturation), 100%);
+  --color-grey-5: hsl(var(--grey-hue), var(--grey-saturation), 92%);
+  --color-grey-10: hsl(var(--grey-hue), var(--grey-saturation), 80%);
+  --color-grey-20: hsl(var(--grey-hue), var(--grey-saturation), 64%);
+  --color-grey-30: hsl(var(--grey-hue), var(--grey-saturation), 48%);
+  --color-grey-40: hsl(var(--grey-hue), var(--grey-saturation), 38%);
+  --color-grey-50: hsl(var(--grey-hue), var(--grey-saturation), 20%);
+  --color-grey-60: hsl(var(--grey-hue), var(--grey-saturation), 16%);
+  --color-grey-65: hsl(var(--grey-hue), var(--grey-saturation), 10.5%);
+  --color-grey-70: hsl(var(--grey-hue), var(--grey-saturation), 10%);
+  --color-grey-75: hsl(var(--grey-hue), var(--grey-saturation), 9%);
+  --color-grey-80: hsl(var(--grey-hue), var(--grey-saturation), 8%);
+  --color-grey-85: hsl(var(--grey-hue), var(--grey-saturation), 5%);
+  --color-grey-90: hsl(var(--grey-hue), var(--grey-saturation), 3%);
+  --color-grey-95: hsl(var(--grey-hue), var(--grey-saturation), 2%);
+  --color-grey-100: hsl(var(--grey-hue), var(--grey-saturation), 0%);
+
+  /* transitions */
+  --transition-timing: 150ms;
+  --transition-ease: ease-in-out;
 
   background: var(--color-body);
   color: var(--color-text-primary);
 }
 
+/* typography */
+h1,
+h2,
+h3,
+h4,
+h5 {
+  letter-spacing: -0.025rem;
+}
+
+/* large title */
+h1 {
+  /* font-weight: var(--font-weight-600);
+  font-size: 1.75rem;
+  line-height: 2.125rem; */
+  font-size: 2rem;
+  font-style: normal;
+  font-weight: var(--font-weight-600);
+  line-height: 2.375rem;
+}
+
+/* title */
+h2 {
+  font-size: 1.5rem;
+  font-style: normal;
+  font-weight: var(--font-weight-600);
+  line-height: 1.875rem;
+}
+
+/* headline */
+h3 {
+  font-size: 1.125rem;
+  font-style: normal;
+  font-weight: var(--font-weight-600);
+  line-height: 1.375rem;
+}
+
+h4 {
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: var(--font-weight-300);
+  line-height: 1.375rem;
+}
+
+/* body */
+h5,
+p {
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: var(--font-weight-300);
+  line-height: 1.375rem;
+  color: var(--color-text-secondary);
+}
+
+/* caption */
+h6 {
+  font-size: 0.875rem;
+  font-style: normal;
+  font-weight: var(--font-weight-300);
+  line-height: 1.125rem;
+}
+
+p + p {
+  margin-top: 1rem;
+}
+
+em {
+  color: var(--color-text-primary);
+  font-style: italic;
+}
+
+strong {
+  font-weight: var(--font-weight-600);
+  color: var(--color-text-primary);
+}
+
+/* buttons & links */
 a {
   text-decoration: none;
+}
+
+button {
+  all: unset;
+}
+
+/* panel backgrounds */
+.panelBackground-10 {
+  background: var(--color-grey-80);
+}
+
+.panelBackground-20 {
+  background: var(--color-grey-75);
+}
+
+.panelBackground-30 {
+  background: var(--color-grey-70);
+}
+
+.panelBackground-40 {
+  background: var(--color-grey-65);
+}
+
+/* misc */
+::selection {
+  background: var(--color-text-primary);
+  color: #000;
+}
+
+::-moz-selection {
+  background: var(--color-text-primary);
+  color: #000;
 }

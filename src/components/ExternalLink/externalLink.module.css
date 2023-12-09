@@ -3,7 +3,8 @@
   align-items: center;
   padding: 0.375rem;
   border-radius: 0.5rem;
-  background: var(--color-chip-background, #202020);
+  background: var(--color-chip-background);
+  transition: background var(--transition-timing) var(--transition-ease);
 }
 
 .externalLink > * + * {
@@ -12,7 +13,7 @@
 }
 
 .externalLink:hover {
-  background: var(--color-gray-60);
+  background: var(--color-grey-50);
 }
 
 .linkThumbnail {

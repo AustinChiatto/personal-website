@@ -1,7 +1,7 @@
 .panel,
-.basePanel {
-  width: 48vw;
-  max-width: 43rem;
+.landingPanel {
+  width: calc(50vw - 2rem);
+  max-width: 48rem;
   flex: 0 0 auto;
   position: sticky;
   display: flex;
@@ -11,13 +11,21 @@
 }
 
 .panel {
-  background: #121212;
   scrollbar-width: none;
   border-left: 1px solid #181818;
+  box-shadow: -1px 0px 2.2px rgba(0, 0, 0, 0.02), -0.9px 0px 5.3px rgba(0, 0, 0, 0.028),
+    -0.5px 0px 10px rgba(0, 0, 0, 0.035), -3.4px 0px 17.9px rgba(0, 0, 0, 0.042),
+    -7.6px 0px 33.4px rgba(0, 0, 0, 0.05), -16px 0px 80px rgba(0, 0, 0, 0.07);
 }
 
 .panel::-webkit-scrollbar {
   display: none;
+}
+
+.landingPanel {
+  background: none;
+  border: none;
+  box-shadow: none;
 }
 
 .panelTab {
@@ -27,6 +35,12 @@
   justify-content: center;
   padding-inline: 0.5rem;
   padding-block: 0.75rem;
+  position: sticky;
+  top: 0;
+}
+
+.panelTab:hover {
+  cursor: pointer;
 }
 
 .panelTab > * {
@@ -38,21 +52,20 @@
   flex-grow: 1;
   height: fit-content;
   flex-direction: column;
-  gap: 4.5rem;
+  gap: 2rem;
   padding-block: 2.25rem;
-  padding-right: 2rem;
+  padding-right: 2.25rem;
   margin-left: 0.5rem;
 }
 
-.basePanel {
+.landingPanel > .panelBody {
   height: 100%;
-  padding-top: 1rem;
-  padding-inline: 3rem;
-  flex-direction: column;
+  justify-content: space-between;
+  padding-top: 2.25rem;
 }
 
-.basePanel > .panelBody {
-  padding-right: 0;
+.landingPanelContent {
+  margin-top: 3.25rem;
 }
 
 .panelIntro > * + * {
@@ -62,7 +75,6 @@
 .panelFooter {
   display: flex;
   justify-content: space-between;
-  padding-block: 3rem;
 }
 
 .categoryButton {
@@ -76,7 +88,7 @@
 }
 
 .categoryButton:hover {
-  border: 1px solid var(--color-gray-50);
+  border: 1px solid var(--color-grey-50);
   padding: 1rem;
 }
 

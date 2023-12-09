@@ -28,34 +28,89 @@ export const panelData = [
     panelComponentProps: {
       key: 'value'
     },
-    // work - level 2
+    // work - Market Maestro
     childPanels: [
       {
         id: 'marketMaestro',
         level: 2,
         intro: {
           title: 'Market Maestro',
-          desc: 'Market Maestro Description'
+          desc: 'The aim of this project was to create an accessible landing page that enables new users to discover and learn about the Market Maestro application, while also facilitating the sign-in process for the existing user base.'
         },
-        panelComponent: 'WorkDetails',
+        panelComponent: 'ProjectDetails',
         panelComponentProps: {
           image: '/images/market-maestro_work-thumbnail.png',
-          technology: [
-            { label: 'JavaScript', desc: 'Used for game logic' },
-            { label: 'HTML Canvas', desc: 'Renders the game to the screen' },
-            { label: 'CSS', desc: 'Used to style the page apart from the renderer' }
+          cardDesc:
+            'A responsive landing page using Next.js for my frontend development internship at Dovetail Digital.',
+          listCards: [
+            [
+              {
+                label: 'Next.js',
+                icon: '/path',
+                desc: 'Utilized for server components & more.'
+              },
+              {
+                label: 'TypeScript',
+                icon: '/path',
+                desc: 'Used for static typing to reduce errors.'
+              },
+              {
+                label: 'MUI',
+                icon: '/path',
+                desc: 'A UI Component library customized to fit the project.'
+              },
+              {
+                label: 'Vercel',
+                icon: '/path',
+                desc: 'A UI Component library customized to fit the project.'
+              }
+            ],
+
+            [
+              {
+                label: 'Austin Chiatto',
+                icon: '/path',
+                desc: 'Frontend Developer'
+              },
+              {
+                label: 'Nicola Bower',
+                icon: '/path',
+                desc: 'UI/UX Designer'
+              }
+            ]
+          ],
+          externalLinks: [{ label: 'Visit Live Site', href: 'https://www.marketmaestro.ca/' }],
+          article: [
+            {
+              markdown: ['## Project Development']
+            },
+            {
+              markdown: ['### Initialization', 'Cloned the base repo from Git labs, etc..']
+            },
+            {
+              markdown: ['### Theming', 'Cloned the base repo from Git labs, etc..']
+            },
+            {
+              markdown: ['### TypeScript Hurdles', 'Cloned the base repo from Git labs, etc..']
+            },
+            {
+              markdown: ['### Next.js API', 'Cloned the base repo from Git labs, etc..']
+            },
+            {
+              markdown: ['### Deploying with Vercel', 'Cloned the base repo from Git labs, etc..']
+            }
           ]
         },
-        // work - level 3
+        // work - Market Maestro Technology
         childPanels: [
           {
-            id: 'marketMaestroDetails',
+            id: 'ProjectTech',
             level: 3,
             intro: {
-              title: 'Market Maestro Details',
-              desc: 'Market Maestro Description'
+              title: 'Project Technology',
+              desc: 'testing'
             },
-            panelComponent: 'WorkDetails',
+            panelComponent: 'AboutMe',
             panelComponentProps: {
               key: 'value'
             }
@@ -88,10 +143,11 @@ export const panelData = [
         panelComponent: 'ProjectDetails',
         panelComponentProps: {
           image: '/images/asteroid-run_project-thumbnail.png',
+          cardDesc: '',
           technology: [
-            { label: 'JavaScript', desc: 'Used for game logic' },
-            { label: 'HTML Canvas', desc: 'Renders the game to the screen' },
-            { label: 'CSS', desc: 'Used to style the page apart from the renderer' }
+            { label: 'JavaScript', icon: '/path', desc: 'Used for game logic' },
+            { label: 'HTML Canvas', icon: '/path', desc: 'Renders the game to the screen' },
+            { label: 'CSS', icon: '/path', desc: 'Used to style the page apart from the renderer' }
           ],
           externalLinks: [
             { label: 'Play Game', href: '#' },
@@ -99,16 +155,12 @@ export const panelData = [
           ],
           article: [
             {
-              heading: 'Initialization',
               image: 'image?',
-              markdown:
-                'l Amet occaecat dolore ad consequat aliquip adipisicing eu. Mollit veniam ut ad aute consectetur elit minim tempor veniam aliquip elit sunt. Adipisicing anim adipisicing adipisicing anim esse non anim ullamco irure velit. Exercitation incididunt enim id consequat incididunt. Non deserunt aliquip commodo ea id aute ullamco ullamco reprehenderit mollit consectetur duis ut do. Ullamco non laboris eiusmod non cillum est non eiusmod veniam labore.'
-            },
-            {
-              heading: 'Static Components',
-              image: 'image?',
-              markdown:
-                'l Amet occaecat dolore ad consequat aliquip adipisicing eu. Mollit veniam ut ad aute consectetur elit minim tempor veniam aliquip elit sunt. Adipisicing anim adipisicing adipisicing anim esse non anim ullamco irure velit. Exercitation incididunt enim id consequat incididunt. Non deserunt aliquip commodo ea id aute ullamco ullamco reprehenderit mollit consectetur duis ut do. Ullamco non laboris eiusmod non cillum est non eiusmod veniam labore.'
+              markdown: [
+                '## Initialization',
+                'In the bustling town of *Haplost*, there was an endearingly eccentric baker named *Germaine*. He was famously known for his peculiar baking experiments. One day, Germaine got a wild idea: to create a bread so light that it would **literally float**. Intrigued by his own idea, he spent countless hours perfecting the recipe, often laughing to himself amidst floating clouds of flour. Germaine was not only a masterful baker, but evidently, a dreamer who believed in the unlikely.',
+                'In the bustling town of *Haplost*, there was an endearingly eccentric baker named *Germaine*. He was famously known for his peculiar baking experiments. One day, Germaine got a wild idea: to create a bread so light that it would **literally float**. Intrigued by his own idea, he spent countless hours perfecting the recipe, often laughing to himself amidst floating clouds of flour. Germaine was not only a masterful baker, but evidently, a dreamer who believed in the unlikely.'
+              ]
             }
           ]
         },
@@ -137,6 +189,7 @@ export const panelData = [
         panelComponent: 'ProjectDetails',
         panelComponentProps: {
           image: '/images/code2image_project-thumbnail.png',
+          cardDesc: '',
           technology: [
             { label: 'JavaScript', desc: 'Used for game logic' },
             { label: 'HTML Canvas', desc: 'Renders the game to the screen' },
@@ -154,6 +207,7 @@ export const panelData = [
         panelComponent: 'ProjectDetails',
         panelComponentProps: {
           image: '/images/market-maestro_work-thumbnail.png',
+          cardDesc: '',
           technology: [
             { label: 'JavaScript', desc: 'Used for game logic' },
             { label: 'HTML Canvas', desc: 'Renders the game to the screen' },
@@ -171,6 +225,7 @@ export const panelData = [
         panelComponent: 'ProjectDetails',
         panelComponentProps: {
           image: '/images/code2image_project-thumbnail.png',
+          cardDesc: '',
           technology: [
             { label: 'JavaScript', desc: 'Used for game logic' },
             { label: 'HTML Canvas', desc: 'Renders the game to the screen' },

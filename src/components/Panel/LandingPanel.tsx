@@ -10,7 +10,6 @@ import styles from './panel.module.css';
 import PanelsContext from '@/context/PanelsContext';
 import { useContext } from 'react';
 import { panelDataObject, PanelProps } from '@/data/panelData';
-import { componentMap } from '@/data/componentMap';
 
 const categoryList: {
   icon: string;
@@ -23,28 +22,28 @@ const categoryList: {
     icon: workIcon,
     iconAlt: 'Squiggly doodle of a star',
     categoryTitle: 'Work',
-    categoryDesc: "Code I've written for others or as part of my job.",
+    categoryDesc: "Websites I've built for others or as part of my career.",
     panelData: panelDataObject['work']
   },
   {
     icon: projectsIcon,
     iconAlt: 'Squiggly doodle of a diamond',
     categoryTitle: 'Projects',
-    categoryDesc: "A collection of things I've built to learn something new.",
+    categoryDesc: 'Self-directed projects that taught me something new.',
     panelData: panelDataObject['projects']
   },
   {
     icon: notesIcon,
     iconAlt: 'Squiggly circle doodle',
-    categoryTitle: 'Notes',
-    categoryDesc: "Things I've discovered and want to remember.",
+    categoryTitle: 'Resources',
+    categoryDesc: "Useful or interesting things I've found or made.",
     panelData: panelDataObject['notes']
   },
   {
     icon: aboutIcon,
     iconAlt: 'Squiggly asterisk doodle',
-    categoryTitle: 'More About Me',
-    categoryDesc: 'Why is this always the hardest thing to write?',
+    categoryTitle: 'About Me',
+    categoryDesc: 'Who I am and what I love to do.',
     panelData: panelDataObject['about']
   }
 ];
@@ -54,27 +53,29 @@ const LandingPanel = () => {
 
   return (
     <section
-      className={styles.basePanel}
+      className={`${styles.panel} ${styles.landingPanel}`}
       style={{ left: 0 }}
     >
+      <aside className={styles.panelTab}>
+        <button>
+          <Typography
+            level={6}
+            color={'tertiary'}
+          >
+            ⌘ Home
+          </Typography>
+        </button>
+      </aside>
       <div className={styles.panelBody}>
-        <div className={styles.panelIntro}>
-          <Typography
-            level={2}
-            variant={'title'}
-          >
-            👋 Hey
-          </Typography>
-          <Typography
-            variant={'body'}
-            color={'secondary'}
-          >
-            I&apos;m Austin, a frontend JavaScript developer who loves using code, animation, and
-            interactivity to solve problems.
-          </Typography>
-        </div>
-        <div className={styles.panelContent}>
-          <ul>
+        <div>
+          <div className={styles.panelIntro}>
+            <Typography level={2}>👋 Hey</Typography>
+            <Typography color={'secondary'}>
+              I&apos;m Austin, a frontend JavaScript developer who loves using code, animation, and
+              interactivity to solve problems.
+            </Typography>
+          </div>
+          <ul className={styles.landingPanelContent}>
             {categoryList.map((e, i) => (
               <li
                 className={styles.categoryButton}
@@ -97,19 +98,19 @@ const LandingPanel = () => {
                   />
                 </div>
                 <div className={styles.categoryButtonLabels}>
-                  <Typography variant={'headline'}>{e.categoryTitle}</Typography>
+                  <Typography level={3}>{e.categoryTitle}</Typography>
                   <Typography color={'secondary'}>{e.categoryDesc}</Typography>
                 </div>
               </li>
             ))}
           </ul>
         </div>
-      </div>
-      <div className={styles.panelFooter}>
-        <Link href="mailto:chiattoaustin@gmail.com">
-          <Typography color={'tertiary'}>hey@austinchiatto.com</Typography>
-        </Link>
-        <Typography color={'tertiary'}>▲</Typography>
+        <div className={styles.panelFooter}>
+          <Link href="mailto:chiattoaustin@gmail.com">
+            <Typography color={'tertiary'}>hey@austinchiatto.com</Typography>
+          </Link>
+          <Typography color={'tertiary'}>▲</Typography>
+        </div>
       </div>
     </section>
   );

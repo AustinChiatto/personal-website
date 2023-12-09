@@ -6,8 +6,10 @@ import Panel from '@/components/Panel/Panel';
 import LandingPanel from '@/components/Panel/LandingPanel';
 import PanelsContext from '@/context/PanelsContext';
 import { componentMap } from '@/data/componentMap';
+import { useRef } from 'react';
 
 export default function Home() {
+  const scrollContainerRef = useRef(null);
   const { panels, createPanel } = usePanels();
 
   return (
@@ -27,7 +29,6 @@ export default function Home() {
               description={panel.intro.desc}
               key={i}
             >
-              {/* {panel.panelComponent} */}
               <RenderedPanelComponent content={panel} />
             </Panel>
           );
