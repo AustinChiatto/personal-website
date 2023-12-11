@@ -1,4 +1,3 @@
-// import { workListData, projectListData, noteListData, aboutListData } from '@/data/panelData';
 import workIcon from '@/assets/icons/work-icon.svg';
 import projectsIcon from '@/assets/icons/projects-icon.svg';
 import notesIcon from '@/assets/icons/notes-icon.svg';
@@ -10,6 +9,7 @@ import styles from './panel.module.css';
 import PanelsContext from '@/context/PanelsContext';
 import { useContext } from 'react';
 import { panelDataObject, PanelProps } from '@/data/panelData';
+import InlineLink from '../links/InlineLink/InlineLink';
 
 const categoryList: {
   icon: string;
@@ -51,6 +51,43 @@ const categoryList: {
 const LandingPanel = () => {
   const { createPanel } = useContext(PanelsContext);
 
+  const dovetailLink = (
+    <InlineLink
+      href="https://www.dovetaildigital.ca/"
+      target="_blank"
+      title="dovetaildigital.ca"
+      highlight
+    >
+      Dovetail Digital
+    </InlineLink>
+  );
+  const marketMaestroLink = (
+    <InlineLink
+      href="https://www.marketmaestro.ca/"
+      target="_blank"
+      title="marketmaestro.ca"
+      highlight
+    >
+      Market Maestro
+    </InlineLink>
+  );
+  const interplanetaryLink = (
+    <InlineLink
+      href="#"
+      highlight
+    >
+      Interplanetary
+    </InlineLink>
+  );
+  const gitRoastedLink = (
+    <InlineLink
+      href="#"
+      highlight
+    >
+      GitRoasted
+    </InlineLink>
+  );
+
   return (
     <section
       className={`${styles.panel} ${styles.landingPanel}`}
@@ -69,11 +106,27 @@ const LandingPanel = () => {
       <div className={styles.panelBody}>
         <div>
           <div className={styles.panelIntro}>
-            <Typography level={2}>👋 Hey</Typography>
-            <Typography color={'secondary'}>
-              I&apos;m Austin, a frontend JavaScript developer who loves using code, animation, and
-              interactivity to solve problems.
+            <Typography level={2}>Austin Chiatto</Typography>
+            <Typography
+              level={5}
+              color={'secondary'}
+            >
+              Developer
             </Typography>
+            <div className={styles.personalIntro}>
+              <Typography>
+                Junior front-end developer living on the (rainy) west coast of Canada.
+              </Typography>
+              <Typography>
+                I recently completed an internship at {dovetailLink} where I built a website using
+                Next.js that introduces their {marketMaestroLink} application.
+              </Typography>
+              <Typography>
+                Since then, I&apos;ve built {interplanetaryLink} a space flight tracker, and{' '}
+                {gitRoastedLink}, which analyzes and roasts your GitHub account.
+              </Typography>
+              <Typography>Take a look around.</Typography>
+            </div>
           </div>
           <ul className={styles.landingPanelContent}>
             {categoryList.map((e, i) => (
@@ -106,10 +159,13 @@ const LandingPanel = () => {
           </ul>
         </div>
         <div className={styles.panelFooter}>
-          <Link href="mailto:chiattoaustin@gmail.com">
-            <Typography color={'tertiary'}>hey@austinchiatto.com</Typography>
-          </Link>
-          <Typography color={'tertiary'}>▲</Typography>
+          <InlineLink href="mailto:chiattoaustin@gmail.com">hey@austinchiatto.com</InlineLink>
+          <Typography
+            level={6}
+            color={'tertiary'}
+          >
+            2023
+          </Typography>
         </div>
       </div>
     </section>

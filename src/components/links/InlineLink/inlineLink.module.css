@@ -1,0 +1,9 @@
+.default {
+  color: var(--color-text-secondary);
+  transition: color var(--transition-timing) var(--transition-ease);
+}
+
+.highlight,
+.default:hover {
+  color: #2997ff;
+}

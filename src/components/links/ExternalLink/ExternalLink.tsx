@@ -1,4 +1,4 @@
-import Typography from '../Typography/Typography';
+import Typography from '../../Typography/Typography';
 import styles from './externalLink.module.css';
 import Link from 'next/link';
 

@@ -72,6 +72,7 @@
   margin-top: 0.5rem;
 }
 
+/* landing panel */
 .panelFooter {
   display: flex;
   justify-content: space-between;
@@ -95,4 +96,13 @@
 .categoryButtonIcon {
   align-self: center;
   aspect-ratio: 1/1;
+}
+
+.categoryButtonIcon > * {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.personalIntro {
+  padding-block: 2rem 1rem;
 }

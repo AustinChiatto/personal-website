@@ -1,15 +1,17 @@
-import CategoryContentList from '@/components/panelContent/CategoryContentList/CategoryContentList';
-import WorkDetails from '@/components/panelContent/WorkDetails/WorkDetails';
-import ProjectDetails from '@/components/panelContent/ProjectDetails/ProjectDetails';
-import NoteContentList from '@/components/panelContent/NoteContentList/NoteContentList';
-import NoteDetails from '@/components/panelContent/NoteDetails/NoteDetails';
-import AboutMe from '@/components/panelContent/AboutMe/AboutMe';
-import AboutMeDetails from '@/components/panelContent/AboutMeDetails/AboutMeDetails';
+import CategoryContentList from '@/components/panelComponents/CategoryContentList/CategoryContentList';
+import ProjectDetails from '@/components/panelComponents/ProjectDetails/ProjectDetails';
+import ProjectStack from '@/components/panelComponents/ProjectDetails/ProjectStack/ProjectStack';
+import ProjectTeam from '@/components/panelComponents/ProjectDetails/ProjectTeam/ProjectTeam';
+import NoteContentList from '@/components/panelComponents/NoteContentList/NoteContentList';
+import NoteDetails from '@/components/panelComponents/NoteDetails/NoteDetails';
+import AboutMe from '@/components/panelComponents/AboutMe/AboutMe';
+import AboutMeDetails from '@/components/panelComponents/AboutMeDetails/AboutMeDetails';
 
 export type PanelType =
   | 'CategoryContentList'
-  | 'WorkDetails'
   | 'ProjectDetails'
+  | 'ProjectStack'
+  | 'ProjectTeam'
   | 'NoteContentList'
   | 'NoteDetails'
   | 'AboutMe'
@@ -18,8 +20,9 @@ export type PanelType =
 // todo: assign correct type
 export const componentMap: Record<string, any> = {
   CategoryContentList,
-  WorkDetails,
   ProjectDetails,
+  ProjectStack,
+  ProjectTeam,
   NoteContentList,
   NoteDetails,
   AboutMe,

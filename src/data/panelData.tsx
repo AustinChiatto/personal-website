@@ -16,13 +16,13 @@ export type PanelProps = {
 };
 
 export const panelData = [
-  // work
+  // Work
   {
     id: 'work',
     level: 1,
     intro: {
-      title: 'Work',
-      desc: 'Work Description'
+      title: 'Work'
+      // desc: "A collection of websites I've built for or with others as part of my career."
     },
     panelComponent: 'CategoryContentList',
     panelComponentProps: {
@@ -35,13 +35,13 @@ export const panelData = [
         level: 2,
         intro: {
           title: 'Market Maestro',
-          desc: 'The aim of this project was to create an accessible landing page that enables new users to discover and learn about the Market Maestro application, while also facilitating the sign-in process for the existing user base.'
+          desc: 'This project involved transforming Figma design documents into a functional site and a set of themed MUI components.'
         },
         panelComponent: 'ProjectDetails',
         panelComponentProps: {
           image: '/images/market-maestro_work-thumbnail.png',
           cardDesc:
-            'A responsive landing page using Next.js for my frontend development internship at Dovetail Digital.',
+            'Responsive Next.js site that I built as part of my internship with Dovetail Digital.',
           listCards: [
             [
               {
@@ -65,7 +65,6 @@ export const panelData = [
                 desc: 'A UI Component library customized to fit the project.'
               }
             ],
-
             [
               {
                 label: 'Austin Chiatto',
@@ -79,7 +78,7 @@ export const panelData = [
               }
             ]
           ],
-          externalLinks: [{ label: 'Visit Live Site', href: 'https://www.marketmaestro.ca/' }],
+          externalLinks: [{ label: 'marketmaestro.ca', href: 'https://www.marketmaestro.ca/' }],
           article: [
             {
               markdown: ['## Project Development']
@@ -104,13 +103,25 @@ export const panelData = [
         // work - Market Maestro Technology
         childPanels: [
           {
-            id: 'ProjectTech',
+            id: 'ProjectStack',
             level: 3,
             intro: {
-              title: 'Project Technology',
-              desc: 'testing'
+              title: 'Project Stack',
+              desc: 'The languages, tools, and methodologies behind the construction of this project, as well as how and why I chose to implement them over others.'
             },
-            panelComponent: 'AboutMe',
+            panelComponent: 'ProjectStack',
+            panelComponentProps: {
+              key: 'value'
+            }
+          },
+          {
+            id: 'ProjectTeam',
+            level: 3,
+            intro: {
+              title: 'The Team',
+              desc: 'The roles and responsibilities of each person who contributed to this project.'
+            },
+            panelComponent: 'ProjectTeam',
             panelComponentProps: {
               key: 'value'
             }
@@ -119,7 +130,7 @@ export const panelData = [
       }
     ]
   },
-  // projects
+  // Projects
   {
     id: 'projects',
     level: 1,
@@ -143,11 +154,31 @@ export const panelData = [
         panelComponent: 'ProjectDetails',
         panelComponentProps: {
           image: '/images/asteroid-run_project-thumbnail.png',
-          cardDesc: '',
-          technology: [
-            { label: 'JavaScript', icon: '/path', desc: 'Used for game logic' },
-            { label: 'HTML Canvas', icon: '/path', desc: 'Renders the game to the screen' },
-            { label: 'CSS', icon: '/path', desc: 'Used to style the page apart from the renderer' }
+          cardDesc:
+            'A responsive landing page using Next.js for my frontend development internship at Dovetail Digital.',
+          listCards: [
+            [
+              {
+                label: 'Next.js',
+                icon: '/path',
+                desc: 'Utilized for server components & more.'
+              },
+              {
+                label: 'TypeScript',
+                icon: '/path',
+                desc: 'Used for static typing to reduce errors.'
+              },
+              {
+                label: 'MUI',
+                icon: '/path',
+                desc: 'A UI Component library customized to fit the project.'
+              },
+              {
+                label: 'Vercel',
+                icon: '/path',
+                desc: 'A UI Component library customized to fit the project.'
+              }
+            ]
           ],
           externalLinks: [
             { label: 'Play Game', href: '#' },
@@ -189,11 +220,31 @@ export const panelData = [
         panelComponent: 'ProjectDetails',
         panelComponentProps: {
           image: '/images/code2image_project-thumbnail.png',
-          cardDesc: '',
-          technology: [
-            { label: 'JavaScript', desc: 'Used for game logic' },
-            { label: 'HTML Canvas', desc: 'Renders the game to the screen' },
-            { label: 'CSS', desc: 'Used to style the page apart from the renderer' }
+          cardDesc:
+            'A responsive landing page using Next.js for my frontend development internship at Dovetail Digital.',
+          listCards: [
+            [
+              {
+                label: 'Next.js',
+                icon: '/path',
+                desc: 'Utilized for server components & more.'
+              },
+              {
+                label: 'TypeScript',
+                icon: '/path',
+                desc: 'Used for static typing to reduce errors.'
+              },
+              {
+                label: 'MUI',
+                icon: '/path',
+                desc: 'A UI Component library customized to fit the project.'
+              },
+              {
+                label: 'Vercel',
+                icon: '/path',
+                desc: 'A UI Component library customized to fit the project.'
+              }
+            ]
           ]
         }
       },
@@ -207,11 +258,31 @@ export const panelData = [
         panelComponent: 'ProjectDetails',
         panelComponentProps: {
           image: '/images/market-maestro_work-thumbnail.png',
-          cardDesc: '',
-          technology: [
-            { label: 'JavaScript', desc: 'Used for game logic' },
-            { label: 'HTML Canvas', desc: 'Renders the game to the screen' },
-            { label: 'CSS', desc: 'Used to style the page apart from the renderer' }
+          cardDesc:
+            'A responsive landing page using Next.js for my frontend development internship at Dovetail Digital.',
+          listCards: [
+            [
+              {
+                label: 'Next.js',
+                icon: '/path',
+                desc: 'Utilized for server components & more.'
+              },
+              {
+                label: 'TypeScript',
+                icon: '/path',
+                desc: 'Used for static typing to reduce errors.'
+              },
+              {
+                label: 'MUI',
+                icon: '/path',
+                desc: 'A UI Component library customized to fit the project.'
+              },
+              {
+                label: 'Vercel',
+                icon: '/path',
+                desc: 'A UI Component library customized to fit the project.'
+              }
+            ]
           ]
         }
       },
@@ -225,17 +296,37 @@ export const panelData = [
         panelComponent: 'ProjectDetails',
         panelComponentProps: {
           image: '/images/code2image_project-thumbnail.png',
-          cardDesc: '',
-          technology: [
-            { label: 'JavaScript', desc: 'Used for game logic' },
-            { label: 'HTML Canvas', desc: 'Renders the game to the screen' },
-            { label: 'CSS', desc: 'Used to style the page apart from the renderer' }
+          cardDesc:
+            'A responsive landing page using Next.js for my frontend development internship at Dovetail Digital.',
+          listCards: [
+            [
+              {
+                label: 'Next.js',
+                icon: '/path',
+                desc: 'Utilized for server components & more.'
+              },
+              {
+                label: 'TypeScript',
+                icon: '/path',
+                desc: 'Used for static typing to reduce errors.'
+              },
+              {
+                label: 'MUI',
+                icon: '/path',
+                desc: 'A UI Component library customized to fit the project.'
+              },
+              {
+                label: 'Vercel',
+                icon: '/path',
+                desc: 'A UI Component library customized to fit the project.'
+              }
+            ]
           ]
         }
       }
     ]
   },
-  // notes
+  // Resources
   {
     id: 'notes',
     level: 1,
@@ -263,7 +354,7 @@ export const panelData = [
       }
     ]
   },
-  // about
+  // About Me
   {
     id: 'about',
     level: 1,

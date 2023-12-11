@@ -1,7 +1,8 @@
 import styles from './projectDetails.module.css';
-import ExternalLink from '@/components/ExternalLink/ExternalLink';
+import ExternalLink from '@/components/links/ExternalLink/ExternalLink';
 import Markdown from 'react-markdown';
 import ListCard, { ListCardProps } from '@/components/ListCard/ListCard';
+import Typography from '@/components/Typography/Typography';
 
 type ExternalLinkProps = {
   label: string;

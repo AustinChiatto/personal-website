@@ -18,12 +18,14 @@ type ContentProps = {
 const ListCard = ({ cardList, content, index }: ContentProps) => {
   const { createPanel } = useContext(PanelsContext);
   const cardListContentArray: ListCardProps[] = cardList;
+  const title = index === 0 ? 'Stack' : 'Team';
+  const cta = index === 0 ? 'All Tools' : 'Details';
 
   return (
     <div className={styles.listCard}>
       <div>
         <div className={styles.cardTitle}>
-          <Typography level={3}>{index == 0 ? 'Stack' : 'Team'}</Typography>
+          <Typography level={3}>{title}</Typography>
         </div>
         <ul className={styles.cardList}>
           {cardListContentArray &&
@@ -50,15 +52,15 @@ const ListCard = ({ cardList, content, index }: ContentProps) => {
         className={styles.button}
         onClick={() =>
           createPanel({
-            id: content.childPanels[0].id,
-            level: content.childPanels[0].level,
-            intro: content.childPanels[0].intro,
-            panelComponent: content.childPanels[0].panelComponent,
-            panelComponentProps: content.childPanels[0].panelComponentProps
+            id: content.childPanels[index].id,
+            level: content.childPanels[index].level,
+            intro: content.childPanels[index].intro,
+            panelComponent: content.childPanels[index].panelComponent,
+            panelComponentProps: content.childPanels[index].panelComponentProps
           })
         }
       >
-        <Typography level={6}>Details</Typography>
+        <Typography level={6}>{cta}</Typography>
       </button>
     </div>
   );
