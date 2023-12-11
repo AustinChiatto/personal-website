@@ -93,14 +93,7 @@ const LandingPanel = () => {
       style={{ left: 0 }}
     >
       <aside className={styles.panelTab}>
-        <button>
-          <Typography
-            level={6}
-            color={'tertiary'}
-          >
-            ⌘ Home
-          </Typography>
-        </button>
+        <button>⌘ Home</button>
       </aside>
       <div className={styles.panelBody}>
         <div>

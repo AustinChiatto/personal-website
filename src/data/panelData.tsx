@@ -42,43 +42,49 @@ export const panelData = [
           image: '/images/market-maestro_work-thumbnail.png',
           cardDesc:
             'Responsive Next.js site that I built as part of my internship with Dovetail Digital.',
+          externalLinks: [
+            {
+              label: 'marketmaestro.ca',
+              href: 'https://www.marketmaestro.ca/',
+              favicon: '/images/mm-favicon.jpeg'
+            }
+          ],
           listCards: [
             [
               {
                 label: 'Next.js',
-                icon: '/path',
+                icon: '/icons/nextjs-original.svg',
                 desc: 'Utilized for server components & more.'
               },
               {
                 label: 'TypeScript',
-                icon: '/path',
+                icon: '/icons/typescript-original.svg',
                 desc: 'Used for static typing to reduce errors.'
               },
               {
                 label: 'MUI',
-                icon: '/path',
+                icon: '/icons/materialui-plain.svg',
                 desc: 'A UI Component library customized to fit the project.'
               },
               {
                 label: 'Vercel',
-                icon: '/path',
+                icon: '/icons/next-dev-icon.svg',
                 desc: 'A UI Component library customized to fit the project.'
               }
             ],
             [
               {
                 label: 'Austin Chiatto',
-                icon: '/path',
+                icon: '/images/austin-chiatto_memoji.png',
                 desc: 'Frontend Developer'
               },
               {
                 label: 'Nicola Bower',
-                icon: '/path',
+                icon: '/images/nicola-bower_memoji.png',
                 desc: 'UI/UX Designer'
               }
             ]
           ],
-          externalLinks: [{ label: 'marketmaestro.ca', href: 'https://www.marketmaestro.ca/' }],
           article: [
             {
               markdown: ['## Project Development']
@@ -160,29 +166,29 @@ export const panelData = [
             [
               {
                 label: 'Next.js',
-                icon: '/path',
+                icon: '/icons/next-dev-icon.svg',
                 desc: 'Utilized for server components & more.'
               },
               {
                 label: 'TypeScript',
-                icon: '/path',
+                icon: '/icons/next-dev-icon.svg',
                 desc: 'Used for static typing to reduce errors.'
               },
               {
                 label: 'MUI',
-                icon: '/path',
+                icon: '/icons/next-dev-icon.svg',
                 desc: 'A UI Component library customized to fit the project.'
               },
               {
                 label: 'Vercel',
-                icon: '/path',
+                icon: '/icons/next-dev-icon.svg',
                 desc: 'A UI Component library customized to fit the project.'
               }
             ]
           ],
           externalLinks: [
-            { label: 'Play Game', href: '#' },
-            { label: 'Source Code', href: '#' }
+            { label: 'Play Game', href: '#', favicon: '/images/mm-favicon.jpeg' },
+            { label: 'Source Code', href: '#', favicon: '/images/mm-favicon.jpeg' }
           ],
           article: [
             {
@@ -226,22 +232,22 @@ export const panelData = [
             [
               {
                 label: 'Next.js',
-                icon: '/path',
+                icon: '/icons/next-dev-icon.svg',
                 desc: 'Utilized for server components & more.'
               },
               {
                 label: 'TypeScript',
-                icon: '/path',
+                icon: '/icons/next-dev-icon.svg',
                 desc: 'Used for static typing to reduce errors.'
               },
               {
                 label: 'MUI',
-                icon: '/path',
+                icon: '/icons/next-dev-icon.svg',
                 desc: 'A UI Component library customized to fit the project.'
               },
               {
                 label: 'Vercel',
-                icon: '/path',
+                icon: '/icons/next-dev-icon.svg',
                 desc: 'A UI Component library customized to fit the project.'
               }
             ]
@@ -264,22 +270,22 @@ export const panelData = [
             [
               {
                 label: 'Next.js',
-                icon: '/path',
+                icon: '/icons/next-dev-icon.svg',
                 desc: 'Utilized for server components & more.'
               },
               {
                 label: 'TypeScript',
-                icon: '/path',
+                icon: '/icons/next-dev-icon.svg',
                 desc: 'Used for static typing to reduce errors.'
               },
               {
                 label: 'MUI',
-                icon: '/path',
+                icon: '/icons/next-dev-icon.svg',
                 desc: 'A UI Component library customized to fit the project.'
               },
               {
                 label: 'Vercel',
-                icon: '/path',
+                icon: '/icons/next-dev-icon.svg',
                 desc: 'A UI Component library customized to fit the project.'
               }
             ]
@@ -302,22 +308,22 @@ export const panelData = [
             [
               {
                 label: 'Next.js',
-                icon: '/path',
+                icon: '/icons/next-dev-icon.svg',
                 desc: 'Utilized for server components & more.'
               },
               {
                 label: 'TypeScript',
-                icon: '/path',
+                icon: '/icons/next-dev-icon.svg',
                 desc: 'Used for static typing to reduce errors.'
               },
               {
                 label: 'MUI',
-                icon: '/path',
+                icon: '/icons/next-dev-icon.svg',
                 desc: 'A UI Component library customized to fit the project.'
               },
               {
                 label: 'Vercel',
-                icon: '/path',
+                icon: '/icons/next-dev-icon.svg',
                 desc: 'A UI Component library customized to fit the project.'
               }
             ]

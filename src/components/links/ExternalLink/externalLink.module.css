@@ -12,13 +12,19 @@
   padding-right: 0.475rem;
 }
 
+.externalLink > p {
+  color: var(--color-text-primary);
+}
+
 .externalLink:hover {
   background: var(--color-grey-50);
 }
 
-.linkThumbnail {
+.linkFavicon {
   background: grey;
   aspect-ratio: 1/1;
   border-radius: 0.25rem;
   width: 1.125rem;
+  overflow: hidden;
+  position: relative;
 }

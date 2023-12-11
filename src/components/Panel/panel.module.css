@@ -43,8 +43,18 @@
   cursor: pointer;
 }
 
-.panelTab > * {
+.panelTab > button {
   writing-mode: vertical-rl;
+  color: var(--color-text-tertiary);
+  transition: color var(--transition-timing) var(--transition-ease);
+  font-size: 0.875rem;
+  font-weight: var(--font-weight-300);
+  line-height: 1.125rem;
+}
+
+.panelTab:hover > button {
+  cursor: pointer;
+  color: var(--color-text-secondary);
 }
 
 .panelBody {

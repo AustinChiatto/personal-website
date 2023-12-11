@@ -37,14 +37,7 @@ const Panel = forwardRef<HTMLDivElement, PanelComponentProps>(
         style={{ left: level * 33 }}
       >
         <aside className={styles.panelTab}>
-          <button onClick={handleTabScroll}>
-            <Typography
-              level={6}
-              color={'tertiary'}
-            >
-              ⌘ {title}
-            </Typography>
-          </button>
+          <button onClick={handleTabScroll}>⌘ {title}</button>
         </aside>
         <div className={styles.panelBody}>
           <div className={styles.panelIntro}>

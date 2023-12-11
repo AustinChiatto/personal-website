@@ -1,21 +1,27 @@
-import Typography from '../../Typography/Typography';
+import Image from 'next/image';
 import styles from './externalLink.module.css';
 import Link from 'next/link';
 
-type ExternalLinkProps = {
+export type ExternalLinkProps = {
   href: string;
-  thumbnail?: string;
+  favicon: string;
   label: string;
 };
 
-const ExternalLink = ({ href, thumbnail, label }: ExternalLinkProps) => {
+const ExternalLink = ({ href, favicon, label }: ExternalLinkProps) => {
   return (
     <Link
       href={href}
       className={styles.externalLink}
     >
-      <div className={styles.linkThumbnail}>{thumbnail}</div>
-      <Typography level={6}>{label}</Typography>
+      <div className={styles.linkFavicon}>
+        <Image
+          src={favicon}
+          alt={label}
+          fill
+        />
+      </div>
+      <p>{label}</p>
     </Link>
   );
 };

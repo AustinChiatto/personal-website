@@ -1,12 +1,7 @@
 import styles from './projectDetails.module.css';
-import ExternalLink from '@/components/links/ExternalLink/ExternalLink';
+import ExternalLink, { ExternalLinkProps } from '@/components/links/ExternalLink/ExternalLink';
 import Markdown from 'react-markdown';
 import ListCard, { ListCardProps } from '@/components/ListCard/ListCard';
-
-type ExternalLinkProps = {
-  label: string;
-  href: string;
-};
 
 type ArticleProps = {
   image?: string;
@@ -32,6 +27,7 @@ const ProjectDetails = ({ panelContent }: ContentProps) => {
               <ExternalLink
                 href={e.href}
                 label={e.label}
+                favicon={e.favicon}
               />
             </li>
           ))}

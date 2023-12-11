@@ -2,10 +2,11 @@ import { useContext } from 'react';
 import Typography from '../Typography/Typography';
 import styles from './listCard.module.css';
 import PanelsContext from '@/context/PanelsContext';
+import Image from 'next/image';
 
 export type ListCardProps = {
   label: string;
-  icon?: string;
+  icon: string;
   desc: string;
 };
 
@@ -18,8 +19,9 @@ type ContentProps = {
 const ListCard = ({ cardList, panelContent, index }: ContentProps) => {
   const { createPanel } = useContext(PanelsContext);
   const cardListContentArray: ListCardProps[] = cardList;
-  const cardTitle = index === 0 ? 'Stack' : 'Team';
+  const cardTitle = index === 0 ? 'Tech Stack' : 'Team Members';
   const cardButtonLabel = index === 0 ? 'All Tools' : 'Details';
+  const teamIcon = index === 0 ? styles.listCardIcon : styles.teamMemberIcon;
 
   return (
     <div className={styles.listCard}>
@@ -34,7 +36,13 @@ const ListCard = ({ cardList, panelContent, index }: ContentProps) => {
                 key={i}
                 className={styles.listItem}
               >
-                <div className={styles.thumbnail}></div>
+                <div className={teamIcon}>
+                  <Image
+                    src={e.icon}
+                    fill
+                    alt="0"
+                  />
+                </div>
                 <div>
                   <Typography level={5}>{e.label}</Typography>
                   <Typography

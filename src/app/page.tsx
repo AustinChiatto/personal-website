@@ -6,17 +6,22 @@ import Panel from '@/components/Panel/Panel';
 import LandingPanel from '@/components/Panel/LandingPanel';
 import PanelsContext from '@/context/PanelsContext';
 import { componentMap } from '@/data/componentMap';
-import { useRef } from 'react';
 
 export default function Home() {
-  const scrollContainerRef = useRef(null);
   const { panels, createPanel } = usePanels();
+  // todo: this is hard to read
+  const panelContainerJustify =
+    panels.length < 1
+      ? { justifyContent: 'center' }
+      : panels.length > 1
+      ? {}
+      : { justifyContent: 'flex-end' };
 
   return (
     <PanelsContext.Provider value={{ panels, createPanel }}>
       <main
         className={styles.main}
-        style={panels.length <= 1 ? { justifyContent: 'center' } : {}}
+        style={panelContainerJustify}
       >
         <LandingPanel />
         {panels.map((panel, i) => {
