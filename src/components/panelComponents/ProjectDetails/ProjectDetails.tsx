@@ -2,7 +2,6 @@ import styles from './projectDetails.module.css';
 import ExternalLink from '@/components/links/ExternalLink/ExternalLink';
 import Markdown from 'react-markdown';
 import ListCard, { ListCardProps } from '@/components/ListCard/ListCard';
-import Typography from '@/components/Typography/Typography';
 
 type ExternalLinkProps = {
   label: string;
@@ -15,11 +14,11 @@ type ArticleProps = {
 };
 
 type ContentProps = {
-  content: any; // todo: assign correct type
+  panelContent: any; // todo: assign correct type
 };
 
-const ProjectDetails = ({ content }: ContentProps) => {
-  const contentData = content.panelComponentProps;
+const ProjectDetails = ({ panelContent }: ContentProps) => {
+  const contentData = panelContent.panelComponentProps;
   const externalLinkArray: ExternalLinkProps[] = contentData.externalLinks;
   const articleArray: ArticleProps[] = contentData.article;
   const listCardArray: ListCardProps[] = contentData.listCards;
@@ -43,7 +42,7 @@ const ProjectDetails = ({ content }: ContentProps) => {
             <ListCard
               key={i}
               cardList={e}
-              content={content}
+              panelContent={panelContent}
               index={i}
             />
           ))}

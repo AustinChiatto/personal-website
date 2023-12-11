@@ -4,7 +4,6 @@ import notesIcon from '@/assets/icons/notes-icon.svg';
 import aboutIcon from '@/assets/icons/about-icon.svg';
 import Image from 'next/image';
 import Typography from '../Typography/Typography';
-import Link from 'next/link';
 import styles from './panel.module.css';
 import PanelsContext from '@/context/PanelsContext';
 import { useContext } from 'react';
@@ -37,7 +36,7 @@ const categoryList: {
     iconAlt: 'Squiggly circle doodle',
     categoryTitle: 'Resources',
     categoryDesc: "Useful or interesting things I've found or made.",
-    panelData: panelDataObject['notes']
+    panelData: panelDataObject['resources']
   },
   {
     icon: aboutIcon,

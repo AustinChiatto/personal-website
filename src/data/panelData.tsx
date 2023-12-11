@@ -24,7 +24,7 @@ export const panelData = [
       title: 'Work'
       // desc: "A collection of websites I've built for or with others as part of my career."
     },
-    panelComponent: 'CategoryContentList',
+    panelComponent: 'ProjectList',
     panelComponentProps: {
       key: 'value'
     },
@@ -103,25 +103,25 @@ export const panelData = [
         // work - Market Maestro Technology
         childPanels: [
           {
-            id: 'ProjectStack',
+            id: 'ProjectTechStack',
             level: 3,
             intro: {
               title: 'Project Stack',
               desc: 'The languages, tools, and methodologies behind the construction of this project, as well as how and why I chose to implement them over others.'
             },
-            panelComponent: 'ProjectStack',
+            panelComponent: 'ProjectTechStack',
             panelComponentProps: {
               key: 'value'
             }
           },
           {
-            id: 'ProjectTeam',
+            id: 'ProjectTeamMembers',
             level: 3,
             intro: {
               title: 'The Team',
               desc: 'The roles and responsibilities of each person who contributed to this project.'
             },
-            panelComponent: 'ProjectTeam',
+            panelComponent: 'ProjectTeamMembers',
             panelComponentProps: {
               key: 'value'
             }
@@ -138,7 +138,7 @@ export const panelData = [
       title: 'Projects',
       desc: 'Projects Description'
     },
-    panelComponent: 'CategoryContentList',
+    panelComponent: 'ProjectList',
     panelComponentProps: {
       key: 'value'
     },
@@ -203,7 +203,7 @@ export const panelData = [
               title: 'Project Technology',
               desc: 'testing'
             },
-            panelComponent: 'AboutMe',
+            panelComponent: 'AboutContent',
             panelComponentProps: {
               key: 'value'
             }
@@ -328,26 +328,25 @@ export const panelData = [
   },
   // Resources
   {
-    id: 'notes',
+    id: 'resources',
     level: 1,
     intro: {
-      title: 'Just for fun',
-      desc: 'Notes Description'
+      title: 'Resources',
+      desc: 'A bunch of stuff'
     },
-    panelComponent: 'NoteContentList',
+    panelComponent: 'ResourceList',
     panelComponentProps: {
       key: 'value'
     },
-    // notes - level 2
     childPanels: [
       {
-        id: 'note',
+        id: 'Resource',
         level: 2,
         intro: {
-          title: 'Note One',
-          desc: 'Note One Description'
+          title: 'Resource',
+          desc: 'Resource Description'
         },
-        panelComponent: 'NoteDetails',
+        panelComponent: 'ResourceContent',
         panelComponentProps: {
           key: 'value'
         }
@@ -362,25 +361,10 @@ export const panelData = [
       title: 'About Me',
       desc: 'About Description'
     },
-    panelComponent: 'AboutMe',
+    panelComponent: 'AboutContent',
     panelComponentProps: {
       key: 'value'
-    },
-    // about - level 2
-    childPanels: [
-      {
-        id: 'marketMaestro',
-        level: 2,
-        intro: {
-          title: 'About Me',
-          desc: 'About Me Description'
-        },
-        panelComponent: 'AboutMeDetails',
-        panelComponentProps: {
-          key: 'value'
-        }
-      }
-    ]
+    }
   }
 ];
 

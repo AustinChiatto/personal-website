@@ -1,11 +1,7 @@
 import Typography from '../Typography/Typography';
 import styles from './chip.module.css';
 
-type ChipProps = {
-  chipLabel: string;
-};
-
-const Chip = ({ chipLabel }: ChipProps) => {
+const Chip = ({ chipLabel }: { chipLabel: string }) => {
   return (
     <div className={styles.chip}>
       <Typography

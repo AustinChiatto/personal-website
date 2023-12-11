@@ -11,21 +11,21 @@ export type ListCardProps = {
 
 type ContentProps = {
   cardList: any; // todo: assign correct type
-  content: any; // todo: assign correct type
+  panelContent: any; // todo: assign correct type
   index: number;
 };
 
-const ListCard = ({ cardList, content, index }: ContentProps) => {
+const ListCard = ({ cardList, panelContent, index }: ContentProps) => {
   const { createPanel } = useContext(PanelsContext);
   const cardListContentArray: ListCardProps[] = cardList;
-  const title = index === 0 ? 'Stack' : 'Team';
-  const cta = index === 0 ? 'All Tools' : 'Details';
+  const cardTitle = index === 0 ? 'Stack' : 'Team';
+  const cardButtonLabel = index === 0 ? 'All Tools' : 'Details';
 
   return (
     <div className={styles.listCard}>
       <div>
         <div className={styles.cardTitle}>
-          <Typography level={3}>{title}</Typography>
+          <Typography level={3}>{cardTitle}</Typography>
         </div>
         <ul className={styles.cardList}>
           {cardListContentArray &&
@@ -52,15 +52,15 @@ const ListCard = ({ cardList, content, index }: ContentProps) => {
         className={styles.button}
         onClick={() =>
           createPanel({
-            id: content.childPanels[index].id,
-            level: content.childPanels[index].level,
-            intro: content.childPanels[index].intro,
-            panelComponent: content.childPanels[index].panelComponent,
-            panelComponentProps: content.childPanels[index].panelComponentProps
+            id: panelContent.childPanels[index].id,
+            level: panelContent.childPanels[index].level,
+            intro: panelContent.childPanels[index].intro,
+            panelComponent: panelContent.childPanels[index].panelComponent,
+            panelComponentProps: panelContent.childPanels[index].panelComponentProps
           })
         }
       >
-        <Typography level={6}>{cta}</Typography>
+        <Typography level={6}>{cardButtonLabel}</Typography>
       </button>
     </div>
   );

@@ -29,7 +29,7 @@ export default function Home() {
               description={panel.intro.desc}
               key={i}
             >
-              <RenderedPanelComponent content={panel} />
+              <RenderedPanelComponent panelContent={panel} />
             </Panel>
           );
         })}

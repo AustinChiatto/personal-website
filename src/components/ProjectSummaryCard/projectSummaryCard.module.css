@@ -1,8 +1,8 @@
-.projectCard {
+.ProjectSummaryCard {
   cursor: pointer;
 }
 
-.projectCard + .projectCard {
+.ProjectSummaryCard + .ProjectSummaryCard {
   margin-top: 4rem;
 }
 

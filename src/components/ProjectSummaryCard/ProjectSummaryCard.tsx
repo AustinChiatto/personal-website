@@ -1,7 +1,7 @@
 import { useContext } from 'react';
 import Chip from '../Chip/Chip';
 import Typography from '../Typography/Typography';
-import styles from './projectCard.module.css';
+import styles from './ProjectSummaryCard.module.css';
 import PanelsContext from '@/context/PanelsContext';
 import Image from 'next/image';
 
@@ -10,7 +10,7 @@ type TechnologyProps = {
   desc: string;
 };
 
-type ProjectCardProps = {
+type ProjectSummaryCardProps = {
   title: string;
   index: number;
   desc: string;
@@ -18,13 +18,13 @@ type ProjectCardProps = {
   data: any; // todo: add correct typing before deployment
 };
 
-const ProjectCard = ({ title, desc, image, data }: ProjectCardProps) => {
+const ProjectSummaryCard = ({ title, desc, image, data }: ProjectSummaryCardProps) => {
   const { createPanel } = useContext(PanelsContext);
   const contentData = data.panelComponentProps;
   const technology: TechnologyProps[] = contentData.listCards[0];
   return (
     <article
-      className={styles.projectCard}
+      className={styles.ProjectSummaryCard}
       onClick={() =>
         createPanel({
           id: data.id,
@@ -61,4 +61,4 @@ const ProjectCard = ({ title, desc, image, data }: ProjectCardProps) => {
   );
 };
 
-export default ProjectCard;
+export default ProjectSummaryCard;
