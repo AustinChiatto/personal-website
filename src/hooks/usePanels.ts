@@ -1,5 +1,5 @@
 import React, { createRef, useEffect, useRef, useState } from 'react';
-import { PanelProps } from '@/data/panelData';
+import { PanelProps } from '@/data/panel-data';
 
 export default function usePanels() {
   const [panels, setPanels] = useState<PanelProps[]>([]);

@@ -1,15 +1,14 @@
 .externalLink {
   display: flex;
   align-items: center;
-  padding: 0.375rem;
+  padding: 0.25rem 0.5rem;
   border-radius: 0.5rem;
-  background: var(--color-chip-background);
+  background: var(--color-element-background);
   transition: background var(--transition-timing) var(--transition-ease);
 }
 
 .externalLink > * + * {
-  margin-left: 0.75rem;
-  padding-right: 0.475rem;
+  margin-left: 0.5rem;
 }
 
 .externalLink > p {
@@ -17,11 +16,10 @@
 }
 
 .externalLink:hover {
-  background: var(--color-grey-50);
+  background: var(--color-element-hover);
 }
 
 .linkFavicon {
-  background: grey;
   aspect-ratio: 1/1;
   border-radius: 0.25rem;
   width: 1.125rem;

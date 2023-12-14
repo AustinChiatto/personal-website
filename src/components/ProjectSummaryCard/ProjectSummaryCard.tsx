@@ -4,6 +4,8 @@ import Typography from '../Typography/Typography';
 import styles from './ProjectSummaryCard.module.css';
 import PanelsContext from '@/context/PanelsContext';
 import Image from 'next/image';
+import { ListCardProps } from '../ListCard/ListCard';
+import { PanelProps } from '@/data/panel-data';
 
 type TechnologyProps = {
   label: string;
@@ -15,24 +17,30 @@ type ProjectSummaryCardProps = {
   index: number;
   desc: string;
   image: string;
-  data: any; // todo: add correct typing before deployment
+  cardData: PanelProps;
 };
 
-const ProjectSummaryCard = ({ title, desc, image, data }: ProjectSummaryCardProps) => {
+const ProjectSummaryCard = ({ title, desc, image, cardData }: ProjectSummaryCardProps) => {
   const { createPanel } = useContext(PanelsContext);
-  const contentData = data.panelComponentProps;
-  const technology: TechnologyProps[] = contentData.listCards[0];
+  const listCardArray = cardData.panelComponentProps.listCards;
+
+  const techStackListCard =
+    listCardArray &&
+    listCardArray.find((lc: ListCardProps) => lc.buttonChildIdRef == 'projectTechStack');
+
+  const techStackContents: TechnologyProps[] = techStackListCard.cardContents;
+
   return (
     <article
       className={styles.ProjectSummaryCard}
       onClick={() =>
         createPanel({
-          id: data.id,
-          level: data.level,
-          intro: data.intro,
-          panelComponent: data.panelComponent,
-          panelComponentProps: data.panelComponentProps,
-          childPanels: data.childPanels
+          id: cardData.id,
+          level: cardData.level,
+          intro: cardData.intro,
+          panelComponent: cardData.panelComponent,
+          panelComponentProps: cardData.panelComponentProps,
+          childPanels: cardData.childPanels
         })
       }
     >
@@ -50,8 +58,8 @@ const ProjectSummaryCard = ({ title, desc, image, data }: ProjectSummaryCardProp
         />
       </div>
       <ul className={styles.chipList}>
-        {technology &&
-          technology.map((e, i) => (
+        {techStackContents &&
+          techStackContents.slice(0, 4).map((e, i) => (
             <li key={i}>
               <Chip chipLabel={e.label} />
             </li>

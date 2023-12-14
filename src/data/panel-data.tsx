@@ -1,4 +1,5 @@
-import { componentMap } from './componentMap';
+import { componentMap } from './component-map';
+import { techStack } from './project-data/market-maestro-data';
 
 type IntroProps = {
   title: string;
@@ -50,40 +51,29 @@ export const panelData = [
             }
           ],
           listCards: [
-            [
-              {
-                label: 'Next.js',
-                icon: '/icons/nextjs-original.svg',
-                desc: 'Utilized for server components & more.'
-              },
-              {
-                label: 'TypeScript',
-                icon: '/icons/typescript-original.svg',
-                desc: 'Used for static typing to reduce errors.'
-              },
-              {
-                label: 'MUI',
-                icon: '/icons/materialui-plain.svg',
-                desc: 'A UI Component library customized to fit the project.'
-              },
-              {
-                label: 'Vercel',
-                icon: '/icons/next-dev-icon.svg',
-                desc: 'A UI Component library customized to fit the project.'
-              }
-            ],
-            [
-              {
-                label: 'Austin Chiatto',
-                icon: '/images/austin-chiatto_memoji.png',
-                desc: 'Frontend Developer'
-              },
-              {
-                label: 'Nicola Bower',
-                icon: '/images/nicola-bower_memoji.png',
-                desc: 'UI/UX Designer'
-              }
-            ]
+            {
+              cardTitle: 'Team Members',
+              cardType: 'grid',
+              cardContents: [
+                {
+                  label: 'Austin Chiatto',
+                  icon: '/images/austin-chiatto_memoji.png',
+                  desc: 'Frontend Developer'
+                },
+                {
+                  label: 'Nicola Bower',
+                  icon: '/images/nicola-bower_memoji.png',
+                  desc: 'UI/UX Designer'
+                }
+              ]
+            },
+            {
+              cardTitle: 'Tech Stack',
+              cardType: 'list',
+              buttonLabel: 'All Tools',
+              buttonChildIdRef: 'projectTechStack',
+              cardContents: techStack
+            }
           ],
           article: [
             {
@@ -109,7 +99,7 @@ export const panelData = [
         // work - Market Maestro Technology
         childPanels: [
           {
-            id: 'ProjectTechStack',
+            id: 'projectTechStack',
             level: 3,
             intro: {
               title: 'Project Stack',
@@ -117,19 +107,7 @@ export const panelData = [
             },
             panelComponent: 'ProjectTechStack',
             panelComponentProps: {
-              key: 'value'
-            }
-          },
-          {
-            id: 'ProjectTeamMembers',
-            level: 3,
-            intro: {
-              title: 'The Team',
-              desc: 'The roles and responsibilities of each person who contributed to this project.'
-            },
-            panelComponent: 'ProjectTeamMembers',
-            panelComponentProps: {
-              key: 'value'
+              techStack: techStack
             }
           }
         ]
@@ -163,28 +141,13 @@ export const panelData = [
           cardDesc:
             'A responsive landing page using Next.js for my frontend development internship at Dovetail Digital.',
           listCards: [
-            [
-              {
-                label: 'Next.js',
-                icon: '/icons/next-dev-icon.svg',
-                desc: 'Utilized for server components & more.'
-              },
-              {
-                label: 'TypeScript',
-                icon: '/icons/next-dev-icon.svg',
-                desc: 'Used for static typing to reduce errors.'
-              },
-              {
-                label: 'MUI',
-                icon: '/icons/next-dev-icon.svg',
-                desc: 'A UI Component library customized to fit the project.'
-              },
-              {
-                label: 'Vercel',
-                icon: '/icons/next-dev-icon.svg',
-                desc: 'A UI Component library customized to fit the project.'
-              }
-            ]
+            {
+              cardTitle: 'Tech Stack',
+              cardType: 'list',
+              buttonLabel: 'All Tools',
+              buttonChildIdRef: 'projectTechStack',
+              cardContents: techStack
+            }
           ],
           externalLinks: [
             { label: 'Play Game', href: '#', favicon: '/images/mm-favicon.jpeg' },
@@ -203,13 +166,13 @@ export const panelData = [
         },
         childPanels: [
           {
-            id: 'ProjectTech',
+            id: 'projectTechStack',
             level: 3,
             intro: {
               title: 'Project Technology',
               desc: 'testing'
             },
-            panelComponent: 'AboutContent',
+            panelComponent: 'ProjectTechStack',
             panelComponentProps: {
               key: 'value'
             }
@@ -229,28 +192,13 @@ export const panelData = [
           cardDesc:
             'A responsive landing page using Next.js for my frontend development internship at Dovetail Digital.',
           listCards: [
-            [
-              {
-                label: 'Next.js',
-                icon: '/icons/next-dev-icon.svg',
-                desc: 'Utilized for server components & more.'
-              },
-              {
-                label: 'TypeScript',
-                icon: '/icons/next-dev-icon.svg',
-                desc: 'Used for static typing to reduce errors.'
-              },
-              {
-                label: 'MUI',
-                icon: '/icons/next-dev-icon.svg',
-                desc: 'A UI Component library customized to fit the project.'
-              },
-              {
-                label: 'Vercel',
-                icon: '/icons/next-dev-icon.svg',
-                desc: 'A UI Component library customized to fit the project.'
-              }
-            ]
+            {
+              cardTitle: 'Tech Stack',
+              cardType: 'list',
+              buttonLabel: 'All Tools',
+              buttonChildIdRef: 'projectTechStack',
+              cardContents: techStack
+            }
           ]
         }
       },
@@ -267,28 +215,13 @@ export const panelData = [
           cardDesc:
             'A responsive landing page using Next.js for my frontend development internship at Dovetail Digital.',
           listCards: [
-            [
-              {
-                label: 'Next.js',
-                icon: '/icons/next-dev-icon.svg',
-                desc: 'Utilized for server components & more.'
-              },
-              {
-                label: 'TypeScript',
-                icon: '/icons/next-dev-icon.svg',
-                desc: 'Used for static typing to reduce errors.'
-              },
-              {
-                label: 'MUI',
-                icon: '/icons/next-dev-icon.svg',
-                desc: 'A UI Component library customized to fit the project.'
-              },
-              {
-                label: 'Vercel',
-                icon: '/icons/next-dev-icon.svg',
-                desc: 'A UI Component library customized to fit the project.'
-              }
-            ]
+            {
+              cardTitle: 'Tech Stack',
+              cardType: 'list',
+              buttonLabel: 'All Tools',
+              buttonChildIdRef: 'projectTechStack',
+              cardContents: techStack
+            }
           ]
         }
       },
@@ -305,56 +238,14 @@ export const panelData = [
           cardDesc:
             'A responsive landing page using Next.js for my frontend development internship at Dovetail Digital.',
           listCards: [
-            [
-              {
-                label: 'Next.js',
-                icon: '/icons/next-dev-icon.svg',
-                desc: 'Utilized for server components & more.'
-              },
-              {
-                label: 'TypeScript',
-                icon: '/icons/next-dev-icon.svg',
-                desc: 'Used for static typing to reduce errors.'
-              },
-              {
-                label: 'MUI',
-                icon: '/icons/next-dev-icon.svg',
-                desc: 'A UI Component library customized to fit the project.'
-              },
-              {
-                label: 'Vercel',
-                icon: '/icons/next-dev-icon.svg',
-                desc: 'A UI Component library customized to fit the project.'
-              }
-            ]
+            {
+              cardTitle: 'Tech Stack',
+              cardType: 'list',
+              buttonLabel: 'All Tools',
+              buttonChildIdRef: 'projectTechStack',
+              cardContents: techStack
+            }
           ]
-        }
-      }
-    ]
-  },
-  // Resources
-  {
-    id: 'resources',
-    level: 1,
-    intro: {
-      title: 'Resources',
-      desc: 'A bunch of stuff'
-    },
-    panelComponent: 'ResourceList',
-    panelComponentProps: {
-      key: 'value'
-    },
-    childPanels: [
-      {
-        id: 'Resource',
-        level: 2,
-        intro: {
-          title: 'Resource',
-          desc: 'Resource Description'
-        },
-        panelComponent: 'ResourceContent',
-        panelComponentProps: {
-          key: 'value'
         }
       }
     ]
@@ -364,8 +255,8 @@ export const panelData = [
     id: 'about',
     level: 1,
     intro: {
-      title: 'About Me',
-      desc: 'About Description'
+      title: 'Hello',
+      desc: "It's nice to meet you."
     },
     panelComponent: 'AboutContent',
     panelComponentProps: {

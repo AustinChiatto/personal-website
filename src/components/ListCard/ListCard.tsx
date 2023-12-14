@@ -3,38 +3,51 @@ import Typography from '../Typography/Typography';
 import styles from './listCard.module.css';
 import PanelsContext from '@/context/PanelsContext';
 import Image from 'next/image';
+import { PanelProps } from '@/data/panel-data';
 
-export type ListCardProps = {
+type CardContentProps = {
   label: string;
   icon: string;
   desc: string;
 };
 
+export type ListCardProps = {
+  cardTitle: string;
+  cardType: string;
+  buttonLabel?: string;
+  buttonChildIdRef?: string;
+  cardContents: CardContentProps[];
+};
+
 type ContentProps = {
-  cardList: any; // todo: assign correct type
-  panelContent: any; // todo: assign correct type
+  cardList: ListCardProps;
+  panelContent: PanelProps;
   index: number;
 };
 
 const ListCard = ({ cardList, panelContent, index }: ContentProps) => {
   const { createPanel } = useContext(PanelsContext);
-  const cardListContentArray: ListCardProps[] = cardList;
-  const cardTitle = index === 0 ? 'Tech Stack' : 'Team Members';
-  const cardButtonLabel = index === 0 ? 'All Tools' : 'Details';
-  const teamIcon = index === 0 ? styles.listCardIcon : styles.teamMemberIcon;
+  const cardContents = cardList.cardContents;
+  const teamIcon = index === 0 ? styles.teamMemberIcon : styles.listCardIcon;
+  const cardTypeClass = cardList.cardType == 'list' ? styles.cardList : styles.cardGrid;
+  const cardItemClass = cardList.cardType == 'list' ? styles.listItem : styles.gridItem;
+
+  const childPanel =
+    panelContent.childPanels &&
+    panelContent.childPanels.find((ch: PanelProps) => ch.id === cardList.buttonChildIdRef);
 
   return (
     <div className={styles.listCard}>
       <div>
         <div className={styles.cardTitle}>
-          <Typography level={3}>{cardTitle}</Typography>
+          <Typography level={3}>{cardList.cardTitle}</Typography>
         </div>
-        <ul className={styles.cardList}>
-          {cardListContentArray &&
-            cardListContentArray.slice(0, 3).map((e, i) => (
+        <ul className={cardTypeClass}>
+          {cardContents &&
+            cardContents.slice(0, 3).map((e, i) => (
               <li
                 key={i}
-                className={styles.listItem}
+                className={cardItemClass}
               >
                 <div className={teamIcon}>
                   <Image
@@ -56,20 +69,22 @@ const ListCard = ({ cardList, panelContent, index }: ContentProps) => {
             ))}
         </ul>
       </div>
-      <button
-        className={styles.button}
-        onClick={() =>
-          createPanel({
-            id: panelContent.childPanels[index].id,
-            level: panelContent.childPanels[index].level,
-            intro: panelContent.childPanels[index].intro,
-            panelComponent: panelContent.childPanels[index].panelComponent,
-            panelComponentProps: panelContent.childPanels[index].panelComponentProps
-          })
-        }
-      >
-        <Typography level={6}>{cardButtonLabel}</Typography>
-      </button>
+      {cardList.buttonLabel && childPanel && (
+        <button
+          className={styles.button}
+          onClick={() =>
+            createPanel({
+              id: childPanel.id,
+              level: childPanel.level,
+              intro: childPanel.intro,
+              panelComponent: childPanel.panelComponent,
+              panelComponentProps: childPanel.panelComponentProps
+            })
+          }
+        >
+          <Typography level={6}>{cardList.buttonLabel}</Typography>
+        </button>
+      )}
     </div>
   );
 };

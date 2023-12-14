@@ -92,7 +92,7 @@
   display: flex;
   gap: 1rem;
   padding: 1rem 2rem 1rem 0;
-  border-radius: var(--border-radius-sm);
+  border-radius: var(--border-radius-md);
   border: 1px solid transparent;
   cursor: pointer;
   transition: all cubic-bezier(0.175, 0.885, 0.32, 1.275) 250ms;

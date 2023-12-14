@@ -1,5 +1,5 @@
 .listCard {
-  border-radius: var(--border-radius-sm);
+  border-radius: var(--border-radius-md);
   border: 1px solid var(--color-grey-50);
   padding: 1rem;
   margin-bottom: 2rem;
@@ -14,19 +14,33 @@
 }
 
 .hr {
-  border: 1px solid var(--color-chip-background, var(--color-grey-50));
+  border: 1px solid var(--color-element-background, var(--color-grey-50));
 }
 
-.cardList {
+.cardList,
+.cardGrid {
   display: flex;
   flex-direction: column;
   gap: 1rem;
 }
 
-.listItem {
+.cardGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.listItem,
+.gridItem {
   display: flex;
   align-items: center;
   gap: 0.75rem;
+}
+
+.gridItem {
+  grid-column: auto / span 1;
+  padding: 1.5rem;
+  background: var(--color-element-background);
+  border-radius: var(--border-radius-sm);
 }
 
 .listCardIcon,
@@ -37,7 +51,8 @@
 }
 
 .teamMemberIcon {
-  scale: 1.1;
+  margin-right: 0.5rem;
+  scale: 1.15;
 }
 
 .button {
@@ -46,12 +61,12 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  border-radius: 0.375rem;
-  background: var(--color-chip-background);
+  border-radius: var(--border-radius-sm);
+  background: var(--color-element-background);
   cursor: pointer;
   transition: background var(--transition-timing) var(--transition-ease);
 }
 
 .button:hover {
-  background: var(--color-grey-50);
+  background: var(--color-element-hover);
 }

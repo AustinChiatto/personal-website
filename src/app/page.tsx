@@ -5,7 +5,7 @@ import styles from './page.module.css';
 import Panel from '@/components/Panel/Panel';
 import LandingPanel from '@/components/Panel/LandingPanel';
 import PanelsContext from '@/context/PanelsContext';
-import { componentMap } from '@/data/componentMap';
+import { componentMap } from '@/data/component-map';
 
 export default function Home() {
   const { panels, createPanel } = usePanels();
@@ -14,7 +14,7 @@ export default function Home() {
     panels.length < 1
       ? { justifyContent: 'center' }
       : panels.length > 1
-      ? {}
+      ? { justifyContent: 'flex-start' }
       : { justifyContent: 'flex-end' };
 
   return (

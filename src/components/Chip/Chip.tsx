@@ -1,9 +1,14 @@
 import Typography from '../Typography/Typography';
 import styles from './chip.module.css';
 
-const Chip = ({ chipLabel }: { chipLabel: string }) => {
+type ChipProps = {
+  chipLabel: string;
+  isActionable?: boolean;
+};
+
+const Chip = ({ chipLabel, isActionable }: ChipProps) => {
   return (
-    <div className={styles.chip}>
+    <div className={`${styles.chip} ${isActionable ? styles.chipActionable : ''}`}>
       <Typography
         level={6}
         color={'secondary'}

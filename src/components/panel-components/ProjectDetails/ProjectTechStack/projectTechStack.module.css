@@ -1,0 +1,23 @@
+.list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  padding: 1rem;
+  margin-bottom: 2rem;
+}
+
+.listItem {
+  grid-column: auto / span 1;
+  padding: 1.5rem;
+  background: var(--color-element-background);
+  border-radius: var(--border-radius-md);
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.icon {
+  aspect-ratio: 1/1;
+  width: 2rem;
+  position: relative;
+}

@@ -1,4 +1,4 @@
-import { PanelProps } from '@/data/panelData';
+import { PanelProps } from '@/data/panel-data';
 import { createContext } from 'react';
 
 type PanelContextType = {

@@ -7,7 +7,7 @@ import Typography from '../Typography/Typography';
 import styles from './panel.module.css';
 import PanelsContext from '@/context/PanelsContext';
 import { useContext } from 'react';
-import { panelDataObject, PanelProps } from '@/data/panelData';
+import { panelDataObject, PanelProps } from '@/data/panel-data';
 import InlineLink from '../links/InlineLink/InlineLink';
 
 const categoryList: {
@@ -30,13 +30,6 @@ const categoryList: {
     categoryTitle: 'Projects',
     categoryDesc: 'Self-directed projects that taught me something new.',
     panelData: panelDataObject['projects']
-  },
-  {
-    icon: notesIcon,
-    iconAlt: 'Squiggly circle doodle',
-    categoryTitle: 'Resources',
-    categoryDesc: "Useful or interesting things I've found or made.",
-    panelData: panelDataObject['resources']
   },
   {
     icon: aboutIcon,
@@ -110,12 +103,12 @@ const LandingPanel = () => {
                 Junior front-end developer living on the (rainy) west coast of Canada.
               </Typography>
               <Typography>
-                I recently completed an internship at {dovetailLink} where I built a website using
+                Recently I completed an internship at {dovetailLink} where I built a website using
                 Next.js that introduces their {marketMaestroLink} application.
               </Typography>
               <Typography>
                 Since then, I&apos;ve built {interplanetaryLink} a space flight tracker, and{' '}
-                {gitRoastedLink}, which analyzes and roasts your GitHub account.
+                {gitRoastedLink}, a site that analyzes and roasts your GitHub account.
               </Typography>
               <Typography>Take a look around.</Typography>
             </div>

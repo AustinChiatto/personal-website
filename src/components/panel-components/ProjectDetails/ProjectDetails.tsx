@@ -2,6 +2,7 @@ import styles from './projectDetails.module.css';
 import ExternalLink, { ExternalLinkProps } from '@/components/links/ExternalLink/ExternalLink';
 import Markdown from 'react-markdown';
 import ListCard, { ListCardProps } from '@/components/ListCard/ListCard';
+import { PanelProps } from '@/data/panel-data';
 
 type ArticleProps = {
   image?: string;
@@ -9,7 +10,7 @@ type ArticleProps = {
 };
 
 type ContentProps = {
-  panelContent: any; // todo: assign correct type
+  panelContent: PanelProps;
 };
 
 const ProjectDetails = ({ panelContent }: ContentProps) => {

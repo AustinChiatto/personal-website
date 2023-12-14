@@ -1,12 +1,8 @@
 import ProjectSummaryCard from '../../ProjectSummaryCard/ProjectSummaryCard';
-import { PanelProps } from '@/data/panelData';
+import { PanelProps } from '@/data/panel-data';
 
-type ContentProps = {
-  panelContent: any;
-};
-
-const ProjectList = ({ panelContent }: ContentProps) => {
-  const panelChildrenArray: PanelProps[] = panelContent.childPanels;
+const ProjectList = ({ panelContent }: { panelContent: PanelProps }) => {
+  const panelChildrenArray: PanelProps[] = panelContent.childPanels ?? [];
   return (
     <>
       {panelChildrenArray.map((e, i) => (
@@ -15,7 +11,7 @@ const ProjectList = ({ panelContent }: ContentProps) => {
           title={e.intro.title}
           desc={e.panelComponentProps.cardDesc}
           image={e.panelComponentProps.image}
-          data={e}
+          cardData={e}
           index={i}
         />
       ))}
