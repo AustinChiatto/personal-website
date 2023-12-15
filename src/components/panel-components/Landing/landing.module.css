@@ -1,0 +1,37 @@
+.categoryList {
+    margin-top: 3.25rem;
+}
+
+.categoryButton {
+    display: flex;
+    width: calc(100% - 2rem);
+    gap: 1rem;
+    padding: 1rem 2rem 1rem 0;
+    border-radius: var(--border-radius-md);
+    border: 1px solid transparent;
+    cursor: pointer;
+    transition: padding cubic-bezier(0.175, 0.885, 0.32, 1.275) 250ms;
+}
+
+.categoryButton:hover {
+    border: 1px solid var(--color-grey-50);
+    padding: 1rem;
+}
+
+.categoryButtonIcon {
+    align-self: center;
+    width: 1.5rem;
+    aspect-ratio: 1/1;
+    position: relative;
+}
+
+.personalIntro {
+    padding-block: 2rem 1rem;
+}
+
+.panelFooter {
+    flex-grow: 1;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}

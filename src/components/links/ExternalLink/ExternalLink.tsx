@@ -1,12 +1,7 @@
 import Image from 'next/image';
 import styles from './externalLink.module.css';
 import Link from 'next/link';
-
-export type ExternalLinkProps = {
-  href: string;
-  favicon: string;
-  label: string;
-};
+import { ExternalLinkProps } from '@/data/project-data/types';
 
 const ExternalLink = ({ href, favicon, label }: ExternalLinkProps) => {
   return (

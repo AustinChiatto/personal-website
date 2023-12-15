@@ -6,11 +6,7 @@ import PanelsContext from '@/context/PanelsContext';
 import Image from 'next/image';
 import { ListCardProps } from '../ListCard/ListCard';
 import { PanelProps } from '@/data/panel-data';
-
-type TechnologyProps = {
-  label: string;
-  desc: string;
-};
+import { TechStackProps } from '@/data/project-data/types';
 
 type ProjectSummaryCardProps = {
   title: string;
@@ -28,7 +24,7 @@ const ProjectSummaryCard = ({ title, desc, image, cardData }: ProjectSummaryCard
     listCardArray &&
     listCardArray.find((lc: ListCardProps) => lc.buttonChildIdRef == 'projectTechStack');
 
-  const techStackContents: TechnologyProps[] = techStackListCard.cardContents;
+  const techStackContents: TechStackProps[] = techStackListCard?.cardContents ?? [];
 
   return (
     <article

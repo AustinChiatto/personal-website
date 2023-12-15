@@ -2,15 +2,10 @@ import Typography from '@/components/Typography/Typography';
 import styles from './projectTechStack.module.css';
 import { PanelProps } from '@/data/panel-data';
 import Image from 'next/image';
-
-type TechStackProps = {
-  label: string;
-  icon: string;
-  desc: string;
-};
+import { TechStackProps } from '@/data/project-data/types';
 
 const ProjectTechStack = ({ panelContent }: { panelContent: PanelProps }) => {
-  const techStack: TechStackProps[] = panelContent.panelComponentProps.techStack;
+  const techStack: TechStackProps[] = panelContent.panelComponentProps.techStack ?? [];
   return (
     <div>
       <ul className={styles.list}>
@@ -29,12 +24,6 @@ const ProjectTechStack = ({ panelContent }: { panelContent: PanelProps }) => {
               </div>
               <div>
                 <Typography level={3}>{e.label}</Typography>
-                {/* <Typography
-                  level={5}
-                  color={'secondary'}
-                >
-                  {e.desc}
-                </Typography> */}
               </div>
             </li>
           ))}

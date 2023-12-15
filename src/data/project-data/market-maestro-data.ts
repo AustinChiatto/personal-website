@@ -1,7 +1,25 @@
-export const projectNameExternalLinks = [];
-export const projectNameTeamMembers = [];
+const externalLinks = [
+  {
+    label: 'marketmaestro.ca',
+    href: 'https://www.marketmaestro.ca/',
+    favicon: '/images/mm-favicon.jpeg'
+  }
+];
 
-export const techStack = [
+const teamMembers = [
+  {
+    label: 'Austin Chiatto',
+    icon: '/images/austin-chiatto_memoji.png',
+    desc: 'Frontend Developer'
+  },
+  {
+    label: 'Nicola Bower',
+    icon: '/images/nicola-bower_memoji.png',
+    desc: 'UI/UX Designer'
+  }
+];
+
+const techStack = [
   {
     label: 'Next.js',
     icon: '/icons/nextjs-original.svg',
@@ -54,4 +72,30 @@ export const techStack = [
   }
 ];
 
-export const projectNameArticle = [];
+const article = [
+  {
+    markdownSection: ['## Project Development']
+  },
+  {
+    markdownSection: ['### Initialization', 'Cloned the base repo from Git labs, etc..']
+  },
+  {
+    markdownSection: ['### Theming', 'Cloned the base repo from Git labs, etc..']
+  },
+  {
+    markdownSection: ['### TypeScript Hurdles', 'Cloned the base repo from Git labs, etc..']
+  },
+  {
+    markdownSection: ['### Next.js API', 'Cloned the base repo from Git labs, etc..']
+  },
+  {
+    markdownSection: ['### Deploying with Vercel', 'Cloned the base repo from Git labs, etc..']
+  }
+];
+
+export const MarketMaestroData = {
+  externalLinks,
+  teamMembers,
+  techStack,
+  article
+};

@@ -1,54 +1,40 @@
-import { ForwardedRef, ReactNode, forwardRef, useCallback } from 'react';
+import { ReactNode, forwardRef } from 'react';
 import Typography from '../Typography/Typography';
 import styles from './panel.module.css';
 
 type PanelComponentProps = {
-  ref: React.RefObject<HTMLDivElement>;
-  level: number;
-  title: string;
-  description?: string;
-  children?: ReactNode;
+    ref: React.RefObject<HTMLDivElement | null>;
+    index: number;
+    level: number;
+    title: string;
+    description?: string;
+    children?: ReactNode;
+    handleTabClick?: any; // todo: fix type
 };
 
 const Panel = forwardRef<HTMLDivElement, PanelComponentProps>(
-  ({ level, title, description, children }, ref) => {
-    // function to scroll into view when tab is clicked
-    const handleTabScroll = useCallback(() => {
-      if (ref && 'current' in ref && ref.current) {
-        console.log(ref);
-        ref.current.scrollIntoView({ inline: 'center', behavior: 'smooth' });
-      }
-    }, [ref]);
+    ({ index, title, description, children, handleTabClick }, ref) => {
+        const colorClass = styles[`panelBackground-${index}`];
 
-    // todo: tab scroll logic
-    // when tab is clicked
-    // keep clicked panel in the same position
-    // scroll all other panels to the right until the panel that was clicked is completely visible
-
-    // todo: left and right sticky tab position
-    // if tab is <= 50%: left sticky, else: right sticky
-
-    const colorClass = `panelBackground-${level * 10}`;
-
-    return (
-      <section
-        className={`${styles.panel} ${colorClass}`}
-        ref={ref}
-        style={{ left: level * 33 }}
-      >
-        <aside className={styles.panelTab}>
-          <button onClick={handleTabScroll}>⌘ {title}</button>
-        </aside>
-        <div className={styles.panelBody}>
-          <div className={styles.panelIntro}>
-            <Typography level={2}>{title}</Typography>
-            <Typography color={'secondary'}>{description}</Typography>
-          </div>
-          <div className={styles.panelContent}>{children}</div>
-        </div>
-      </section>
-    );
-  }
+        return (
+            <section
+                className={`${styles.panel} ${colorClass}`}
+                ref={ref}
+                style={{ left: index * 33 }}
+            >
+                <aside className={styles.panelTab}>
+                    <button onClick={() => handleTabClick()}>⌘ {title}</button>
+                </aside>
+                <div className={styles.panelBody}>
+                    <div className={styles.panelIntro}>
+                        <Typography level={2}>{title}</Typography>
+                        <Typography color={'secondary'}>{description}</Typography>
+                    </div>
+                    <div className={styles.panelContent}>{children}</div>
+                </div>
+            </section>
+        );
+    }
 );
 
 Panel.displayName = 'Panel';

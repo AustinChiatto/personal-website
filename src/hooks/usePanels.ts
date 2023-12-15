@@ -1,29 +1,36 @@
 import React, { createRef, useEffect, useRef, useState } from 'react';
-import { PanelProps } from '@/data/panel-data';
+import { PanelProps, panelData } from '@/data/panel-data';
 
 export default function usePanels() {
-  const [panels, setPanels] = useState<PanelProps[]>([]);
-  const panelRefs = useRef<React.RefObject<HTMLDivElement>[]>([]);
+    const [panels, setPanels] = useState<PanelProps[]>([]);
+    const panelRefs = useRef<React.RefObject<HTMLDivElement>[]>([]);
 
-  const createPanel = (panel: PanelProps) => {
-    const newPanelRef = createRef<HTMLDivElement>();
-    panelRefs.current = [...panelRefs.current, newPanelRef];
+    const createPanel = (panel: PanelProps) => {
+        const newPanelRef = createRef<HTMLDivElement>();
+        panelRefs.current = [...panelRefs.current, newPanelRef];
 
-    setPanels((prev) => {
-      const filteredPanels = prev.filter((p) => p.level < panel.level);
+        setPanels((prev) => {
+            const filteredPanels = prev.filter((p) => p.level < panel.level);
 
-      panel.panelRef = newPanelRef;
+            panel.panelRef = newPanelRef;
 
-      return [...filteredPanels, panel];
-    });
-  };
+            return [...filteredPanels, panel];
+        });
+    };
 
-  useEffect(() => {
-    if (panelRefs.current.length > 0) {
-      const lastRef = panelRefs.current[panelRefs.current.length - 1];
-      lastRef?.current?.scrollIntoView({ inline: 'start', behavior: 'smooth' });
-    }
-  }, [panels]); // re-run this effect whenever the panels state changes
+    useEffect(() => {
+        const firstPanel: PanelProps = panelData;
 
-  return { panels, createPanel };
+        // create the first panel
+        createPanel(firstPanel);
+    }, []); // This effect runs only on initial render
+
+    useEffect(() => {
+        if (panelRefs.current.length > 0) {
+            const lastRef = panelRefs.current[panelRefs.current.length - 1];
+            lastRef?.current?.scrollIntoView({ inline: 'start', behavior: 'smooth' });
+        }
+    }, [panels]); // re-run this effect whenever the panels state changes
+
+    return { panels, createPanel };
 }

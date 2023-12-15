@@ -1,118 +1,91 @@
-.panel,
-.landingPanel {
-  width: calc(50vw - 2rem);
-  max-width: 48rem;
-  flex: 0 0 auto;
-  position: sticky;
-  display: flex;
-  justify-content: space-between;
-  overflow-x: hidden;
-  overflow-y: auto;
+.panel {
+    width: calc(50vw - 2rem);
+    max-width: 48rem;
+    flex: 0 0 auto;
+    position: sticky;
+    display: flex;
+    justify-content: space-between;
+    overflow-x: hidden;
+    overflow-y: auto;
+
+    scrollbar-width: none;
+    border-left: 1px solid #181818;
+    box-shadow: -1px 0px 2.2px rgba(0, 0, 0, 0.02), -0.9px 0px 5.3px rgba(0, 0, 0, 0.028),
+        -0.5px 0px 10px rgba(0, 0, 0, 0.035), -3.4px 0px 17.9px rgba(0, 0, 0, 0.042),
+        -7.6px 0px 33.4px rgba(0, 0, 0, 0.05), -16px 0px 80px rgba(0, 0, 0, 0.07);
 }
 
-.panel {
-  scrollbar-width: none;
-  border-left: 1px solid #181818;
-  box-shadow: -1px 0px 2.2px rgba(0, 0, 0, 0.02), -0.9px 0px 5.3px rgba(0, 0, 0, 0.028),
-    -0.5px 0px 10px rgba(0, 0, 0, 0.035), -3.4px 0px 17.9px rgba(0, 0, 0, 0.042),
-    -7.6px 0px 33.4px rgba(0, 0, 0, 0.05), -16px 0px 80px rgba(0, 0, 0, 0.07);
+/* panel level custom styling */
+.panelBackground-0 {
+    background: var(--color-grey-85);
+    box-shadow: unset;
+    border-left: unset;
+}
+
+.panelBackground-1 {
+    background: var(--color-grey-80);
+}
+
+.panelBackground-2 {
+    background: var(--color-grey-75);
+}
+
+.panelBackground-3 {
+    background: var(--color-grey-70);
+}
+
+.panelBackground-4 {
+    background: var(--color-grey-65);
 }
 
 .panel::-webkit-scrollbar {
-  display: none;
-}
-
-.landingPanel {
-  background: none;
-  border: none;
-  box-shadow: none;
+    display: none;
 }
 
 .panelTab {
-  height: 100%;
-  max-width: 48px;
-  display: flex;
-  justify-content: center;
-  padding-inline: 0.5rem;
-  padding-block: 0.75rem;
-  position: sticky;
-  top: 0;
+    max-width: 48px;
+    display: flex;
+    justify-content: center;
+    position: sticky;
+    top: 0;
 }
 
 .panelTab:hover {
-  cursor: pointer;
+    cursor: pointer;
 }
 
 .panelTab > button {
-  writing-mode: vertical-rl;
-  color: var(--color-text-tertiary);
-  transition: color var(--transition-timing) var(--transition-ease);
-  font-size: 0.875rem;
-  font-weight: var(--font-weight-300);
-  line-height: 1.125rem;
+    writing-mode: vertical-rl;
+    color: var(--color-text-tertiary);
+    transition: color var(--transition-timing) var(--transition-ease);
+    font-size: 0.875rem;
+    font-weight: var(--font-weight-300);
+    line-height: 1.125rem;
+    max-height: 100%;
+    padding-inline: 0.5rem;
+    padding-block: 0.5rem;
 }
 
 .panelTab:hover > button {
-  cursor: pointer;
-  color: var(--color-text-secondary);
+    cursor: pointer;
+    color: var(--color-text-secondary);
 }
 
 .panelBody {
-  display: flex;
-  flex-grow: 1;
-  height: fit-content;
-  flex-direction: column;
-  gap: 2rem;
-  padding-block: 2.25rem;
-  padding-right: 2.25rem;
-  margin-left: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding-top: 2.25rem;
+    padding-right: 2.25rem;
 }
 
-.landingPanel > .panelBody {
-  height: 100%;
-  justify-content: space-between;
-  padding-top: 2.25rem;
-}
-
-.landingPanelContent {
-  margin-top: 3.25rem;
+.panelContent {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    padding-bottom: 2.25rem;
 }
 
 .panelIntro > * + * {
-  margin-top: 0.5rem;
-}
-
-/* landing panel */
-.panelFooter {
-  display: flex;
-  justify-content: space-between;
-}
-
-.categoryButton {
-  display: flex;
-  gap: 1rem;
-  padding: 1rem 2rem 1rem 0;
-  border-radius: var(--border-radius-md);
-  border: 1px solid transparent;
-  cursor: pointer;
-  transition: all cubic-bezier(0.175, 0.885, 0.32, 1.275) 250ms;
-}
-
-.categoryButton:hover {
-  border: 1px solid var(--color-grey-50);
-  padding: 1rem;
-}
-
-.categoryButtonIcon {
-  align-self: center;
-  aspect-ratio: 1/1;
-}
-
-.categoryButtonIcon > * {
-  width: 1.5rem;
-  height: 1.5rem;
-}
-
-.personalIntro {
-  padding-block: 2rem 1rem;
+    margin-top: 0.5rem;
 }
