@@ -6,6 +6,7 @@ type PanelComponentProps = {
     ref: React.RefObject<HTMLDivElement | null>;
     index: number;
     level: number;
+    panelsLength: number;
     title: string;
     description?: string;
     children?: ReactNode;
@@ -13,18 +14,20 @@ type PanelComponentProps = {
 };
 
 const Panel = forwardRef<HTMLDivElement, PanelComponentProps>(
-    ({ index, title, description, children, handleTabClick }, ref) => {
+    ({ index, title, description, children, handleTabClick, panelsLength }, ref) => {
         const colorClass = styles[`panelBackground-${index}`];
 
         return (
             <section
                 className={`${styles.panel} ${colorClass}`}
                 ref={ref}
-                style={{ left: index * 33 }}
+                style={{ left: index * 34 }}
             >
-                <aside className={styles.panelTab}>
-                    <button onClick={() => handleTabClick()}>⌘ {title}</button>
-                </aside>
+                {(index !== 0 || (index === 0 && panelsLength > 2)) && (
+                    <aside className={styles.panelTab}>
+                        <button onClick={() => handleTabClick()}>⌘ {title}</button>
+                    </aside>
+                )}
                 <div className={styles.panelBody}>
                     <div className={styles.panelIntro}>
                         <Typography level={2}>{title}</Typography>

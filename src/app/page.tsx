@@ -28,34 +28,52 @@ export default function Home() {
         const currentPanel = scrollContainer?.children[index] as HTMLElement;
         const nextPanel = scrollContainer?.children[index + 1] as HTMLElement;
 
+        console.log(scrollContainer.scrollLeft);
+        console.log(currentPanel.getBoundingClientRect().right);
+        console.log(
+            'newScrollTarget: ' +
+                (currentPanel.getBoundingClientRect().right -
+                    viewportWidth +
+                    scrollContainer.scrollLeft)
+        );
+
         if (!currentPanel || !nextPanel) return;
 
-        const panelWidth = nextPanel?.offsetWidth;
+        const panelWidth = currentPanel.offsetWidth;
 
-        console.log('======');
-        console.log('vw: ' + viewportWidth);
-        console.log('scrollContainerWidth: ' + scrollContainer.offsetWidth);
-        console.log('scrollContainerLeft: ' + scrollContainer.scrollLeft);
-        console.log('currentPanelLeft: ' + currentPanel?.offsetLeft);
-        console.log('currentPanelLeft + panelWidth: ' + (currentPanel?.offsetLeft + panelWidth));
-        console.log('======');
+        // target scroll for panels that are off screen to the right
+        const rightTargetScroll =
+            currentPanel.getBoundingClientRect().right - viewportWidth + scrollContainer.scrollLeft;
 
-        // scrollContainer.scrollLeft : how much the scroll container has scrolled to the left
-        // nextPanel?.offsetLeft : the distance the nextPanel's xPos from the start of the scrollContainer
+        // target scroll for panels being covered by sequential panels
         const targetScroll =
-            scrollContainer.scrollLeft - nextPanel?.offsetLeft + (index + 1) * panelWidth;
+            scrollContainer.scrollLeft -
+            nextPanel.offsetLeft +
+            nextPanel.getBoundingClientRect().left +
+            index * panelWidth -
+            currentPanel.getBoundingClientRect().left;
 
         const duration: number = 2000;
         let startTime: number = Date.now();
 
         const scrollSmoothly = () => {
-            if (scrollContainer.scrollLeft! <= targetScroll) return;
+            // if (currentPanel.getBoundingClientRect().right < viewportWidth) return;
+            // if (scrollContainer.scrollLeft >= rightTargetScroll) return;
+
+            // const time: number = (Date.now() - startTime) / duration;
+            // const difference = rightTargetScroll - scrollContainer.scrollLeft;
+            // const perTick = difference * time;
+
+            // scrollContainer.scrollLeft += perTick;
+
+            if (scrollContainer.scrollLeft <= targetScroll) return;
 
             const time: number = (Date.now() - startTime) / duration;
             const difference = targetScroll - scrollContainer.scrollLeft;
             const perTick = difference * time;
 
             scrollContainer.scrollLeft += perTick;
+
             requestAnimationFrame(scrollSmoothly);
         };
         startTime = Date.now();
@@ -76,6 +94,7 @@ export default function Home() {
                             <Panel
                                 key={i}
                                 index={i}
+                                panelsLength={panels.length}
                                 level={panel.level}
                                 ref={panel.panelRef}
                                 title={panel.intro.title}

@@ -43,7 +43,7 @@
 }
 
 .panelTab {
-    max-width: 48px;
+    max-width: 34px;
     display: flex;
     justify-content: center;
     position: sticky;
