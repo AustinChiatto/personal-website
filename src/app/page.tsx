@@ -6,16 +6,10 @@ import Panel from '@/components/Panel/Panel';
 import PanelsContext from '@/context/PanelsContext';
 import { componentMap } from '@/data/component-map';
 import { useRef } from 'react';
+import { TransitionGroup, CSSTransition } from 'react-transition-group';
 
 export default function Home() {
     const { panels, createPanel } = usePanels();
-    // todo: this is hard to read
-    const panelContainerJustify =
-        panels.length <= 1
-            ? { justifyContent: 'center' }
-            : panels.length > 2
-            ? { justifyContent: 'flex-start' }
-            : { justifyContent: 'flex-end' };
 
     const scrollContainerRef = useRef<HTMLDivElement | null>(null);
 
@@ -42,8 +36,8 @@ export default function Home() {
         const panelWidth = currentPanel.offsetWidth;
 
         // target scroll for panels that are off screen to the right
-        const rightTargetScroll =
-            currentPanel.getBoundingClientRect().right - viewportWidth + scrollContainer.scrollLeft;
+        // const rightTargetScroll =
+        //     currentPanel.getBoundingClientRect().right - viewportWidth + scrollContainer.scrollLeft;
 
         // target scroll for panels being covered by sequential panels
         const targetScroll =
@@ -85,26 +79,34 @@ export default function Home() {
             <main>
                 <div
                     className={styles.main}
-                    style={panelContainerJustify}
                     ref={scrollContainerRef}
                 >
-                    {panels.map((panel, i) => {
-                        const RenderedPanelComponent = componentMap[panel.panelComponent];
-                        return (
-                            <Panel
-                                key={i}
-                                index={i}
-                                panelsLength={panels.length}
-                                level={panel.level}
-                                ref={panel.panelRef}
-                                title={panel.intro.title}
-                                description={panel.intro.desc}
-                                handleTabClick={() => handleTabClick(i)}
-                            >
-                                <RenderedPanelComponent panelContent={panel} />
-                            </Panel>
-                        );
-                    })}
+                    <TransitionGroup component={null}>
+                        {panels.map((panel, i) => {
+                            const RenderedPanelComponent = componentMap[panel.panelComponent];
+                            return (
+                                <CSSTransition
+                                    key={i}
+                                    classNames="panel-transition"
+                                    timeout={250}
+                                    exit={false} // todo: see if there's a way to handle the exit animations paired with the scroll.
+                                >
+                                    <Panel
+                                        key={i}
+                                        index={i}
+                                        panelsLength={panels.length}
+                                        level={panel.level}
+                                        ref={panel.panelRef}
+                                        title={panel.intro.title}
+                                        description={panel.intro.desc}
+                                        handleTabClick={() => handleTabClick(i)}
+                                    >
+                                        <RenderedPanelComponent panelContent={panel} />
+                                    </Panel>
+                                </CSSTransition>
+                            );
+                        })}
+                    </TransitionGroup>
                 </div>
             </main>
         </PanelsContext.Provider>

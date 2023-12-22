@@ -22,12 +22,11 @@ const Panel = forwardRef<HTMLDivElement, PanelComponentProps>(
                 className={`${styles.panel} ${colorClass}`}
                 ref={ref}
                 style={{ left: index * 34 }}
+                onClick={() => handleTabClick()}
             >
-                {(index !== 0 || (index === 0 && panelsLength > 2)) && (
-                    <aside className={styles.panelTab}>
-                        <button onClick={() => handleTabClick()}>⌘ {title}</button>
-                    </aside>
-                )}
+                <aside className={styles.panelTab}>
+                    <button onClick={() => handleTabClick()}>⌘ {title}</button>
+                </aside>
                 <div className={styles.panelBody}>
                     <div className={styles.panelIntro}>
                         <Typography level={2}>{title}</Typography>

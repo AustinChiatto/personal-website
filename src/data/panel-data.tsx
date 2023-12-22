@@ -187,8 +187,23 @@ export const panelData = {
                                 buttonChildIdRef: 'projectTechStack',
                                 cardContents: MarketMaestroData.techStack
                             }
+                        ],
+                        externalLinks: [
+                            { label: 'Play Game', href: '#', favicon: '/images/mm-favicon.jpeg' },
+                            { label: 'Source Code', href: '#', favicon: '/images/mm-favicon.jpeg' }
                         ]
-                    }
+                    },
+                    childPanels: [
+                        {
+                            id: 'projectTechStack',
+                            level: 4,
+                            intro: {
+                                title: 'Project Technology',
+                                desc: 'testing'
+                            },
+                            panelComponent: 'ProjectTechStack'
+                        }
+                    ]
                 },
                 {
                     id: 'Shallot',
@@ -210,8 +225,23 @@ export const panelData = {
                                 buttonChildIdRef: 'projectTechStack',
                                 cardContents: MarketMaestroData.techStack
                             }
+                        ],
+                        externalLinks: [
+                            { label: 'Play Game', href: '#', favicon: '/images/mm-favicon.jpeg' },
+                            { label: 'Source Code', href: '#', favicon: '/images/mm-favicon.jpeg' }
                         ]
-                    }
+                    },
+                    childPanels: [
+                        {
+                            id: 'projectTechStack',
+                            level: 4,
+                            intro: {
+                                title: 'Project Technology',
+                                desc: 'testing'
+                            },
+                            panelComponent: 'ProjectTechStack'
+                        }
+                    ]
                 },
                 {
                     id: 'ReactDeploymentChecklist',
@@ -233,8 +263,23 @@ export const panelData = {
                                 buttonChildIdRef: 'projectTechStack',
                                 cardContents: MarketMaestroData.techStack
                             }
+                        ],
+                        externalLinks: [
+                            { label: 'Play Game', href: '#', favicon: '/images/mm-favicon.jpeg' },
+                            { label: 'Source Code', href: '#', favicon: '/images/mm-favicon.jpeg' }
                         ]
-                    }
+                    },
+                    childPanels: [
+                        {
+                            id: 'projectTechStack',
+                            level: 4,
+                            intro: {
+                                title: 'Project Technology',
+                                desc: 'testing'
+                            },
+                            panelComponent: 'ProjectTechStack'
+                        }
+                    ]
                 }
             ]
         },
