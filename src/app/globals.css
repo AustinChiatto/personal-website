@@ -181,3 +181,9 @@ hr {
   transform: scale(0.9);
   transition: all 50ms;
 }
+/* 
+@media screen and (max-width: 768px) {
+  h2 + h3 {
+    margin-top: 0.75rem;
+  }
+} */

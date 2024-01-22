@@ -54,8 +54,6 @@ export default function Home() {
   );
 }
 
-// todo: check level of all typography components
 // todo: check alt's for all images
 // todo: check title's for all links
 // todo: check target's for external links
-// todo: check image weights

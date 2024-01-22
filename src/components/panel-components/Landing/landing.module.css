@@ -35,3 +35,71 @@
   justify-content: space-between;
   align-items: flex-end;
 }
+
+/* --- */
+
+.externalLinkList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--color-element-background);
+}
+
+.resumeSection {
+  margin-top: 3rem;
+}
+
+.resumeSection > h2 {
+  margin-bottom: 0.75rem;
+}
+
+.resumeSubsection + .resumeSubsection {
+  margin-top: 1.5rem;
+}
+
+.resumeSubsectionHead {
+  margin-bottom: 0.25rem;
+}
+
+.skillList,
+.projectSkills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.projectList {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.5rem;
+}
+
+.projectItem {
+  grid-column: auto / span 1;
+  border: 1px solid var(--color-element-background);
+  border-radius: var(--border-radius-sm);
+}
+
+.projectCard {
+  height: 100%;
+  padding: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.projectSkills {
+  gap: 0.25rem;
+  padding-top: 0.5rem;
+}
+
+@media screen and (max-width: 768px) {
+  .panelFooter {
+    margin-top: 2rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--color-element-background);
+  }
+}

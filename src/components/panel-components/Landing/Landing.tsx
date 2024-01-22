@@ -1,15 +1,34 @@
 import Typography from '../../Typography/Typography';
 import styles from './landing.module.css';
 import PanelsContext from '@/context/PanelsContext';
-import { useContext } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import { PanelProps } from '@/data/panel-data';
 import InlineLink from '../../links/InlineLink/InlineLink';
 import Image from 'next/image';
+import Markdown from 'react-markdown';
+import Chip from '@/components/Chip/Chip';
+import ExternalLink from '@/components/links/ExternalLink/ExternalLink';
+import LandingMobile from './LandingMobile';
 
 const LandingPanel = ({ panelContent }: { panelContent: PanelProps }) => {
   const { createPanel } = useContext(PanelsContext);
   const childPanelArray = panelContent?.childPanels ?? [];
   const categoryListArray = panelContent?.panelComponentProps?.categoryButtonList ?? [];
+
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+
+    handleResize();
+    window.addEventListener('resize', handleResize);
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
 
   const dovetailLink = (
     <InlineLink
@@ -39,14 +58,6 @@ const LandingPanel = ({ panelContent }: { panelContent: PanelProps }) => {
       Interplanetary
     </InlineLink>
   );
-  const gitRoastedLink = (
-    <InlineLink
-      href="#"
-      highlight
-    >
-      GitRoasted
-    </InlineLink>
-  );
 
   return (
     <>
@@ -63,40 +74,43 @@ const LandingPanel = ({ panelContent }: { panelContent: PanelProps }) => {
           building small projects like {interplanetaryLink} to teach myself new tech I find neat.
         </Typography>
       </div>
-      <ul className={styles.categoryList}>
-        {childPanelArray.map((e, i) => (
-          <li
-            className={styles.categoryListItem}
-            key={i}
-          >
-            <button
-              className={styles.categoryButton}
-              onClick={() =>
-                createPanel({
-                  id: e.id,
-                  level: e.level,
-                  intro: e.intro,
-                  panelComponent: e.panelComponent,
-                  panelComponentProps: e.panelComponentProps,
-                  childPanels: e.childPanels
-                })
-              }
+      {!isMobile && (
+        <ul className={styles.categoryList}>
+          {childPanelArray.map((e, i) => (
+            <li
+              className={styles.categoryListItem}
+              key={i}
             >
-              <div className={styles.categoryButtonIcon}>
-                <Image
-                  src={categoryListArray[i].icon}
-                  alt={categoryListArray[i].alt}
-                  fill
-                />
-              </div>
-              <div className={styles.categoryButtonLabels}>
-                <Typography level={3}>{categoryListArray[i].title}</Typography>
-                <Typography color={'secondary'}>{categoryListArray[i].caption}</Typography>
-              </div>
-            </button>
-          </li>
-        ))}
-      </ul>
+              <button
+                className={styles.categoryButton}
+                onClick={() =>
+                  createPanel({
+                    id: e.id,
+                    level: e.level,
+                    intro: e.intro,
+                    panelComponent: e.panelComponent,
+                    panelComponentProps: e.panelComponentProps,
+                    childPanels: e.childPanels
+                  })
+                }
+              >
+                <div className={styles.categoryButtonIcon}>
+                  <Image
+                    src={categoryListArray[i].icon}
+                    alt={categoryListArray[i].alt}
+                    fill
+                  />
+                </div>
+                <div className={styles.categoryButtonLabels}>
+                  <Typography level={3}>{categoryListArray[i].title}</Typography>
+                  <Typography color={'secondary'}>{categoryListArray[i].caption}</Typography>
+                </div>
+              </button>
+            </li>
+          ))}
+        </ul>
+      )}
+      {isMobile && <LandingMobile />}
       <div className={styles.panelFooter}>
         <InlineLink href="mailto:chiattoaustin@gmail.com">hey@austinchiatto.com</InlineLink>
         <Typography
@@ -111,3 +125,17 @@ const LandingPanel = ({ panelContent }: { panelContent: PanelProps }) => {
 };
 
 export default LandingPanel;
+
+/* 
+If mobile
+- remove category buttons
+- remove footer
+- remove tab bar
+- DONE -- panel width == 100%
+- DONE -- add email to bottom of intro section
+- add experience section
+- add education section
+- add skills section
+- add projects section -> projects will take you to the live site when clicked
+- add contact section with email, linkedin, github, resume
+*/
