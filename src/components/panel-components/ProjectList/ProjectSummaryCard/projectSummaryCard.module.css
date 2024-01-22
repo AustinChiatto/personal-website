@@ -7,13 +7,21 @@
   margin-top: 4rem;
 }
 
-.projectImage {
+.projectImageWrapper {
   width: 100%;
   aspect-ratio: 16/9;
   position: relative;
   border-radius: calc(var(--border-radius-sm) / 2);
   overflow: hidden;
   margin-block: 1rem 1rem;
+}
+
+.projectImage {
+  transition: scale 150ms ease-in-out;
+}
+
+.ProjectSummaryCard:hover .projectImage {
+  scale: 1.05;
 }
 
 .chipList {

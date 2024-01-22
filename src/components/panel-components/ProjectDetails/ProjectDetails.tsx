@@ -4,6 +4,9 @@ import Markdown from 'react-markdown';
 import ListCard, { ListCardProps } from '@/components/ListCard/ListCard';
 import { PanelProps } from '@/data/panel-data';
 import { ArticleProps, ExternalLinkProps } from '@/data/project-data/types';
+import Image from 'next/image';
+import Link from 'next/link';
+import Typography from '@/components/Typography/Typography';
 
 const ProjectDetails = ({ panelContent }: { panelContent: PanelProps }) => {
   const contentData = panelContent.panelComponentProps;

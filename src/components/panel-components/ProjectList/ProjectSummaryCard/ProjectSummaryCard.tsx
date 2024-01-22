@@ -44,8 +44,9 @@ const ProjectSummaryCard = ({ title, desc, image, cardData }: ProjectSummaryCard
         <Typography level={3}>{title}</Typography>
         <Typography color={'secondary'}>{desc}</Typography>
       </div>
-      <div className={styles.projectImage}>
+      <div className={styles.projectImageWrapper}>
         <Image
+          className={styles.projectImage}
           src={image}
           alt="testing"
           fill

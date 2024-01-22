@@ -141,7 +141,8 @@ export const panelData = {
           panelComponent: 'ProjectDetails',
           panelComponentProps: {
             image: '/images/code2image_project-thumbnail.png',
-            cardDesc: 'A tool that creates beautiful images of code snippets.',
+            cardDesc:
+              'A tool to create customized images of code snippets with style settings, such as syntax highlighting, background gradients, and more.',
             externalLinks: Code2ImageData.externalLinks,
             listCards: [
               {
@@ -219,8 +220,8 @@ export const panelData = {
           },
           panelComponent: 'ProjectDetails',
           panelComponentProps: {
-            image: '/images/code2image_project-thumbnail.png',
-            cardDesc: 'A tool to help developers new to CSS grid that I built to learn React',
+            image: '/images/grid-tool_project-thumbnail.png',
+            cardDesc: 'A tool to I built during my program to help my friends understand CSS Grid.',
             externalLinks: GridToolData.externalLinks,
             listCards: [
               {

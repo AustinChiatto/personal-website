@@ -74,7 +74,11 @@ const techStack = [
 
 const article = [
   {
-    markdownSection: ['## Project Development']
+    markdownSection: [
+      '## Project Development',
+      '### Initialization',
+      'Initial requirements had me clone the repository from **GitLab**, install **MUI** as a dependency, and learn the basics of **Nest.js App Router**.'
+    ]
   },
   {
     markdownSection: [
