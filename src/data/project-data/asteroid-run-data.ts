@@ -2,7 +2,7 @@ const externalLinks = [
   {
     label: 'Play Game',
     href: 'https://asteroid-run.austinchiatto.com/',
-    favicon: '/images/mm-favicon.jpeg'
+    favicon: '/icons/external-link.svg'
   },
   {
     label: 'View Repo',

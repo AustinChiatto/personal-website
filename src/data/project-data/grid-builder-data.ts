@@ -1,8 +1,8 @@
 const externalLinks = [
   {
-    label: 'crumb.so/grid-tool',
+    label: 'Live Site',
     href: 'https://crumb.so/grid-tool',
-    favicon: '/images/mm-favicon.jpeg'
+    favicon: '/icons/external-link.svg'
   },
   {
     label: 'View Repo',

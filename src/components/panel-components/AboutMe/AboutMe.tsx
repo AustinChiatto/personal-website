@@ -44,7 +44,7 @@ const AboutContent = () => {
     },
     {
       label: 'Resume',
-      href: 'https://www.linkedin.com/in/austin-chiatto/',
+      href: '/austin-chiatto_resume_2024.pdf',
       favicon: '/icons/icon-doc-text-fill.svg'
     }
   ];
@@ -76,7 +76,7 @@ const AboutContent = () => {
       <ul className={styles.gridList}>
         <li className={styles.gridItem}>
           <Link
-            href="#"
+            href="/austin-chiatto_resume_2024.pdf"
             title="View Resume"
             target="_blank"
             className={styles.largeExternalLink}

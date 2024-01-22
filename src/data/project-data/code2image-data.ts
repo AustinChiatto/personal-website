@@ -1,8 +1,8 @@
 const externalLinks = [
   {
-    label: 'crumb.so/code2image',
+    label: 'Live Site',
     href: 'https://crumb.so/code-to-img',
-    favicon: '/images/mm-favicon.jpeg'
+    favicon: '/icons/external-link.svg'
   },
   {
     label: 'View Repo',

@@ -5,9 +5,6 @@ import { useContext, useEffect, useState } from 'react';
 import { PanelProps } from '@/data/panel-data';
 import InlineLink from '../../links/InlineLink/InlineLink';
 import Image from 'next/image';
-import Markdown from 'react-markdown';
-import Chip from '@/components/Chip/Chip';
-import ExternalLink from '@/components/links/ExternalLink/ExternalLink';
 import LandingMobile from './LandingMobile';
 
 const LandingPanel = ({ panelContent }: { panelContent: PanelProps }) => {
