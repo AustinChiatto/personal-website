@@ -1,91 +1,107 @@
 .panel {
-    width: calc(50vw - 2rem);
-    max-width: 48rem;
-    flex: 0 0 auto;
-    position: sticky;
-    display: flex;
-    justify-content: space-between;
-    overflow-x: hidden;
-    overflow-y: auto;
+  width: calc(50vw - 2rem);
+  max-width: 48rem;
+  flex: 0 0 auto;
+  position: sticky;
+  display: flex;
+  justify-content: space-between;
+  overflow-x: hidden;
+  overflow-y: auto;
 
-    scrollbar-width: none;
-    border-left: 1px solid #181818;
-    box-shadow: -1px 0px 2.2px rgba(0, 0, 0, 0.02), -0.9px 0px 5.3px rgba(0, 0, 0, 0.028),
-        -0.5px 0px 10px rgba(0, 0, 0, 0.035), -3.4px 0px 17.9px rgba(0, 0, 0, 0.042),
-        -7.6px 0px 33.4px rgba(0, 0, 0, 0.05), -16px 0px 80px rgba(0, 0, 0, 0.07);
+  scrollbar-width: none;
+  border-left: 1px solid #181818;
+  box-shadow: -1px 0px 2.2px rgba(0, 0, 0, 0.02), -0.9px 0px 5.3px rgba(0, 0, 0, 0.028),
+    -0.5px 0px 10px rgba(0, 0, 0, 0.035), -3.4px 0px 17.9px rgba(0, 0, 0, 0.042),
+    -7.6px 0px 33.4px rgba(0, 0, 0, 0.05), -16px 0px 80px rgba(0, 0, 0, 0.07);
 }
 
 /* panel level custom styling */
 .panelBackground-0 {
-    background: var(--color-grey-85);
-    box-shadow: unset;
-    border-left: unset;
+  background: var(--color-grey-85);
+  box-shadow: unset;
+  border-left: unset;
 }
 
 .panelBackground-1 {
-    background: var(--color-grey-80);
+  background: var(--color-grey-80);
 }
 
 .panelBackground-2 {
-    background: var(--color-grey-75);
+  background: var(--color-grey-75);
 }
 
 .panelBackground-3 {
-    background: var(--color-grey-70);
+  background: var(--color-grey-70);
 }
 
 .panelBackground-4 {
-    background: var(--color-grey-65);
+  background: var(--color-grey-65);
 }
 
 .panel::-webkit-scrollbar {
-    display: none;
+  display: none;
 }
 
 .panelTab {
-    max-width: 34px;
-    display: flex;
-    justify-content: center;
-    position: sticky;
-    top: 0;
+  max-width: 34px;
+  display: flex;
+  justify-content: center;
+  position: sticky;
+  top: 0;
 }
 
 .panelTab:hover {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 .panelTab > button {
-    writing-mode: vertical-rl;
-    color: var(--color-text-tertiary);
-    transition: color var(--transition-timing) var(--transition-ease);
-    font-size: 0.875rem;
-    font-weight: var(--font-weight-300);
-    line-height: 1.125rem;
-    max-height: 100%;
-    padding-inline: 0.5rem;
-    padding-block: 0.5rem;
+  writing-mode: vertical-rl;
+  color: var(--color-text-tertiary);
+  transition: color var(--transition-timing) var(--transition-ease);
+  font-size: 0.875rem;
+  font-weight: var(--font-weight-300);
+  line-height: 1.125rem;
+  max-height: 100%;
+  padding-inline: 0.5rem;
+  padding-block: 0.5rem;
 }
 
 .panelTab:hover > button {
-    cursor: pointer;
-    color: var(--color-text-secondary);
+  cursor: pointer;
+  color: var(--color-text-secondary);
 }
 
 .panelBody {
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-    padding-top: 2.25rem;
-    padding-right: 2.25rem;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding-top: 2.25rem;
+  padding-right: 2.25rem;
 }
 
 .panelContent {
-    display: flex;
-    flex-direction: column;
-    flex-grow: 1;
-    padding-bottom: 2.25rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  padding-bottom: 2.25rem;
 }
 
-.panelIntro > * + * {
-    margin-top: 0.5rem;
+@media screen and (max-width: 1200px) {
+  .panel {
+    width: 65vw;
+    max-width: 40rem;
+  }
+}
+
+@media screen and (max-width: 834px) {
+  .panel {
+    width: 70vw;
+  }
+}
+
+@media screen and (max-width: 786px) {
+  .panel {
+    width: calc(100vw - 2rem);
+  }
 }

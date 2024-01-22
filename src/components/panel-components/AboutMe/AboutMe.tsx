@@ -9,7 +9,7 @@ import Image from 'next/image';
 const AboutContent = () => {
   const linkedIn = (
     <InlineLink
-      href="#"
+      href="https://www.linkedin.com/in/austin-chiatto/"
       highlight
     >
       LinkedIn
@@ -18,41 +18,34 @@ const AboutContent = () => {
 
   const email = (
     <InlineLink
-      href="#"
+      href="mailto:chiattoaustin@gmail.com"
       highlight
     >
       Email
     </InlineLink>
   );
 
-  const artemis = (
-    <InlineLink
-      href="#"
-      highlight
-    >
-      Artemis
-    </InlineLink>
-  );
-
-  const starship = (
-    <InlineLink
-      href="#"
-      highlight
-    >
-      Starship
-    </InlineLink>
-  );
-
+  // Todo: This is duplicated from above.
   const externalLinkArray = [
     {
       label: 'Email',
-      href: '#',
+      href: 'mailto:chiattoaustin@gmail.com',
       favicon: '/icons/email.svg'
     },
     {
       label: 'LinkedIn',
-      href: '#',
+      href: 'https://www.linkedin.com/in/austin-chiatto/',
       favicon: '/icons/linkedin-original.svg'
+    },
+    {
+      label: 'GitHub',
+      href: 'https://www.linkedin.com/in/austin-chiatto/',
+      favicon: '/icons/github-original.svg'
+    },
+    {
+      label: 'Resume',
+      href: 'https://www.linkedin.com/in/austin-chiatto/',
+      favicon: '/icons/icon-doc-text-fill.svg'
     }
   ];
 
@@ -77,19 +70,21 @@ const AboutContent = () => {
       </Typography>
 
       <Typography color={'secondary'}>
-        If you would like to say hi, feel free to send me an {email}, a message on {linkedIn}, or
-        check out my resume or GitHub.
+        If you would like to say hi, feel free to send me an {email}, a message on {linkedIn}, or if
+        you&apos;re not sure yet, check out my resume and GitHub below.
       </Typography>
       <ul className={styles.gridList}>
         <li className={styles.gridItem}>
           <Link
             href="#"
+            title="View Resume"
+            target="_blank"
             className={styles.largeExternalLink}
           >
             <div className={styles.icon}>
               <Image
                 src={'/icons/icon-doc-text-fill.svg'}
-                alt=""
+                alt="Icon document text fill"
                 fill
               />
             </div>
@@ -98,13 +93,15 @@ const AboutContent = () => {
         </li>
         <li className={styles.gridItem}>
           <Link
-            href="#"
+            href="https://github.com/AustinChiatto"
+            title="View GitHub Profile"
+            target="_blank"
             className={styles.largeExternalLink}
           >
             <div className={styles.icon}>
               <Image
                 src={'/icons/github-original.svg'}
-                alt=""
+                alt="Icon GitHub"
                 fill
               />
             </div>
@@ -128,7 +125,7 @@ const AboutContent = () => {
       <div className={styles.aboutImage}>
         <Image
           src={'/images/about-image.jpeg'}
-          alt=""
+          alt="A view of a mountain meadow from Panorama Ridge in Squamish, BC, Canada."
           fill
           objectFit="cover"
         />

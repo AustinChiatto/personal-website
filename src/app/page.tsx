@@ -54,7 +54,6 @@ export default function Home() {
   );
 }
 
-// ! todo: double check that data import is the same across components
 // todo: check level of all typography components
 // todo: check alt's for all images
 // todo: check title's for all links
