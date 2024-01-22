@@ -20,7 +20,7 @@
   transition: scale 150ms ease-in-out;
 }
 
-.ProjectSummaryCard:hover .projectImage {
+.projectImageWrapper:hover .projectImage {
   scale: 1.05;
 }
 
