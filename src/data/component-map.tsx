@@ -7,21 +7,20 @@ import ResourceContent from '@/components/panel-components/ResourceContent/Resou
 import AboutContent from '@/components/panel-components/AboutMe/AboutMe';
 
 export type PanelType =
-    | 'LandingPanel'
-    | 'ProjectList'
-    | 'ProjectDetails'
-    | 'ProjectTechStack'
-    | 'ResourceList'
-    | 'ResourceContent'
-    | 'AboutContent';
+  | 'LandingPanel'
+  | 'ProjectList'
+  | 'ProjectDetails'
+  | 'ProjectTechStack'
+  | 'ResourceList'
+  | 'ResourceContent'
+  | 'AboutContent';
 
-// todo: assign correct type
 export const componentMap: Record<string, any> = {
-    LandingPanel,
-    ProjectList,
-    ProjectDetails,
-    ProjectTechStack,
-    ResourceList,
-    ResourceContent,
-    AboutContent
+  LandingPanel,
+  ProjectList,
+  ProjectDetails,
+  ProjectTechStack,
+  ResourceList,
+  ResourceContent,
+  AboutContent
 };

@@ -30,7 +30,7 @@ export default function Home() {
                   key={i}
                   classNames="panel-transition"
                   timeout={250}
-                  exit={false} // todo: see if there's a way to handle the exit animations paired with the scroll.
+                  exit={false}
                 >
                   <Panel
                     key={i}
@@ -53,7 +53,3 @@ export default function Home() {
     </PanelsContext.Provider>
   );
 }
-
-// todo: check alt's for all images
-// todo: check title's for all links
-// todo: check target's for external links

@@ -25,7 +25,6 @@ const AboutContent = () => {
     </InlineLink>
   );
 
-  // Todo: This is duplicated from above.
   const externalLinkArray = [
     {
       label: 'Email',
@@ -124,7 +123,7 @@ const AboutContent = () => {
       </Typography>
       <div className={styles.aboutImage}>
         <Image
-          src={'/images/about-image.jpeg'}
+          src={'/images/about-image.webp'}
           alt="A view of a mountain meadow from Panorama Ridge in Squamish, BC, Canada."
           fill
           objectFit="cover"

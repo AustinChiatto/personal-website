@@ -10,7 +10,7 @@ type PanelComponentProps = {
   title: string;
   description?: string;
   children?: ReactNode;
-  handleTabClick?: any; // todo: fix type
+  handleTabClick?: any;
 };
 
 const Panel = forwardRef<HTMLDivElement, PanelComponentProps>(
