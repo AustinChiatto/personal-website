@@ -1,7 +1,7 @@
 import { useContext } from 'react';
 import Chip from '../../../Chip/Chip';
 import Typography from '../../../Typography/Typography';
-import styles from './ProjectSummaryCard.module.css';
+import styles from './projectSummaryCard.module.css';
 import PanelsContext from '@/context/PanelsContext';
 import Image from 'next/image';
 import { ListCardProps } from '../../../ListCard/ListCard';
