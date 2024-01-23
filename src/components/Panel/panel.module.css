@@ -44,8 +44,6 @@
 
 .panelTab {
   max-width: 34px;
-  display: flex;
-  justify-content: center;
   position: sticky;
   top: 0;
 }
@@ -55,20 +53,27 @@
 }
 
 .panelTab > button {
-  writing-mode: vertical-rl;
   color: var(--color-text-tertiary);
   transition: color var(--transition-timing) var(--transition-ease);
   font-size: 0.875rem;
   font-weight: var(--font-weight-300);
-  line-height: 1.125rem;
-  max-height: 100%;
-  padding-inline: 0.5rem;
   padding-block: 0.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
 }
 
 .panelTab:hover > button {
   cursor: pointer;
   color: var(--color-text-secondary);
+}
+
+.tabButtonText {
+  writing-mode: vertical-rl;
+  -webkit-writing-mode: vertical-lr;
+  line-height: 1.125rem;
+  padding-inline: 0.5rem;
+  padding-block: 0.5rem;
 }
 
 .panelBody {

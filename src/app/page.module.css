@@ -1,7 +1,7 @@
 .main {
-    height: 100vh;
-    position: relative;
-    display: flex;
-    overflow-x: auto;
-    overflow-y: clip;
+  height: 100dvh;
+  position: relative;
+  display: flex;
+  overflow-x: auto;
+  overflow-y: clip;
 }

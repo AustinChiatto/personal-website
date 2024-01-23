@@ -25,7 +25,9 @@ const Panel = forwardRef<HTMLDivElement, PanelComponentProps>(
         onClick={() => handleTabClick()}
       >
         <aside className={styles.panelTab}>
-          <button onClick={() => handleTabClick()}>⌘ {title}</button>
+          <button onClick={() => handleTabClick()}>
+            <span className={styles.tabButtonText}>⌘ {title}</span>
+          </button>
         </aside>
         <div className={styles.panelBody}>
           <div className={styles.panelIntro}>
