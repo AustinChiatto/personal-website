@@ -68,8 +68,12 @@ const LandingPanel = ({ panelContent }: { panelContent: PanelProps }) => {
         </Typography>
         <Typography>
           Since then, I&apos;ve been working on refining my skills as a front-end developer,
-          building small projects like {interplanetaryLink} to teach myself new tech I find neat.
+          building small projects to teach myself new tech I find neat.
         </Typography>
+        {/* <Typography>
+          Since then, I&apos;ve been working on refining my skills as a front-end developer,
+          building small projects like {interplanetaryLink} to teach myself new tech I find neat.
+        </Typography> */}
       </div>
       {!isMobile && (
         <ul className={styles.categoryList}>
@@ -122,17 +126,3 @@ const LandingPanel = ({ panelContent }: { panelContent: PanelProps }) => {
 };
 
 export default LandingPanel;
-
-/* 
-If mobile
-- remove category buttons
-- remove footer
-- remove tab bar
-- DONE -- panel width == 100%
-- DONE -- add email to bottom of intro section
-- add experience section
-- add education section
-- add skills section
-- add projects section -> projects will take you to the live site when clicked
-- add contact section with email, linkedin, github, resume
-*/

@@ -82,12 +82,6 @@ const article = [
   },
   {
     markdownSection: [
-      '### Initialization',
-      'Initial requirements had me clone the repository from **GitLab**, install **MUI** as a dependency, and learn the basics of **Nest.js App Router**.'
-    ]
-  },
-  {
-    markdownSection: [
       '### Material-UI',
       "I developed a flexible **MUI theme** that is compatible with both base and custom components utilizing a theme provider. I created palettes for *light and dark modes* that are set automatically based on the user's browser settings. I adjusted typography properties, and built component overrides to match the companies style guide and design documents."
     ]
