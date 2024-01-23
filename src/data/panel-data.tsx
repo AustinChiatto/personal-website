@@ -82,7 +82,7 @@ export const panelData = {
           },
           panelComponent: 'ProjectDetails',
           panelComponentProps: {
-            image: '/images/market-maestro_work-thumbnail.png',
+            image: '/images/market-maestro_work-thumbnail.webp',
             cardDesc:
               'Responsive Next.js site that I built as part of my internship with Dovetail Digital.',
             externalLinks: MarketMaestroData.externalLinks,
@@ -140,7 +140,7 @@ export const panelData = {
           },
           panelComponent: 'ProjectDetails',
           panelComponentProps: {
-            image: '/images/code2image_project-thumbnail.png',
+            image: '/images/code2image_project-thumbnail.webp',
             cardDesc:
               'A tool to create customized images of code snippets with style settings, such as syntax highlighting, background gradients, and more.',
             externalLinks: Code2ImageData.externalLinks,
@@ -180,7 +180,7 @@ export const panelData = {
           },
           panelComponent: 'ProjectDetails',
           panelComponentProps: {
-            image: '/images/asteroid-run_project-thumbnail.png',
+            image: '/images/asteroid-run_project-thumbnail.webp',
             cardDesc:
               'A browser-based game I built to teach myself object-oriented programming with JavaScript.',
             externalLinks: AsteroidRunData.externalLinks,
@@ -220,7 +220,7 @@ export const panelData = {
           },
           panelComponent: 'ProjectDetails',
           panelComponentProps: {
-            image: '/images/grid-tool_project-thumbnail.png',
+            image: '/images/grid-tool_project-thumbnail.webp',
             cardDesc: 'A tool to I built during my program to help my friends understand CSS Grid.',
             externalLinks: GridToolData.externalLinks,
             listCards: [

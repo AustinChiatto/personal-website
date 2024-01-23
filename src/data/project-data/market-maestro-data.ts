@@ -9,12 +9,12 @@ const externalLinks = [
 const teamMembers = [
   {
     label: 'Austin Chiatto',
-    icon: '/images/austin-chiatto_memoji.png',
+    icon: '/images/austin-chiatto_memoji.webp',
     desc: 'Frontend Developer'
   },
   {
     label: 'Nicola Bower',
-    icon: '/images/nicola-bower_memoji.png',
+    icon: '/images/nicola-bower_memoji.webp',
     desc: 'UI/UX Designer'
   }
 ];
