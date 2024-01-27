@@ -1,5 +1,5 @@
 .panel {
-  width: calc(50vw - 2rem);
+  width: calc(45vw);
   max-width: 48rem;
   flex: 0 0 auto;
   position: sticky;

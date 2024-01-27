@@ -42,6 +42,7 @@
   --color-grey-40: hsl(var(--grey-hue), var(--grey-saturation), 38%);
   --color-grey-50: hsl(var(--grey-hue), var(--grey-saturation), 20%);
   --color-grey-60: hsl(var(--grey-hue), var(--grey-saturation), 15%);
+  --color-grey-64: hsl(var(--grey-hue), var(--grey-saturation), 13.5%);
   --color-grey-65: hsl(var(--grey-hue), var(--grey-saturation), 10.5%);
   --color-grey-70: hsl(var(--grey-hue), var(--grey-saturation), 10%);
   --color-grey-75: hsl(var(--grey-hue), var(--grey-saturation), 9%);
@@ -109,7 +110,7 @@ p {
   font-size: 1rem;
   font-style: normal;
   font-weight: var(--font-weight-400);
-  line-height: 1.5rem;
+  line-height: 1.4rem;
   color: var(--color-text-secondary);
 }
 
@@ -135,9 +136,67 @@ strong {
   color: var(--color-text-primary);
 }
 
+pre {
+  margin-block: 1.5rem;
+}
+
+span {
+  padding: none;
+  margin: none;
+}
+
+.mdCode {
+  background: var(--color-element-background);
+  color: var(--color-text-primary);
+  padding: 0.125rem;
+}
+
+.mdCodeBlock {
+  font-size: 0.875rem;
+  border-radius: 0.5rem !important;
+  text-shadow: none !important;
+  line-height: 1.2 !important;
+  background-color: var(--color-grey-64) !important;
+  tab-size: 4 !important;
+}
+
+code {
+  font-family: var(--font-family) !important;
+  background-color: var(--color-grey-64) !important;
+}
+
 /* buttons & links */
 a {
+  color: #2997ff;
   text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  border-radius: 0.25rem;
+}
+
+.mdHeadingBorder {
+  padding-bottom: 0.5rem;
+  margin-block: 2.5rem 1rem;
+  border-bottom: 1px solid var(--color-element-background);
+}
+
+.mdH3 {
+  margin-top: 2rem;
+}
+
+.mdLinkedHeading {
+  color: var(--color-text-primary);
+}
+
+.mdList {
+  list-style-type: disc;
+  list-style-position: inside;
+}
+
+.mdList > * {
+  margin-top: 1rem;
 }
 
 button {
@@ -181,9 +240,3 @@ hr {
   transform: scale(0.9);
   transition: all 50ms;
 }
-/* 
-@media screen and (max-width: 768px) {
-  h2 + h3 {
-    margin-top: 0.75rem;
-  }
-} */

@@ -1,3 +1,7 @@
+.section {
+  max-width: 100%;
+}
+
 .externalLinkList {
   display: flex;
   gap: 0.5rem;
@@ -7,14 +11,6 @@
 .listCardWrapper {
   padding-top: 2rem;
   border-top: 1px solid var(--color-element-background);
-}
-
-.sectionWrapper {
-  margin-top: 3rem;
-}
-
-.sectionWrapper > * + * {
-  margin-top: 2.5rem;
 }
 
 .sectionWrapper .section :is(h1, h2, h3, h4, h5, h6) + p {
