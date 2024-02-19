@@ -7,3 +7,9 @@
 .default:hover {
   color: var(--color-link-blue);
 }
+
+.highlight:hover {
+  text-decoration: underline;
+  text-decoration-style: wavy;
+  text-decoration-skip-ink: none;
+}

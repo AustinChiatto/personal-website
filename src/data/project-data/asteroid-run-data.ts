@@ -1,12 +1,12 @@
 const externalLinks = [
   {
     label: 'Play Game',
-    href: 'https://asteroid-run.austinchiatto.com/',
+    href: 'https://asteroidrun.crumb.so/',
     favicon: '/icons/external-link.svg'
   },
   {
     label: 'View Repo',
-    href: 'https://asteroid-run.austinchiatto.com/',
+    href: 'https://asteroidrun.crumb.so/',
     favicon: '/icons/github-original.svg'
   }
 ];
@@ -39,124 +39,17 @@ const techStack = [
   }
 ];
 
-// const article = [
-//   {
-//     markdownSection: [
-//       '## Learning JavaScript OOP',
-//       "In this project, I'm going to build a little browser game that is a mixture between **Space Invaders & Asteroids**.",
-//       'I am going to use this example to learn how to build a `class` and use it to create objects from, how to render and dispose of elements on the game screen using **HTML canvas**, and I will learn how to control elements with *keyboard inputs*.',
-//       'Now lets get coding!'
-//     ]
-//   },
-//   {
-//     markdownSection: [
-//       '### Table of Contents',
-//       '* [Creating the game screen](#creating-the-game-screen)',
-//       '* [Controlling the player](#controlling-the-player)',
-//       '* [Spawning enemies](#spawning-enemies)',
-//       '* [Collision and game over](#collision-and-game-over)',
-//       ''
-//     ]
-//   },
-//   {
-//     markdownSection: [
-//       '## Creating the game screen',
-//       "To start, I'll add the `canvas` that the game will be rendered in, defining its dimensions, and building the start of the render function that will eventually `render` our objects.",
-//       "~~~html\n<!-- index.html -->\n<canvas class='game-canvas'></canvas>\n~~~",
-//       "Using `requestAnimationFrame` on itself, this function will run once per frame. I'll then use a _guard clause_ to check if the game is running before calling the `clearRect()` method on the canvas. This method erases everything previously drawn at the start of each frame, preparing it for the next.",
-//       `
-// ~~~js
-// // render.js
-// const canvas = document.querySelector(".game-canvas");
-// const c = canvas.getContext("2d");
-
-// canvas.width = 800;
-// canvas.height = innerHeight;
-
-// function render() {
-// 		setTimeout(() => {
-// 			requestAnimationFrame(render);
-// });
-
-// if (!game.active) return
-// 		c.clearRect(0, 0, canvas.width, canvas.height);
-// }
-
-// render()`
-//     ]
-//   },
-//   {
-//     markdownSection: [
-//       '### Creating & Rendering the player',
-//       'Now for the player!',
-//       "I will start by building a `class` for the player. In the `constructor`, I will set the player's initial velocity, opacity, image, dimensions, and position. These will be what we manipulate to control the behaviour of the player.",
-//       `~~~js
-// // player.js
-// class Player {
-// 	constructor() {
-// 	    this.velocity = {
-// 	        x: 0,
-// 	        y: 0,
-// 	    };
-// 	    this.opacity = 1;
-
-// 	    const image = new Image();
-// 	    image.src = playerShipAsset;
-// 	    image.onload = () => {
-// 	        this.image = image;
-// 	        this.width = image.width;
-// 	        this.height = image.height;
-// 	        this.position = {
-// 	            x: canvas.width / 2 - this.width / 2,
-// 	            y: canvas.height - this.height * 2,
-// 	        };
-// 	    };
-// 	}
-// }`,
-//       "Here, the player's velocity is set to 0 in both axes. An image object is created with a defined src, and the player's position is set using the dimensions of the player and canvas.",
-//       "So why don't I see a player on screen?!",
-//       "I forgot that I will need to add the `draw()` method to my Player class to visually represent the object in the `canvas` once it's created. Oh, I'll also need to create the Player object using the keyword **new**.",
-//       `~~~js
-// // Player class
-// draw() {
-// 	c.save();
-// 	c.globalAlpha = this.opacity;
-// 	c.drawImage(
-// 			this.image,
-// 			this.position.x,
-// 			this.position.y,
-// 			this.width,
-// 			this.height
-// 	);
-// 		c.restore();
-// }`,
-//       '~~~js\n// player.js\nconst player = new Player();',
-//       '**Ta-da!** I have a player.',
-//       '![Game screenshot](/images/asteroid-run_project-thumbnail.webp)'
-//     ]
-//   },
-//   {
-//     markdownSection: ['## Controlling the player', '']
-//   },
-//   {
-//     markdownSection: ['## Spawning enemies', '']
-//   },
-//   {
-//     markdownSection: ['## Collision and game over', '']
-//   }
-// ];
-
 const article = [
   {
     markdownSection: [
       `
 ## Learning OOP with a JS game
 
-In this project, I'm going to build a little browser game that is a mixture between **Space Invaders & Asteroids**.
+I'm going to build a little browser game that will be a bit like **Space Invaders & Asteroids** had a baby.
 
-I am going to use this example to learn how to build a \`class\` and use it to create objects from, how to render and dispose of elements on the game screen using **HTML canvas**, and I will learn how to control elements with *keyboard inputs*.
+I'm using this example to teach myself the basics of \`JavaScript classes\` and \`objects\`.
 
-Now lets get coding!
+So, lets get coding!
 
 ### Table of Contents
 
@@ -167,7 +60,7 @@ Now lets get coding!
 
 ## Creating the game screen
 
-I'm going to start by adding the \`canvas\` that our game will be rendered in, defining its dimensions, and building the start of the render function that will eventually \`render\` our objects.
+To start I'll add the \`canvas\` and define it's dimension. This will be where the game's elements are rendered. I'll also start building the render function, which will be responsible for handling the visuals.
 
 ~~~html
 <canvas class="game-canvas"></canvas>

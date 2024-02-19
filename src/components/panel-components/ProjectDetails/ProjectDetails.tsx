@@ -13,10 +13,11 @@ interface H2Props {
   children: React.ReactNode;
 }
 
+// todo: assign better typings
 type codeProps = {
-  children: any; // Todo: fix this type it should not be "any"
-  className: any; // Todo: fix this type it should not be "any"
-  node: any; // Todo: fix this type it should not be "any"
+  children: any;
+  className: any;
+  node: any;
 };
 
 const ProjectDetails = ({ panelContent }: { panelContent: PanelProps }) => {
@@ -120,7 +121,7 @@ const ProjectDetails = ({ panelContent }: { panelContent: PanelProps }) => {
               {e.markdownSection.map((markdownItem, j) => (
                 <Markdown
                   key={j}
-                  components={MarkdownComponents} // Todo: fix this type error
+                  components={MarkdownComponents as any} // Todo: assign more specific type
                   remarkPlugins={[remarkGfm]}
                 >
                   {markdownItem}

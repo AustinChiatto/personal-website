@@ -188,11 +188,18 @@ img {
 
 .mdLinkedHeading {
   color: var(--color-text-primary);
+  cursor: default;
 }
 
 .mdList {
   list-style-type: disc;
   list-style-position: inside;
+}
+
+.mdList > li > a:hover {
+  text-decoration: underline;
+  text-decoration-style: wavy;
+  text-decoration-skip-ink: none;
 }
 
 .mdList > * {

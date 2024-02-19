@@ -57,7 +57,7 @@ const projects = [
   },
   {
     title: 'Asteroid Run',
-    href: 'https://asteroid-run.austinchiatto.com',
+    href: 'https://asteroidrun.crumb.so',
     desc: 'A browser based space game.',
     skills: ['JavaScript', 'CSS', 'HTML Canvas']
   },
