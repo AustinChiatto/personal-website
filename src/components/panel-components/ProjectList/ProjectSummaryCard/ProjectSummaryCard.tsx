@@ -13,10 +13,17 @@ type ProjectSummaryCardProps = {
   index: number;
   desc: string;
   image: string;
+  imageBase64: string;
   cardData: PanelProps;
 };
 
-const ProjectSummaryCard = ({ title, desc, image, cardData }: ProjectSummaryCardProps) => {
+const ProjectSummaryCard = ({
+  title,
+  desc,
+  image,
+  imageBase64,
+  cardData
+}: ProjectSummaryCardProps) => {
   const { createPanel } = useContext(PanelsContext);
   const listCardArray = cardData?.panelComponentProps?.listCards ?? [];
 
@@ -51,6 +58,8 @@ const ProjectSummaryCard = ({ title, desc, image, cardData }: ProjectSummaryCard
           alt="testing"
           fill
           objectFit="cover"
+          placeholder="blur"
+          blurDataURL={`data:image/png,${imageBase64}`}
         />
       </div>
       <ul className={styles.chipList}>

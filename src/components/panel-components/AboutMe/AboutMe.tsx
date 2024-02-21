@@ -127,6 +127,8 @@ const AboutContent = () => {
           alt="A view of a mountain meadow from Panorama Ridge in Squamish, BC, Canada."
           fill
           objectFit="cover"
+          placeholder="blur"
+          blurDataURL="data:image/png,iVBORw0KGgoAAAANSUhEUgAAABIAAAAKCAIAAAA2KZn2AAAAAXNSR0IArs4c6QAAAERlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAEqADAAQAAAABAAAACgAAAADKOW4WAAAB7ElEQVQoFQ2Qu27TYACF/7vt2E4bJ2mbNk3aQtImWShMSEi8AGLlJXgXXgMmBsQME4giRCUEUxsp5dKmMdhO4tt/xev5jvQdHfji1dn5TzGbLx9PAkbx54soXAoIYbPOEISLlcBGH7ZdAHSn7T4atQk2AAAyPtre2zHLYitOy5ZPftyaIEAPB77S+qBl8zS5msc2yG4Xi0nv5Hr6fXpxeTzYI2kcXkfyj2lKyaZrajesGsWLvGTJ7MP5lRRZFCWlgpUt/pfky4URYu5B8vrN23h5hTRMRHIyaMh1gZzuZZKVhWptBo5X813DyjROxcezb1IJKYsSj8n7dy8xQsZQDYEruzfhuteNs5JUeGuHffryddjvzm5+V/1f85Bia7uz0d9p4FZn83gYlHlech1GyZ1DdjpqNwMRReLesB/UoeOp0/GRkgUjuecix0KT0RBu7reqZ5487QWNjZvr3LXrd3c7Nq0hCyxXIcbYseqEYSEq1JClXKdJtzeCz54/0Ar2dz3GCLGQ4tAoO4twu91ENAuzBAogSKERp4hCYhiig/37pH9gZWkhgASarteKc8FYSjxrXiY8kZQYTVLOcbVIO1zlYAVIR6yq7K+/4QCQaa0xlzUKEUKcc40U8wFBwCDs+prnQEhFsMVsSBn8D5KkANIz5D4SAAAAAElFTkSuQmCC"
         />
       </div>
     </>

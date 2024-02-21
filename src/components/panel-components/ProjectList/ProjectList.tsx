@@ -11,6 +11,7 @@ const ProjectList = ({ panelContent }: { panelContent: PanelProps }) => {
           title={e.intro.title}
           desc={e.panelComponentProps?.cardDesc ?? ''}
           image={e.panelComponentProps?.image ?? ''}
+          imageBase64={e.panelComponentProps?.imageBase64 ?? ''}
           cardData={e}
           index={i}
         />
