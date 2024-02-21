@@ -55,11 +55,11 @@ const ProjectSummaryCard = ({
         <Image
           className={styles.projectImage}
           src={image}
+          placeholder="blur"
+          blurDataURL={imageBase64}
           alt="testing"
           fill
-          objectFit="cover"
-          placeholder="blur"
-          blurDataURL={`data:image/png,${imageBase64}`}
+          sizes="100%"
         />
       </div>
       <ul className={styles.chipList}>
