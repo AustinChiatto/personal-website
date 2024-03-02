@@ -146,8 +146,7 @@ export const panelData = {
             image: '/images/code2image_project-thumbnail.webp',
             imageBase64:
               'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAAKCAIAAAA2KZn2AAAAAXNSR0IArs4c6QAAAERlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAEqADAAQAAAABAAAACgAAAADKOW4WAAABxklEQVQoFSVQu25TQRCdnd31ffiVGGInKEZIoUHIogIhBBRIfACi5hdCS5OKgpKOmpZ/gIYKRQniJSHoLJIAUcAvfOO9np1hLoy0K83umTPnHHP19hfr2CGjEVmGuJhSeRIWhyV9X9JJpCnFeYxF5EJiSXGxZNrsd52wjdE2cvN4p2ONsJRAJUkpihMBE4GFIe7u755ptx5u77BQXC7M9bvfnMONdXz2tP1nctxb61qdNrob/pcxKkMbBsDO6hYz9c+fc0meuRTSFWxldnRMiAhgXn6GJ698nkNWh6QJWVMeXeGtJnPUz4rNYe59HX1HN8D6Zl+Elf7Xwgz6dH9AtbTma/bFMMzFKlog6KnGTOZsG01HpYA3YCzqu/Ow0oC1NNQbKcOynRaIjQqu5plEopPUUgOpxc/fFbeOPg6vXbhztpd43BvJ0Sfw2SjJ4KeVe07FCcegPoXJUc1CAno/MF9HFy/fLMZKeqMfL/UQTN26CMagla4qAU1VWzUPLhgQiwH4w8aAuUBpmh/jKj1bRc1VSZyfHp5OJZSA/xyqyCgmMBzM7PbrAD5gSi7nNBHnK7dM5XwymwwPxm/3Zu/f2NUOjX4r6V+oi/AKr3gGcwAAAABJRU5ErkJggg==',
-            cardDesc:
-              'A tool to create customized images of code snippets with style settings, such as syntax highlighting, background gradients, and more.',
+            cardDesc: 'Built to learn the basics of React.',
             externalLinks: Code2ImageData.externalLinks,
             listCards: [
               {
@@ -181,15 +180,14 @@ export const panelData = {
           level: 3,
           intro: {
             title: 'Asteroid Run',
-            desc: 'A browser-based game I built to teach myself object-oriented programming with JavaScript.'
+            desc: 'Created to teach myself JavaScript object-oriented programming.'
           },
           panelComponent: 'ProjectDetails',
           panelComponentProps: {
             image: '/images/asteroid-run_project-thumbnail.webp',
             imageBase64:
               'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAAKCAIAAAA2KZn2AAAAAXNSR0IArs4c6QAAAERlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAEqADAAQAAAABAAAACgAAAADKOW4WAAABhElEQVQoFT1R247UMAy1HbtN06aXmZKd1QDahWUREuKBhxUv/P9nrITEByBEp9NLgksBP1iyc3yOj4MhBABAxKQBhBD3UjuAhoiB9qxFjoaZ6MvTEyd9TbCu6XK56KCiMynneRTJjOA0/aqc70P9/PzNcPb48FlMdqxvmABjiinFZd50tojLsi5Kxatcr5NE8/06juPgbLo/vHaS37UnVgUiiv9GABKhdlBZIsxKcl3WafypWyjsY3+qcnPX1fzXgzF/hPakUwiKIpPmRdU3DIBF+nTy3tk+NIybaUHSsR+7N0XENfmmHYbB5EiJYb3q1UTk4W1wtS1f9gycce5jVL6dFAmZWMbLpPuq5QjqXE8FmHF4/4p9Lt2BOa9zd4A1qat9xZiWeZ0US6j2/vOhMcbdn9kWWFi2vi/cUSKM3RnTIgiWuKhuy7LMOA7TnEBmmIX5zeM76TqyTn+QffmiqcOtrb+ePwSeTqW56Wzbt2Vos2OTtZ4qbwqbF645HoyrtpUQfwOUU4v6i3SO+gAAAABJRU5ErkJggg==',
-            cardDesc:
-              'A browser-based game I built to teach myself object-oriented programming with JavaScript.',
+            cardDesc: 'Created to teach myself JavaScript object-oriented programming.',
             externalLinks: AsteroidRunData.externalLinks,
             listCards: [
               {
@@ -222,7 +220,7 @@ export const panelData = {
           id: 'GridTool',
           level: 3,
           intro: {
-            title: 'CSS Grid Tool',
+            title: 'Grid Tool',
             desc: 'Grids made simple.'
           },
           panelComponent: 'ProjectDetails',
@@ -230,7 +228,7 @@ export const panelData = {
             image: '/images/grid-tool_project-thumbnail.webp',
             imageBase64:
               'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAAKCAIAAAA2KZn2AAAAAXNSR0IArs4c6QAAAERlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAEqADAAQAAAABAAAACgAAAADKOW4WAAABk0lEQVQoFT1QzW4TMRAej+3dZLspVapIbRWJwgFx5dZH4aXgcbhz6yEXJCQQET+CCFqilmSb2uv12NPZjcrIsuzRfD/zqW/LjWJgTt7l9Sr//MFXv7jZqi6AglxWanrM86dqfq6nMyxKrRQXlVHfv2xypBR5/uLA2FJGQWlmhqHkgUqtVqvFYnF6dnaYnk9mdlQbtfywXi+3vkkXr58RU6lNyoAISmgfwaonSoj47s3H81fTk5dH2Hz913y+0sFJtw0kKgKQErH9DYAAWZDSwqa5+fTbXe8wXv81OcTInThNKqUkACLKOYtazr3X/Vf+5KMNPt7eIlC630RuO2MlGpFEmeYeC4Icak+RpN3tPN1HnRKSa8cYqwpgGB0MiiMxJib1YE8J17AeP5mIdJdawnJszIH1QTsCY2wXQp+dCP9fSbbqD2vEHRXFYWGsRGasa4SUJqWuNNlipIEHegaNWuZRMnzMqSPvGIzE7WNdx+zuLt++1/W4PDkaHVdlXaBBiS/H3DW+/XMXbrbs4uxUIpZWfAATe/NUxwUmEQAAAABJRU5ErkJggg==',
-            cardDesc: 'A tool to I built during my program to help my friends understand CSS Grid.',
+            cardDesc: 'A CSS grid tool built to learn React.',
             externalLinks: GridToolData.externalLinks,
             listCards: [
               {

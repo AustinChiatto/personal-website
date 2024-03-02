@@ -11,13 +11,13 @@
   width: 100%;
   aspect-ratio: 16/9;
   position: relative;
-  border-radius: calc(var(--border-radius-sm) / 2);
+  border-radius: var(--border-radius-sm);
   overflow: hidden;
-  margin-block: 1rem 1rem;
+  margin-block: 1rem 0.5rem;
 }
 
 .projectImage {
-  transition: scale 150ms ease-in-out;
+  transition: scale var(--transition-timing) var(--transition-ease);
 }
 
 .projectImageWrapper:hover .projectImage {

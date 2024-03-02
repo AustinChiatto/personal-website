@@ -4,7 +4,6 @@ import PanelsContext from '@/context/PanelsContext';
 import { useContext, useEffect, useState } from 'react';
 import { PanelProps } from '@/data/panel-data';
 import InlineLink from '../../links/InlineLink/InlineLink';
-import Image from 'next/image';
 import LandingMobile from './LandingMobile';
 
 const LandingPanel = ({ panelContent }: { panelContent: PanelProps }) => {
@@ -70,46 +69,38 @@ const LandingPanel = ({ panelContent }: { panelContent: PanelProps }) => {
           Since then, I&apos;ve been working on refining my skills as a front-end developer,
           building small projects to teach myself new tech I find neat.
         </Typography>
-        {/* <Typography>
-          Since then, I&apos;ve been working on refining my skills as a front-end developer,
-          building small projects like {interplanetaryLink} to teach myself new tech I find neat.
-        </Typography> */}
       </div>
       {!isMobile && (
-        <ul className={styles.categoryList}>
-          {childPanelArray.map((e, i) => (
-            <li
-              className={styles.categoryListItem}
-              key={i}
-            >
-              <button
-                className={styles.categoryButton}
-                onClick={() =>
-                  createPanel({
-                    id: e.id,
-                    level: e.level,
-                    intro: e.intro,
-                    panelComponent: e.panelComponent,
-                    panelComponentProps: e.panelComponentProps,
-                    childPanels: e.childPanels
-                  })
-                }
+        <section className={styles.categorySection}>
+          <hr />
+          <ul className={styles.categoryList}>
+            {childPanelArray.map((e, i) => (
+              <li
+                className={styles.categoryListItem}
+                key={i}
               >
-                <div className={styles.categoryButtonIcon}>
-                  <Image
-                    src={categoryListArray[i].icon}
-                    alt={categoryListArray[i].alt}
-                    fill
-                  />
-                </div>
-                <div className={styles.categoryButtonLabels}>
-                  <Typography level={3}>{categoryListArray[i].title}</Typography>
-                  <Typography color={'secondary'}>{categoryListArray[i].caption}</Typography>
-                </div>
-              </button>
-            </li>
-          ))}
-        </ul>
+                <button
+                  className={styles.categoryButton}
+                  onClick={() =>
+                    createPanel({
+                      id: e.id,
+                      level: e.level,
+                      intro: e.intro,
+                      panelComponent: e.panelComponent,
+                      panelComponentProps: e.panelComponentProps,
+                      childPanels: e.childPanels
+                    })
+                  }
+                >
+                  <div className={styles.categoryButtonLabels}>
+                    <Typography level={3}>{categoryListArray[i].title}</Typography>
+                    <Typography color={'secondary'}>{categoryListArray[i].caption}</Typography>
+                  </div>
+                </button>
+              </li>
+            ))}
+          </ul>
+        </section>
       )}
       {isMobile && <LandingMobile />}
       <div className={styles.panelFooter}>

@@ -1,0 +1,45 @@
+/* markdown styling */
+.mdCode {
+  background: var(--color-element-background);
+  color: var(--color-text-primary);
+  padding: 0.125rem;
+}
+
+.mdCodeBlock {
+  font-size: 0.875rem;
+  border-radius: 0.5rem !important;
+  text-shadow: none !important;
+  line-height: 1.2 !important;
+  background-color: var(--color-grey-64) !important;
+  tab-size: 4 !important;
+}
+
+.mdHeadingBorder {
+  padding-bottom: 0.5rem;
+  margin-block: 2.5rem 1rem;
+  border-bottom: 1px solid var(--color-element-background);
+}
+
+.mdH3 {
+  margin-top: 2rem;
+}
+
+.mdLinkedHeading {
+  color: var(--color-text-primary);
+  cursor: default;
+}
+
+.mdList {
+  list-style-type: disc;
+  list-style-position: inside;
+}
+
+.mdList > li > a:hover {
+  text-decoration: underline;
+  text-decoration-style: wavy;
+  text-decoration-skip-ink: none;
+}
+
+.mdList > * {
+  margin-top: 1rem;
+}

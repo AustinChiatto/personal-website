@@ -43,7 +43,7 @@ const article = [
   {
     markdownSection: [
       `
-## Learning OOP with a JS game
+## Building a game to learn JavaScript OOP
 
 I'm going to build a little browser game that will be a bit like **Space Invaders & Asteroids** had a baby.
 
