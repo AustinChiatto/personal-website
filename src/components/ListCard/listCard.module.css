@@ -54,19 +54,3 @@
   margin-right: 0.5rem;
   scale: 1.15;
 }
-
-.button {
-  display: flex;
-  padding: 0.625rem 0rem;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  border-radius: var(--border-radius-sm);
-  background: var(--color-element-background);
-  cursor: pointer;
-  transition: background var(--transition-timing) var(--transition-ease);
-}
-
-.button:hover {
-  background: var(--color-element-hover);
-}

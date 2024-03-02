@@ -6,7 +6,7 @@ const externalLinks = [
   },
   {
     label: 'View Repo',
-    href: 'https://asteroidrun.crumb.so/',
+    href: 'https://github.com/AustinChiatto/asteroid-run-2.0.0',
     favicon: '/icons/github-original.svg'
   }
 ];

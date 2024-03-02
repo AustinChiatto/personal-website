@@ -4,6 +4,7 @@ import styles from './listCard.module.css';
 import PanelsContext from '@/context/PanelsContext';
 import Image from 'next/image';
 import { PanelProps } from '@/data/panel-data';
+import Button from '../Button/Button';
 
 type CardContentProps = {
   label: string;
@@ -70,9 +71,10 @@ const ListCard = ({ cardList, panelContent, index }: ContentProps) => {
         </ul>
       </div>
       {cardList.buttonLabel && childPanel && (
-        <button
-          className={styles.button}
-          onClick={() =>
+        <Button
+          label={cardList.buttonLabel}
+          variant="listCard"
+          onClickEvent={() =>
             createPanel({
               id: childPanel.id,
               level: childPanel.level,
@@ -81,9 +83,7 @@ const ListCard = ({ cardList, panelContent, index }: ContentProps) => {
               panelComponentProps: childPanel.panelComponentProps
             })
           }
-        >
-          <Typography level={6}>{cardList.buttonLabel}</Typography>
-        </button>
+        />
       )}
     </div>
   );

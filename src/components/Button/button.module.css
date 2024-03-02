@@ -1,0 +1,30 @@
+.button {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0.625rem;
+  border-radius: var(--border-radius-sm);
+  background: var(--color-element-background);
+  cursor: pointer;
+  transition: scale 100ms var(--transition-bounce);
+}
+
+.button:hover {
+  background: var(--color-element-hover);
+}
+
+.button.pressed {
+  scale: 0.96;
+  transition: all 100ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* variants */
+.listCard {
+  padding: 0.625rem 0;
+  width: 100%;
+}
+
+.listCard.pressed {
+  scale: 1;
+}

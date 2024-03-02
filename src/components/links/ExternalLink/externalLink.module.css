@@ -4,7 +4,7 @@
   padding: 0.25rem 0.5rem;
   border-radius: var(--border-radius-sm);
   background: var(--color-element-background);
-  transition: background var(--transition-timing) var(--transition-ease);
+  transition: background, scale 100ms var(--transition-bounce);
 }
 
 .externalLink > * + * {
@@ -17,6 +17,10 @@
 
 .externalLink:hover {
   background: var(--color-element-hover);
+}
+
+.externalLinkPressed {
+  scale: 0.96;
 }
 
 .linkFavicon {
