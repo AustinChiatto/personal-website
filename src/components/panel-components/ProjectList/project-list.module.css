@@ -1,0 +1,15 @@
+.featuredProjects,
+.allProjects {
+  display: flex;
+  flex-direction: column;
+}
+
+.featuredProjects {
+  gap: 2.5rem;
+  margin-bottom: 4rem;
+}
+
+.allProjects {
+  gap: 1rem;
+  margin-top: 1rem;
+}

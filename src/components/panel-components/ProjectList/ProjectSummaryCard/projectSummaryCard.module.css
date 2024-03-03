@@ -1,21 +1,20 @@
 .featuredCard,
 .standardCard {
   cursor: pointer;
-  width: 100%;
+}
+
+.projectImageWrapper {
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--border-radius-sm);
 }
 
 /* Featured Card */
-.featuredCard + .featuredCard {
-  margin-top: 2.5rem;
-}
 
 .featuredCard .projectImageWrapper {
   width: 100%;
   aspect-ratio: 4/3;
-  position: relative;
-  border-radius: var(--border-radius-sm);
-  overflow: hidden;
-  margin-block: 1rem 0.5rem;
+  margin-block: 0.5rem;
 }
 
 .projectImage {
@@ -35,17 +34,19 @@
 .standardCard {
   background: #1e1e1e;
   padding: 1rem;
-}
-
-.standardCard + .standardCard {
-  margin-top: 1rem;
+  display: flex;
+  gap: 1rem;
+  border-radius: var(--border-radius-md);
 }
 
 .standardCard .projectImageWrapper {
   width: 7rem;
   aspect-ratio: 1/1;
-  position: relative;
-  border-radius: var(--border-radius-sm);
-  overflow: hidden;
-  margin-block: 1rem 0.5rem;
+  order: -1;
+}
+
+.standardCardContent {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }

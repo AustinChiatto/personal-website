@@ -35,6 +35,57 @@ const ProjectSummaryCard = ({
 
   const techStackContents: TechStackProps[] = techStackListCard?.cardContents ?? [];
 
+  const CardImage = (
+    <div className={styles.projectImageWrapper}>
+      <Image
+        className={styles.projectImage}
+        src={image}
+        placeholder="blur"
+        blurDataURL={imageBase64}
+        alt="testing"
+        fill
+        sizes="100%"
+        style={{ objectFit: 'cover' }}
+      />
+    </div>
+  );
+
+  const CardDesc = (
+    <div>
+      <Typography level={3}>{title}</Typography>
+      <Typography color={'secondary'}>{desc}</Typography>
+    </div>
+  );
+
+  const CardTechStack = (
+    <ul className={styles.chipList}>
+      {techStackContents &&
+        techStackContents.slice(0, 4).map((e, i) => (
+          <li key={i}>
+            <Chip chipLabel={e.label} />
+          </li>
+        ))}
+    </ul>
+  );
+
+  const FeaturedCard = (
+    <>
+      {CardDesc}
+      {CardImage}
+      {CardTechStack}
+    </>
+  );
+
+  const StandardCard = (
+    <>
+      {CardImage}
+      <div className={styles.standardCardContent}>
+        {CardDesc}
+        {CardTechStack}
+      </div>
+    </>
+  );
+
   return (
     <button
       className={featured ? styles.featuredCard : styles.standardCard}
@@ -49,30 +100,7 @@ const ProjectSummaryCard = ({
         })
       }
     >
-      <div>
-        <Typography level={3}>{title}</Typography>
-        <Typography color={'secondary'}>{desc}</Typography>
-      </div>
-      <div className={styles.projectImageWrapper}>
-        <Image
-          className={styles.projectImage}
-          src={image}
-          placeholder="blur"
-          blurDataURL={imageBase64}
-          alt="testing"
-          fill
-          sizes="100%"
-          style={{ objectFit: 'cover' }}
-        />
-      </div>
-      <ul className={styles.chipList}>
-        {techStackContents &&
-          techStackContents.slice(0, 4).map((e, i) => (
-            <li key={i}>
-              <Chip chipLabel={e.label} />
-            </li>
-          ))}
-      </ul>
+      {featured ? FeaturedCard : StandardCard}
     </button>
   );
 };
