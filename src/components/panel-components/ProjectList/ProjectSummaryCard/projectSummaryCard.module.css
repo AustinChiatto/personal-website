@@ -21,7 +21,7 @@
   transition: scale var(--transition-timing) var(--transition-ease);
 }
 
-.projectImageWrapper:hover .projectImage {
+.featuredCard .projectImageWrapper:hover .projectImage {
   scale: 1.025;
 }
 
@@ -31,12 +31,18 @@
 }
 
 /* Standard Card */
+
 .standardCard {
   background: #1e1e1e;
   padding: 1rem;
   display: flex;
   gap: 1rem;
   border-radius: var(--border-radius-md);
+  transition: transform var(--transition-timing-long) var(--transition-bounce);
+}
+
+.standardCard:hover {
+  transform: translateY(-0.325rem);
 }
 
 .standardCard .projectImageWrapper {

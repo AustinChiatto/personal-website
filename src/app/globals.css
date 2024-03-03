@@ -55,7 +55,9 @@
   --color-grey-100: hsl(var(--grey-hue), var(--grey-saturation), 0%);
 
   /* transitions */
+  --transition-timing-short: 100ms;
   --transition-timing: 150ms;
+  --transition-timing-long: 300ms;
   --transition-ease: ease-in-out;
   --transition-bounce: cubic-bezier(0.175, 0.885, 0.32, 1.275);
 
