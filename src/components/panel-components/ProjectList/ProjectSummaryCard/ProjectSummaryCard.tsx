@@ -11,6 +11,7 @@ import { TechStackProps } from '@/data/project-data/types';
 type ProjectSummaryCardProps = {
   title: string;
   index: number;
+  featured?: boolean;
   desc: string;
   image: string;
   imageBase64: string;
@@ -19,6 +20,7 @@ type ProjectSummaryCardProps = {
 
 const ProjectSummaryCard = ({
   title,
+  featured,
   desc,
   image,
   imageBase64,
@@ -35,7 +37,7 @@ const ProjectSummaryCard = ({
 
   return (
     <button
-      className={styles.ProjectSummaryCard}
+      className={featured ? styles.featuredCard : styles.standardCard}
       onClick={() =>
         createPanel({
           id: cardData.id,
@@ -60,6 +62,7 @@ const ProjectSummaryCard = ({
           alt="testing"
           fill
           sizes="100%"
+          style={{ objectFit: 'cover' }}
         />
       </div>
       <ul className={styles.chipList}>

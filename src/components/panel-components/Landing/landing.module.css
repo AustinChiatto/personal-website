@@ -1,29 +1,5 @@
-.categorySection {
-  margin-top: 1rem;
-}
-
-.categoryButton {
-  display: flex;
-  width: calc(100% - 2rem);
-  gap: 1rem;
-  padding: 1rem 1.25rem 1rem 0;
-
-  border-radius: var(--border-radius-md);
-  border: 1px solid transparent;
-  cursor: pointer;
-  transition: padding 250ms var(--transition-bounce);
-}
-
-.categoryButton:hover {
-  background: #1e1e1e;
-  padding: 1rem 1.25rem;
-}
-
-.categoryButtonIcon {
-  align-self: center;
-  width: 1.5rem;
-  aspect-ratio: 1/1;
-  position: relative;
+.personalIntro {
+  padding-block: 1rem;
 }
 
 .panelFooter {
@@ -33,7 +9,7 @@
   align-items: flex-end;
 }
 
-/* --- */
+/* mobile single pager */
 
 .externalLinkList {
   display: flex;

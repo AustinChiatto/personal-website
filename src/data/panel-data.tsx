@@ -266,7 +266,23 @@ export const panelData = {
         title: 'Hello',
         desc: "It's nice to meet you."
       },
-      panelComponent: 'AboutContent'
+      panelComponent: 'AboutContent',
+      childPanels: [
+        {
+          panelComponentProps: {
+            image: '/images/grid-tool_project-thumbnail.webp',
+            imageBase64:
+              'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAAKCAIAAAA2KZn2AAAAAXNSR0IArs4c6QAAAERlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAEqADAAQAAAABAAAACgAAAADKOW4WAAABhElEQVQoFT1R247UMAy1HbtN06aXmZKd1QDahWUREuKBhxUv/P9nrITEByBEp9NLgksBP1iyc3yOj4MhBABAxKQBhBD3UjuAhoiB9qxFjoaZ6MvTEyd9TbCu6XK56KCiMynneRTJjOA0/aqc70P9/PzNcPb48FlMdqxvmABjiinFZd50tojLsi5Kxatcr5NE8/06juPgbLo/vHaS37UnVgUiiv9GABKhdlBZIsxKcl3WafypWyjsY3+qcnPX1fzXgzF/hPakUwiKIpPmRdU3DIBF+nTy3tk+NIybaUHSsR+7N0XENfmmHYbB5EiJYb3q1UTk4W1wtS1f9gycce5jVL6dFAmZWMbLpPuq5QjqXE8FmHF4/4p9Lt2BOa9zd4A1qat9xZiWeZ0US6j2/vOhMcbdn9kWWFi2vi/cUSKM3RnTIgiWuKhuy7LMOA7TnEBmmIX5zeM76TqyTn+QffmiqcOtrb+ePwSeTqW56Wzbt2Vos2OTtZ4qbwqbF645HoyrtpUQfwOUU4v6i3SO+gAAAABJRU5ErkJggg=='
+          }
+        },
+        {
+          panelComponentProps: {
+            image: '/images/about-image.webp',
+            imageBase64:
+              'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAAKCAIAAAA2KZn2AAAAAXNSR0IArs4c6QAAAERlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAEqADAAQAAAABAAAACgAAAADKOW4WAAABhElEQVQoFT1R247UMAy1HbtN06aXmZKd1QDahWUREuKBhxUv/P9nrITEByBEp9NLgksBP1iyc3yOj4MhBABAxKQBhBD3UjuAhoiB9qxFjoaZ6MvTEyd9TbCu6XK56KCiMynneRTJjOA0/aqc70P9/PzNcPb48FlMdqxvmABjiinFZd50tojLsi5Kxatcr5NE8/06juPgbLo/vHaS37UnVgUiiv9GABKhdlBZIsxKcl3WafypWyjsY3+qcnPX1fzXgzF/hPakUwiKIpPmRdU3DIBF+nTy3tk+NIybaUHSsR+7N0XENfmmHYbB5EiJYb3q1UTk4W1wtS1f9gycce5jVL6dFAmZWMbLpPuq5QjqXE8FmHF4/4p9Lt2BOa9zd4A1qat9xZiWeZ0US6j2/vOhMcbdn9kWWFi2vi/cUSKM3RnTIgiWuKhuy7LMOA7TnEBmmIX5zeM76TqyTn+QffmiqcOtrb+ePwSeTqW56Wzbt2Vos2OTtZ4qbwqbF645HoyrtpUQfwOUU4v6i3SO+gAAAABJRU5ErkJggg=='
+          }
+        }
+      ]
     }
   ]
 };

@@ -1,0 +1,58 @@
+.categoryListItem {
+  margin-top: 0.75rem;
+  display: grid;
+  grid-template-rows: 1fr;
+  place-content: stretch;
+  position: relative;
+}
+
+.categoryButtonContents,
+.categoryButton {
+  grid-column: 1;
+  grid-row: 1;
+}
+
+.categoryButtonContents {
+  display: block;
+  position: relative;
+  z-index: 1;
+  border-radius: var(--border-radius-md);
+  overflow: hidden;
+
+  transform: perspective(50rem) translateZ(-1rem) scaleX(0.98) scaleY(0.96);
+  transition: all 300ms var(--transition-bounce);
+}
+
+.contentVariation1 {
+  z-index: 2;
+  transform: perspective(50rem) translateZ(-1rem) scaleX(0.98) scaleY(0.96);
+}
+
+.categoryButton {
+  display: flex;
+  gap: 1rem;
+  padding: 1rem 1.25rem;
+  border-radius: var(--border-radius-md);
+  border: 1px solid transparent;
+  cursor: pointer;
+
+  background: #1e1e1e;
+  transition: all 300ms var(--transition-bounce);
+  transform-origin: 50% 125%;
+  z-index: 3;
+}
+
+.categoryListItem:hover .categoryButton {
+  background: #1e1e1e;
+  padding: 1rem 1.25rem;
+  transform: perspective(50rem) rotateX(-25deg) translateZ(-1rem) scaleX(0.99) scaleY(0.8);
+}
+
+.categoryListItem:hover .contentVariation0 {
+  transform: perspective(50rem) rotateX(-25deg) translateZ(-1rem) scaleX(0.94) scaleY(0.8);
+}
+
+.categoryListItem:hover .contentVariation1 {
+  transform: perspective(50rem) rotateX(-25deg) translateZ(-1rem) scaleX(0.98) scaleY(0.9)
+    translateY(0.75rem);
+}

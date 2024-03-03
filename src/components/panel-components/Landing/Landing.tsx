@@ -5,12 +5,11 @@ import { useContext, useEffect, useState } from 'react';
 import { PanelProps } from '@/data/panel-data';
 import InlineLink from '../../links/InlineLink/InlineLink';
 import LandingMobile from './LandingMobile';
+import LandingNavItem from './LandingNavItem/LandingNavItem';
 
 const LandingPanel = ({ panelContent }: { panelContent: PanelProps }) => {
   const { createPanel } = useContext(PanelsContext);
   const childPanelArray = panelContent?.childPanels ?? [];
-  const categoryListArray = panelContent?.panelComponentProps?.categoryButtonList ?? [];
-
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
@@ -46,18 +45,10 @@ const LandingPanel = ({ panelContent }: { panelContent: PanelProps }) => {
       Market Maestro
     </InlineLink>
   );
-  const interplanetaryLink = (
-    <InlineLink
-      href="#"
-      highlight
-    >
-      Interplanetary
-    </InlineLink>
-  );
 
   return (
     <>
-      <div className={styles.personalIntro}>
+      <section className={styles.personalIntro}>
         <Typography>
           Junior front-end developer living on the (rainy) west coast of Canada.
         </Typography>
@@ -69,41 +60,24 @@ const LandingPanel = ({ panelContent }: { panelContent: PanelProps }) => {
           Since then, I&apos;ve been working on refining my skills as a front-end developer,
           building small projects to teach myself new tech I find neat.
         </Typography>
-      </div>
+      </section>
       {!isMobile && (
-        <section className={styles.categorySection}>
+        <section>
           <hr />
           <ul className={styles.categoryList}>
             {childPanelArray.map((e, i) => (
-              <li
-                className={styles.categoryListItem}
+              <LandingNavItem
+                panelContent={panelContent}
                 key={i}
-              >
-                <button
-                  className={styles.categoryButton}
-                  onClick={() =>
-                    createPanel({
-                      id: e.id,
-                      level: e.level,
-                      intro: e.intro,
-                      panelComponent: e.panelComponent,
-                      panelComponentProps: e.panelComponentProps,
-                      childPanels: e.childPanels
-                    })
-                  }
-                >
-                  <div className={styles.categoryButtonLabels}>
-                    <Typography level={3}>{categoryListArray[i].title}</Typography>
-                    <Typography color={'secondary'}>{categoryListArray[i].caption}</Typography>
-                  </div>
-                </button>
-              </li>
+                index={i}
+                item={e}
+              />
             ))}
           </ul>
         </section>
       )}
       {isMobile && <LandingMobile />}
-      <div className={styles.panelFooter}>
+      <section className={styles.panelFooter}>
         <InlineLink href="mailto:chiattoaustin@gmail.com">hey@austinchiatto.com</InlineLink>
         <Typography
           level={6}
@@ -111,7 +85,7 @@ const LandingPanel = ({ panelContent }: { panelContent: PanelProps }) => {
         >
           2024
         </Typography>
-      </div>
+      </section>
     </>
   );
 };

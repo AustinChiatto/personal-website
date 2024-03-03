@@ -1,15 +1,17 @@
-.ProjectSummaryCard {
+.featuredCard,
+.standardCard {
   cursor: pointer;
   width: 100%;
 }
 
-.ProjectSummaryCard + .ProjectSummaryCard {
-  margin-top: 4rem;
+/* Featured Card */
+.featuredCard + .featuredCard {
+  margin-top: 2.5rem;
 }
 
-.projectImageWrapper {
+.featuredCard .projectImageWrapper {
   width: 100%;
-  aspect-ratio: 16/9;
+  aspect-ratio: 4/3;
   position: relative;
   border-radius: var(--border-radius-sm);
   overflow: hidden;
@@ -21,10 +23,29 @@
 }
 
 .projectImageWrapper:hover .projectImage {
-  scale: 1.05;
+  scale: 1.025;
 }
 
 .chipList {
   display: flex;
   gap: 0.5rem;
+}
+
+/* Standard Card */
+.standardCard {
+  background: #1e1e1e;
+  padding: 1rem;
+}
+
+.standardCard + .standardCard {
+  margin-top: 1rem;
+}
+
+.standardCard .projectImageWrapper {
+  width: 7rem;
+  aspect-ratio: 1/1;
+  position: relative;
+  border-radius: var(--border-radius-sm);
+  overflow: hidden;
+  margin-block: 1rem 0.5rem;
 }
