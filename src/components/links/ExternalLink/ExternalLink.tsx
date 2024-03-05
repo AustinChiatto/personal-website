@@ -3,7 +3,6 @@ import styles from './externalLink.module.css';
 import Link from 'next/link';
 import { ExternalLinkProps } from '@/data/project-data/types';
 import { useRef, useState } from 'react';
-import Typography from '@/components/Typography/Typography';
 import Tooltip from '@/components/Tooltip/Tooltip';
 
 const ExternalLink = ({ href, favicon, label, tooltip }: ExternalLinkProps) => {

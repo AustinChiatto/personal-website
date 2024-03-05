@@ -5,7 +5,6 @@ import { MarketMaestroData } from './project-data/market-maestro-data';
 import { Code2ImageData } from './project-data/code2image-data';
 import { AsteroidRunData } from './project-data/asteroid-run-data';
 import { GridToolData } from './project-data/grid-builder-data';
-import { ShallotData } from './project-data/shallot-data';
 import { ArticleProps, ExternalLinkProps, TechStackProps } from './project-data/types';
 
 type IntroProps = {
@@ -18,7 +17,7 @@ type PanelComponentProps = {
   imageBase64?: string;
   cardDesc?: string;
   externalLinks?: ExternalLinkProps[];
-  videoShowcase: string;
+  videoShowcase?: string;
   listCards?: ListCardProps[];
   article?: ArticleProps[];
   techStack?: TechStackProps[];
@@ -46,20 +45,14 @@ export const panelData = {
   panelComponentProps: {
     categoryButtonList: [
       {
-        icon: '/icons/work-icon.svg',
-        alt: 'Squiggly doodle of a star',
         title: 'Work',
         caption: "Websites I've built for others or as part of my career."
       },
       {
-        icon: '/icons/projects-icon.svg',
-        alt: 'Squiggly doodle of a diamond',
         title: 'Projects',
         caption: 'Self-directed projects that taught me something new.'
       },
       {
-        icon: '/icons/about-icon.svg',
-        alt: 'Squiggly asterisk doodle',
         title: 'About Me',
         caption: 'Who I am and what I love to do.'
       }

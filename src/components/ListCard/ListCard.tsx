@@ -4,7 +4,6 @@ import styles from './listCard.module.css';
 import PanelsContext from '@/context/PanelsContext';
 import Image from 'next/image';
 import { PanelProps } from '@/data/panel-data';
-import Button from '../Button/Button';
 import Chip from '../Chip/Chip';
 
 type CardContentProps = {

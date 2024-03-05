@@ -1,30 +1,10 @@
 import Typography from '@/components/Typography/Typography';
-import InlineLink from '@/components/links/InlineLink/InlineLink';
 import styles from './aboutMe.module.css';
-import Chip from '@/components/Chip/Chip';
 import ExternalLink from '@/components/links/ExternalLink/ExternalLink';
 import Link from 'next/link';
 import Image from 'next/image';
 
 const AboutContent = () => {
-  const linkedIn = (
-    <InlineLink
-      href="https://www.linkedin.com/in/austin-chiatto/"
-      highlight
-    >
-      LinkedIn
-    </InlineLink>
-  );
-
-  const email = (
-    <InlineLink
-      href="mailto:chiattoaustin@gmail.com"
-      highlight
-    >
-      Email
-    </InlineLink>
-  );
-
   const externalLinkArray = [
     {
       label: 'Email',
