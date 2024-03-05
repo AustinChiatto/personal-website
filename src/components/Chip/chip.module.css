@@ -1,15 +1,17 @@
 .chip {
   display: inline-block;
+  border: var(--chip-border);
   border-radius: var(--border-radius-sm);
-  background: var(--color-element-background);
+  background: var(--color-chip-background);
   padding: 0.25rem 0.75rem;
   max-width: fit-content;
 }
 
-.chipActionable {
-  background: none;
-  padding: 0.125rem 0.5rem;
+.chip.chipActionable {
   cursor: pointer;
-  border: 1px solid var(--color-grey-50);
-  border-radius: var(--border-radius-sm);
+  transition: transform var(--transition-timing) var(--transition-bounce);
+}
+
+.chip.chipActionable:hover {
+  transform: rotate(3.25deg);
 }

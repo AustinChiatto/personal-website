@@ -81,7 +81,17 @@ const ProjectSummaryCard = ({
       {CardImage}
       <div className={styles.standardCardContent}>
         {CardDesc}
-        {CardTechStack}
+        <ul className={styles.chipList}>
+          {techStackContents &&
+            techStackContents.slice(0, 4).map((e, i) => (
+              <li key={i}>
+                <Chip
+                  chipLabel={e.label}
+                  isActionable
+                />
+              </li>
+            ))}
+        </ul>
       </div>
     </>
   );

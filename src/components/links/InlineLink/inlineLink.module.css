@@ -1,3 +1,8 @@
+.inlineLink {
+  position: relative;
+  display: inline-block;
+}
+
 .default {
   color: var(--color-text-secondary);
   transition: color var(--transition-timing) var(--transition-ease);

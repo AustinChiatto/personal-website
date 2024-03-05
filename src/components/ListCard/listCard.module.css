@@ -1,56 +1,51 @@
 .listCard {
-  border-radius: var(--border-radius-md);
-  border: 1px solid var(--color-grey-50);
-  padding: 1rem;
-  margin-bottom: 2rem;
+  width: 100%;
   display: flex;
-  flex-direction: column;
   justify-content: space-between;
-  gap: 2.25rem;
+  align-items: center;
+  padding: 1rem;
+  padding-right: 0;
+  overflow: hidden;
+  margin-bottom: 2rem;
+  border-radius: var(--border-radius-md);
+  background: var(--color-element-background);
+  border: var(--element-border);
+  cursor: pointer;
+  transition: transform var(--transition-timing-long) var(--transition-bounce);
 }
 
-.cardTitle {
-  margin-bottom: 1.5rem;
+.listCard:hover {
+  transform: translateY(-0.325rem);
 }
 
-.hr {
-  border: 1px solid var(--color-element-background, var(--color-grey-50));
-}
-
-.cardList,
-.cardGrid {
+.cardStaticElements {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  flex-grow: 1;
+  justify-content: space-between;
+  align-self: stretch;
 }
 
-.cardGrid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-}
-
-.listItem,
-.gridItem {
+.cardDynamicElements {
   display: flex;
   align-items: center;
   gap: 0.75rem;
+  padding-block: 0.5rem;
 }
 
-.gridItem {
-  grid-column: auto / span 1;
-  padding: 1.5rem;
-  background: var(--color-element-background);
-  border-radius: var(--border-radius-sm);
-}
-
-.listCardIcon,
-.teamMemberIcon {
-  aspect-ratio: 1/1;
-  width: 2rem;
+.skillIcon {
   position: relative;
+  right: -1.8125rem;
+  padding: 1rem;
+  width: 72;
+  height: 72;
+  border-radius: var(--border-radius-md);
+
+  background: var(--color-chip-background);
+  border: var(--chip-border);
+  transition: transform var(--transition-timing-long) var(--transition-bounce);
 }
 
-.teamMemberIcon {
-  margin-right: 0.5rem;
-  scale: 1.15;
+.skillIcon:hover {
+  transform: rotate(-3.25deg) scale(1.05);
 }

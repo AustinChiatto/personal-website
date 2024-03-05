@@ -5,6 +5,7 @@ import PanelsContext from '@/context/PanelsContext';
 import Image from 'next/image';
 import { PanelProps } from '@/data/panel-data';
 import Button from '../Button/Button';
+import Chip from '../Chip/Chip';
 
 type CardContentProps = {
   label: string;
@@ -38,54 +39,41 @@ const ListCard = ({ cardList, panelContent, index }: ContentProps) => {
     panelContent.childPanels.find((ch: PanelProps) => ch.id === cardList.buttonChildIdRef);
 
   return (
-    <div className={styles.listCard}>
-      <div>
-        <div className={styles.cardTitle}>
-          <Typography level={3}>{cardList.cardTitle}</Typography>
-        </div>
-        <ul className={cardTypeClass}>
-          {cardContents &&
-            cardContents.slice(0, 3).map((e, i) => (
-              <li
-                key={i}
-                className={cardItemClass}
-              >
-                <div className={teamIcon}>
-                  <Image
-                    src={e.icon}
-                    fill
-                    alt="0"
-                  />
-                </div>
-                <div>
-                  <Typography level={5}>{e.label}</Typography>
-                  <Typography
-                    level={6}
-                    color={'secondary'}
-                  >
-                    {e.desc}
-                  </Typography>
-                </div>
-              </li>
-            ))}
-        </ul>
+    <button
+      className={styles.listCard}
+      onClick={() =>
+        cardList.buttonLabel &&
+        childPanel &&
+        createPanel({
+          id: childPanel.id,
+          level: childPanel.level,
+          intro: childPanel.intro,
+          panelComponent: childPanel.panelComponent,
+          panelComponentProps: childPanel.panelComponentProps
+        })
+      }
+    >
+      <div className={styles.cardStaticElements}>
+        <Typography level={3}>{cardList.cardTitle}</Typography>
+        <Chip chipLabel="View All" />
       </div>
-      {cardList.buttonLabel && childPanel && (
-        <Button
-          label={cardList.buttonLabel}
-          variant="listCard"
-          onClickEvent={() =>
-            createPanel({
-              id: childPanel.id,
-              level: childPanel.level,
-              intro: childPanel.intro,
-              panelComponent: childPanel.panelComponent,
-              panelComponentProps: childPanel.panelComponentProps
-            })
-          }
-        />
-      )}
-    </div>
+      <ul className={styles.cardDynamicElements}>
+        {cardContents &&
+          cardContents.slice(0, 4).map((e, i) => (
+            <li
+              key={i}
+              className={styles.skillIcon}
+            >
+              <Image
+                src={e.icon}
+                width={42}
+                height={42}
+                alt="0"
+              />
+            </li>
+          ))}
+      </ul>
+    </button>
   );
 };
 

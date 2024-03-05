@@ -33,17 +33,17 @@
   gap: 1rem;
   padding: 1rem 1.25rem;
   border-radius: var(--border-radius-md);
-  border: 1px solid transparent;
   cursor: pointer;
 
-  background: #1e1e1e;
+  background: var(--color-element-background);
+  border: var(--element-border);
   transition: all 300ms var(--transition-bounce);
   transform-origin: 50% 125%;
   z-index: 3;
 }
 
 .categoryListItem:hover .categoryButton {
-  background: #1e1e1e;
+  background: var(--color-element-background);
   padding: 1rem 1.25rem;
   transform: perspective(50rem) rotateX(-25deg) translateZ(-1rem) scaleX(0.99) scaleY(0.8);
 }

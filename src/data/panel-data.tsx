@@ -9,7 +9,7 @@ import { ShallotData } from './project-data/shallot-data';
 import { ArticleProps, ExternalLinkProps, TechStackProps } from './project-data/types';
 
 type IntroProps = {
-  title: string;
+  title?: string;
   desc?: string;
 };
 
@@ -91,11 +91,6 @@ export const panelData = {
               'Responsive Next.js site that I built as part of my internship with Dovetail Digital.',
             externalLinks: MarketMaestroData.externalLinks,
             listCards: [
-              {
-                cardTitle: 'Team Members',
-                cardType: 'grid',
-                cardContents: MarketMaestroData.teamMembers
-              },
               {
                 cardTitle: 'Tech Stack',
                 cardType: 'list',

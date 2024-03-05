@@ -15,6 +15,10 @@
   --border-radius-md: 0.75rem;
   --border-radius-lg: 1rem;
 
+  /* border */
+  --element-border: 1px solid #242424;
+  --chip-border: 1px solid #2a2a2a;
+
   /* breakpoints */
   --breakpoint-mobile-sm: 320px;
   --breakpoint-mobile-md: 375px;
@@ -29,7 +33,9 @@
   --color-text-secondary: #8d8d92;
   --color-text-tertiary: #47474a;
   --color-link-blue: #2997ff;
-  --color-element-background: var(--color-grey-60);
+  --color-element-background: #1e1e1e;
+  --color-chip-background: #262626;
+  --color-external-link: var(--color-chip-background);
   --color-element-hover: var(--color-grey-50);
   --color-element-pressed: var(--color-grey-60);
 
@@ -45,8 +51,8 @@
   --color-grey-50: hsl(var(--grey-hue), var(--grey-saturation), 20%);
   --color-grey-60: hsl(var(--grey-hue), var(--grey-saturation), 15%);
   --color-grey-64: hsl(var(--grey-hue), var(--grey-saturation), 13.5%);
-  --color-grey-65: hsl(var(--grey-hue), var(--grey-saturation), 10.5%);
-  --color-grey-70: hsl(var(--grey-hue), var(--grey-saturation), 10%);
+  --color-grey-65: hsl(var(--grey-hue), var(--grey-saturation), 10%);
+  --color-grey-70: hsl(var(--grey-hue), var(--grey-saturation), 9.5%);
   --color-grey-75: hsl(var(--grey-hue), var(--grey-saturation), 9%);
   --color-grey-80: hsl(var(--grey-hue), var(--grey-saturation), 8%);
   --color-grey-85: hsl(var(--grey-hue), var(--grey-saturation), 7%);
@@ -156,6 +162,7 @@ a {
 
 button {
   all: unset;
+  box-sizing: border-box;
 }
 
 img {

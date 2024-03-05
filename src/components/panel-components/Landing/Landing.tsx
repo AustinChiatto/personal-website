@@ -29,7 +29,7 @@ const LandingPanel = ({ panelContent }: { panelContent: PanelProps }) => {
     <InlineLink
       href="https://www.dovetaildigital.ca/"
       target="_blank"
-      title="dovetaildigital.ca"
+      tooltip="dovetaildigital.ca"
       highlight
     >
       Dovetail Digital
@@ -39,7 +39,7 @@ const LandingPanel = ({ panelContent }: { panelContent: PanelProps }) => {
     <InlineLink
       href="https://www.marketmaestro.ca/"
       target="_blank"
-      title="marketmaestro.ca"
+      tooltip="marketmaestro.ca"
       highlight
     >
       Market Maestro
@@ -83,7 +83,7 @@ const LandingPanel = ({ panelContent }: { panelContent: PanelProps }) => {
           level={6}
           color={'tertiary'}
         >
-          2024
+          1.0.1
         </Typography>
       </section>
     </>
