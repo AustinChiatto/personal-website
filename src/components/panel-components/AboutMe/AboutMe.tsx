@@ -28,21 +28,25 @@ const AboutContent = () => {
   const externalLinkArray = [
     {
       label: 'Email',
+      tooltip: 'Hey there 👋',
       href: 'mailto:chiattoaustin@gmail.com',
       favicon: '/icons/email.svg'
     },
     {
       label: 'LinkedIn',
+      tooltip: 'Work history',
       href: 'https://www.linkedin.com/in/austin-chiatto/',
       favicon: '/icons/linkedin-original.svg'
     },
     {
       label: 'GitHub',
-      href: 'https://www.linkedin.com/in/austin-chiatto/',
+      tooltip: 'GitHub profile',
+      href: 'https://github.com/AustinChiatto',
       favicon: '/icons/github-original.svg'
     },
     {
       label: 'Resume',
+      tooltip: 'Resume as PDF',
       href: '/austin-chiatto_resume_2024.pdf',
       favicon: '/icons/icon-doc-text-fill.svg'
     }
@@ -57,20 +61,21 @@ const AboutContent = () => {
               <ExternalLink
                 href={e.href}
                 label={e.label}
+                tooltip={e.tooltip}
                 favicon={e.favicon}
               />
             </li>
           ))}
       </ul>
       <Typography color={'secondary'}>
-        I like solving problems and building neat things. Despite being new to development, I have
-        spent my life tinkering with, breaking, fixing, and having fun with technology. Frontend
-        development is a way for me to bring together all the things I love doing.
+        I&apos;m Austin, a front-end developer, designer, and aspiring astronaut that spends all his
+        free time brainstorming.
       </Typography>
-
       <Typography color={'secondary'}>
-        If you would like to say hi, feel free to send me an {email}, a message on {linkedIn}, or if
-        you&apos;re not sure yet, check out my resume and GitHub below.
+        I like building neat things that solve problems. Although I am new to the development
+        industry, I have spent my life tinkering with, breaking, building, and having fun with
+        technology. Front-end development has been the perfect way to bring together all the things
+        I love doing.
       </Typography>
       <ul className={styles.gridList}>
         <li className={styles.gridItem}>
@@ -109,18 +114,14 @@ const AboutContent = () => {
         </li>
       </ul>
       <Typography color={'secondary'}>
-        Off the clock, you&apos;re likely to catch me keeping up with the space race, climbing some
-        rocks in the bouldering gym, or hanging out with my cat{' '}
-        <Chip
-          chipLabel="Max"
-          isActionable
-        />
+        Off the clock, you&apos;re likely to catch me immersed in a game, movie, or book. If not,
+        you can always find me hanging out with my cat Max.
       </Typography>
-      <hr />
-      <Typography level={3}>Thanks for stopping by!</Typography>
+      <Typography color={'secondary'}>Don&apos;t forget to be kind to yourself ✌️</Typography>
+      {/* <hr />
       <Typography color={'secondary'}>
         I&apos;ll leave you with this photo from a recent adventure.
-      </Typography>
+      </Typography> */}
       <div className={styles.aboutImage}>
         <Image
           src={'/images/about-image.webp'}

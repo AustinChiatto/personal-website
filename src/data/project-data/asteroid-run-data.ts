@@ -13,6 +13,8 @@ const externalLinks = [
   }
 ];
 
+const videoShowcase = 'video/placeholder-video-showcase.mp4';
+
 const techStack = [
   {
     label: 'JavaScript',
@@ -366,6 +368,7 @@ And lastly, a few control graphics, a start screen, and a game over screen, comp
 
 export const AsteroidRunData = {
   externalLinks,
+  videoShowcase,
   techStack,
   article
 };

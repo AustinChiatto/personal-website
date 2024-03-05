@@ -20,6 +20,8 @@ const teamMembers = [
   }
 ];
 
+const videoShowcase = 'video/placeholder-video-showcase.mp4';
+
 const techStack = [
   {
     label: 'Next.js',
@@ -122,6 +124,7 @@ const article = [
 export const MarketMaestroData = {
   externalLinks,
   teamMembers,
+  videoShowcase,
   techStack,
   article
 };

@@ -13,6 +13,8 @@ const externalLinks = [
   }
 ];
 
+const videoShowcase = 'video/placeholder-video-showcase.mp4';
+
 const techStack = [
   {
     label: 'React',
@@ -87,6 +89,7 @@ const article = [
 
 export const GridToolData = {
   externalLinks,
+  videoShowcase,
   techStack,
   article
 };

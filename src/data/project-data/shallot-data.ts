@@ -7,6 +7,8 @@ const externalLinks = [
   }
 ];
 
+const videoShowcase = 'video/placeholder-video-showcase.mp4';
+
 const techStack = [
   {
     label: 'Figma',
@@ -38,6 +40,7 @@ const article = [
 
 export const ShallotData = {
   externalLinks,
+  videoShowcase,
   techStack,
   article
 };

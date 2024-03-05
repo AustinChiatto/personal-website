@@ -21,7 +21,7 @@ const ProjectList = ({ panelContent }: { panelContent: PanelProps }) => {
           />
         ))}
       </section>
-      <Typography level={2}>All Projects</Typography>
+      {panelChildrenArray.length > 2 && <Typography level={2}>All Projects</Typography>}
       <section className={styles.allProjects}>
         {panelChildrenArray.slice(2).map((e, i) => (
           <ProjectSummaryCard

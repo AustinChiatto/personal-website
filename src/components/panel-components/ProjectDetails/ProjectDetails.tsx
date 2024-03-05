@@ -100,17 +100,31 @@ const ProjectDetails = ({ panelContent }: { panelContent: PanelProps }) => {
             </li>
           ))}
       </ul>
-      <div className={styles.listCardWrapper}>
-        {listCardArray &&
-          listCardArray.map((e, i) => (
-            <ListCard
-              key={i}
-              cardList={e}
-              panelContent={panelContent}
-              index={i}
-            />
-          ))}
+      <div className={styles.projectShowcase}>
+        <video
+          width="100%"
+          height="100%"
+          preload="none"
+          autoPlay
+          muted
+          loop
+        >
+          <source
+            src={contentData && contentData.videoShowcase}
+            type="video/mp4"
+          />
+          Your browser does not support the video tag.
+        </video>
       </div>
+      {listCardArray &&
+        listCardArray.map((e, i) => (
+          <ListCard
+            key={i}
+            cardList={e}
+            panelContent={panelContent}
+            index={i}
+          />
+        ))}
       <article className={styles.sectionWrapper}>
         {/* todo: no need for a .map going forward as it will be just a single item */}
         {articleArray &&
