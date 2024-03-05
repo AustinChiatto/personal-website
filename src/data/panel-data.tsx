@@ -270,6 +270,13 @@ export const panelData = {
       panelComponent: 'AboutContent',
       childPanels: [
         {
+          id: '[ph]',
+          level: 3,
+          intro: {
+            title: '[ph]',
+            desc: '[ph]'
+          },
+          panelComponent: 'ProjectTechStack',
           panelComponentProps: {
             image: '/images/grid-tool_project-thumbnail.webp',
             imageBase64:
@@ -277,6 +284,13 @@ export const panelData = {
           }
         },
         {
+          id: '[ph]',
+          level: 3,
+          intro: {
+            title: '[ph]',
+            desc: '[ph]'
+          },
+          panelComponent: 'ProjectTechStack',
           panelComponentProps: {
             image: '/images/about-image.webp',
             imageBase64:
