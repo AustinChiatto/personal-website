@@ -1,5 +1,6 @@
 export type ExternalLinkProps = {
   label: string;
+  tooltip?: string;
   href: string;
   favicon: string;
 };

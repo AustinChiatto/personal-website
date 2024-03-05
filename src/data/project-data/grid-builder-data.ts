@@ -1,11 +1,13 @@
 const externalLinks = [
   {
     label: 'Live Site',
+    tooltip: 'Build a grid',
     href: 'https://crumb.so/grid-tool',
     favicon: '/icons/external-link.svg'
   },
   {
-    label: 'View Repo',
+    label: 'Repo',
+    tooltip: 'View the code',
     href: 'https://github.com/AustinChiatto/crumb/tree/main/src/components/GridTool',
     favicon: '/icons/github-original.svg'
   }

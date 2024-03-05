@@ -1,11 +1,13 @@
 const externalLinks = [
   {
-    label: 'Play Game',
+    label: 'Play',
+    tooltip: 'Play Asteroid Run 🚀 ',
     href: 'https://asteroidrun.crumb.so/',
     favicon: '/icons/external-link.svg'
   },
   {
-    label: 'View Repo',
+    label: 'Repo',
+    tooltip: 'View the code',
     href: 'https://github.com/AustinChiatto/asteroid-run-2.0.0',
     favicon: '/icons/github-original.svg'
   }
@@ -43,7 +45,7 @@ const article = [
   {
     markdownSection: [
       `
-## Building a game to learn JavaScript OOP
+## Learning object-oriented programming
 
 I'm going to build a little browser game that will be a bit like **Space Invaders & Asteroids** had a baby.
 

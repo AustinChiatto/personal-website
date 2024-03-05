@@ -1,6 +1,7 @@
 const externalLinks = [
   {
     label: 'View Theme',
+    tooltip: "It's named Shallot 🧅",
     href: 'https://github.com/OnionUI/Themes/blob/main/README.md',
     favicon: '/icons/github-original.svg'
   }

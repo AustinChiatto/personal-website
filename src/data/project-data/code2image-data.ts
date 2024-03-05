@@ -1,11 +1,13 @@
 const externalLinks = [
   {
-    label: 'Live Site',
+    label: 'View Site',
+    tooltip: 'Create pretty images',
     href: 'https://crumb.so/code-to-img',
     favicon: '/icons/external-link.svg'
   },
   {
-    label: 'View Repo',
+    label: 'Repo',
+    tooltip: 'View the code',
     href: 'https://github.com/AustinChiatto/crumb/tree/main/src/components/CodeToImg',
     favicon: '/icons/github-original.svg'
   }

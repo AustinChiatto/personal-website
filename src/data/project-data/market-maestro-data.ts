@@ -1,6 +1,7 @@
 const externalLinks = [
   {
     label: 'marketmaestro.ca',
+    tooltip: 'See live site',
     href: 'https://www.marketmaestro.ca/',
     favicon: '/images/mm-favicon.jpeg'
   }

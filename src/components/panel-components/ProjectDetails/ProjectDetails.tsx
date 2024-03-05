@@ -94,6 +94,7 @@ const ProjectDetails = ({ panelContent }: { panelContent: PanelProps }) => {
               <ExternalLink
                 href={e.href}
                 label={e.label}
+                tooltip={e.tooltip}
                 favicon={e.favicon}
               />
             </li>

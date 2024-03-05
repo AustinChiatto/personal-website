@@ -2,20 +2,32 @@ import Image from 'next/image';
 import styles from './externalLink.module.css';
 import Link from 'next/link';
 import { ExternalLinkProps } from '@/data/project-data/types';
-import { useState } from 'react';
+import { useRef, useState } from 'react';
+import Typography from '@/components/Typography/Typography';
+import Tooltip from '@/components/Tooltip/Tooltip';
 
-const ExternalLink = ({ href, favicon, label }: ExternalLinkProps) => {
-  const [isPressed, setIsPressed] = useState(false);
+const ExternalLink = ({ href, favicon, label, tooltip }: ExternalLinkProps) => {
+  const [isHovered, setIsHovered] = useState(false);
+  const onEnterDelay = useRef<number | undefined>();
+  const onLeaveDelay = useRef<number | undefined>();
+
+  const handleMouseEnter = () => {
+    onLeaveDelay.current && clearTimeout(onLeaveDelay.current);
+    onEnterDelay.current = window.setTimeout(() => setIsHovered(true), 700);
+  };
+
+  const handleMouseLeave = () => {
+    onEnterDelay.current && clearTimeout(onEnterDelay.current);
+    onLeaveDelay.current = window.setTimeout(() => setIsHovered(false), 300);
+  };
 
   return (
     <Link
       href={href}
       target="_blank"
-      title={label}
-      className={`${styles.externalLink} ${isPressed ? styles.externalLinkPressed : ''}`}
-      onMouseDown={() => setIsPressed(true)}
-      onMouseUp={() => setIsPressed(false)}
-      onMouseOut={() => setIsPressed(false)}
+      className={styles.externalLink}
+      onMouseEnter={handleMouseEnter}
+      onMouseOut={handleMouseLeave}
     >
       <div className={styles.linkFavicon}>
         <Image
@@ -24,7 +36,8 @@ const ExternalLink = ({ href, favicon, label }: ExternalLinkProps) => {
           fill
         />
       </div>
-      <p>{label}</p>
+      {label}
+      {isHovered && tooltip && <Tooltip label={tooltip} />}
     </Link>
   );
 };

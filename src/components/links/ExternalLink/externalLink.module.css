@@ -1,26 +1,17 @@
 .externalLink {
   display: flex;
+  position: relative;
   align-items: center;
   padding: 0.25rem 0.5rem;
-  border-radius: var(--border-radius-sm);
   background: var(--color-element-background);
-  transition: background, scale 100ms var(--transition-bounce);
-}
-
-.externalLink > * + * {
-  margin-left: 0.5rem;
-}
-
-.externalLink > p {
+  border: var(--element-border);
+  border-radius: var(--border-radius-sm);
+  transition: background, scale var(--transition-timing-short) var(--transition-bounce);
   color: var(--color-text-primary);
 }
 
 .externalLink:hover {
   background: var(--color-element-hover);
-}
-
-.externalLinkPressed {
-  scale: 0.96;
 }
 
 .linkFavicon {
@@ -29,4 +20,6 @@
   width: 1.125rem;
   overflow: hidden;
   position: relative;
+  pointer-events: none;
+  margin-right: 0.5rem;
 }

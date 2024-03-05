@@ -1,0 +1,21 @@
+.tooltip {
+  position: absolute;
+  width: max-content;
+  bottom: 120%;
+  padding: 0.25rem 0.75rem;
+  border-radius: var(--border-radius-sm);
+  z-index: 2;
+  background: var(--color-grey-5);
+  animation: scale-up var(--transition-timing-long) forwards var(--transition-bounce);
+}
+
+@keyframes scale-up {
+  0% {
+    transform: scale(0.9);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
