@@ -8,6 +8,7 @@ import { ArticleProps, ExternalLinkProps } from '@/data/project-data/types';
 import { generateSlug } from '@/utils/generateSlug';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { oneDark } from 'react-syntax-highlighter/dist/esm/styles/prism';
+import { useEffect, useRef } from 'react';
 
 interface H2Props {
   children: React.ReactNode;
@@ -85,9 +86,17 @@ const ProjectDetails = ({ panelContent }: { panelContent: PanelProps }) => {
     }
   };
 
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  useEffect(() => {
+    if (videoRef.current) {
+      videoRef.current.load(); // call load function when contentData changes
+    }
+  }, [contentData]);
+
   return (
     <>
-      <ul className={styles.externalLinkList}>
+      <ul className={styles.linkList}>
         {externalLinkArray &&
           externalLinkArray.map((e, i) => (
             <li key={i}>
@@ -102,6 +111,7 @@ const ProjectDetails = ({ panelContent }: { panelContent: PanelProps }) => {
       </ul>
       <div className={styles.projectShowcase}>
         <video
+          ref={videoRef}
           width="100%"
           height="100%"
           preload="none"
@@ -145,6 +155,19 @@ const ProjectDetails = ({ panelContent }: { panelContent: PanelProps }) => {
             </section>
           ))}
       </article>
+      <ul className={styles.linkListBottom}>
+        {externalLinkArray &&
+          externalLinkArray.map((e, i) => (
+            <li key={i}>
+              <ExternalLink
+                href={e.href}
+                label={e.label}
+                tooltip={e.tooltip}
+                favicon={e.favicon}
+              />
+            </li>
+          ))}
+      </ul>
     </>
   );
 };

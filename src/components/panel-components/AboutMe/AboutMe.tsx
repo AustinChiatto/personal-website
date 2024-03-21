@@ -48,14 +48,11 @@ const AboutContent = () => {
           ))}
       </ul>
       <Typography color={'secondary'}>
-        I&apos;m Austin, a front-end developer, designer, and aspiring astronaut that spends all his
-        free time brainstorming.
+        I&apos;m Austin, a curiosity-driven developer, designer, and tech enthusiast.
       </Typography>
       <Typography color={'secondary'}>
-        I like building neat things that solve problems. Although I am new to the development
-        industry, I have spent my life tinkering with, breaking, building, and having fun with
-        technology. Front-end development has been the perfect way to bring together all the things
-        I love doing.
+        I am interested in building neat things that solve problems, the JavaScript stack, writing
+        cleaner code, and hanging out with my cat Max.
       </Typography>
       <ul className={styles.gridList}>
         <li className={styles.gridItem}>
@@ -93,15 +90,8 @@ const AboutContent = () => {
           </Link>
         </li>
       </ul>
-      <Typography color={'secondary'}>
-        Off the clock, you&apos;re likely to catch me immersed in a game, movie, or book. If not,
-        you can always find me hanging out with my cat Max.
-      </Typography>
+
       <Typography color={'secondary'}>Don&apos;t forget to be kind to yourself ✌️</Typography>
-      {/* <hr />
-      <Typography color={'secondary'}>
-        I&apos;ll leave you with this photo from a recent adventure.
-      </Typography> */}
       <div className={styles.aboutImage}>
         <Image
           src={'/images/about-image.webp'}

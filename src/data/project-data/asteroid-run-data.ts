@@ -13,7 +13,7 @@ const externalLinks = [
   }
 ];
 
-const videoShowcase = 'video/placeholder-video-showcase.mp4';
+const videoShowcase = 'video/asteroid-run-video-showcase.mp4';
 
 const techStack = [
   {

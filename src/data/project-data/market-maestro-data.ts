@@ -1,7 +1,7 @@
 const externalLinks = [
   {
-    label: 'marketmaestro.ca',
-    tooltip: 'See live site',
+    label: 'View Live Site',
+    tooltip: 'marketmaestro.ca',
     href: 'https://www.marketmaestro.ca/',
     favicon: '/images/mm-favicon.jpeg'
   }
@@ -20,7 +20,7 @@ const teamMembers = [
   }
 ];
 
-const videoShowcase = 'video/placeholder-video-showcase.mp4';
+const videoShowcase = 'video/market-maestro-video-showcase.mp4';
 
 const techStack = [
   {
@@ -78,45 +78,37 @@ const techStack = [
 const article = [
   {
     markdownSection: [
-      '## Project Development',
-      '### Initialization',
-      'Initial requirements had me clone the repository from **GitLab**, install **MUI** as a dependency, and learn the basics of **Nest.js App Router**.'
-    ]
-  },
-  {
-    markdownSection: [
-      '### Material-UI',
-      "I developed a flexible **MUI theme** that is compatible with both base and custom components utilizing a theme provider. I created palettes for *light and dark modes* that are set automatically based on the user's browser settings. I adjusted typography properties, and built component overrides to match the companies style guide and design documents."
-    ]
-  },
-  {
-    markdownSection: [
-      '### Static Type',
-      "I learned how to use **TypeScript's static type system** and how to navigate typing while avoiding ambiguous types like *any*."
-    ]
-  },
-  {
-    markdownSection: [
-      '### Email API',
-      "I worked with **SendGrid's email API** and utilized async functions, **POST requests**, and implemented error handling while building a customer *feedback modal*."
-    ]
-  },
-  {
-    markdownSection: [
-      '### Version Control',
-      'I incorporated industry standards, creating *feature branches*, *merge requests*, and refined my commit messages with the help of **Conventional Commits**.'
-    ]
-  },
-  {
-    markdownSection: [
-      '### Vercel',
-      'I managed a project in **Vercel**, where I learned how to create environments, connect domains, and link backends.'
-    ]
-  },
-  {
-    markdownSection: [
-      '### Best Practices',
-      'I implemented best practices, such as writing comment blocks that avoid redundancy, writing clean and readable code by introducing methods like *guard clauses*, and using descriptive and standardized naming conventions.'
+      `
+## Building Market Maestro
+
+### Initialization
+
+Initial requirements had me clone the repository from **GitLab**, install **MUI** as a dependency, and learn the basics of **Nest.js App Router**.
+
+### Material-UI
+
+I developed a flexible **MUI theme** that is compatible with both base and custom components utilizing a theme provider. I created palettes for _light and dark modes_ that are set automatically based on the user's browser settings. I adjusted typography properties, and built component overrides to match the companies style guide and design documents.
+
+### Static Type
+
+I learned how to use **TypeScript's static type system** and how to navigate typing while avoiding ambiguous types like _any_.
+
+### Email API
+
+I worked with **SendGrid's email API** and utilized async functions, **POST requests**, and implemented error handling while building a customer _feedback modal_.
+
+### Version Control
+
+I incorporated industry standards, creating _feature branches_, _merge requests_, and refined my commit messages with the help of **Conventional Commits**.
+
+### Vercel
+
+I managed a project in **Vercel**, where I learned how to create environments, connect domains, and link backends.
+
+### Best Practices
+
+I implemented best practices, such as writing comment blocks that avoid redundancy, writing clean and readable code by introducing methods like _guard clauses_, and using descriptive and standardized naming conventions.
+`
     ]
   }
 ];

@@ -39,7 +39,7 @@ export const panelData = {
   level: 1,
   intro: {
     title: 'Austin Chiatto',
-    desc: 'Front-End Developer'
+    desc: 'Full-Stack Developer'
   },
   panelComponent: 'LandingPanel',
   panelComponentProps: {

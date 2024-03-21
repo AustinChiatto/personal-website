@@ -13,7 +13,7 @@ const externalLinks = [
   }
 ];
 
-const videoShowcase = 'video/placeholder-video-showcase.mp4';
+const videoShowcase = 'video/code2image-video-showcase.mp4';
 
 const techStack = [
   {

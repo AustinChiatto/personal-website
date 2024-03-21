@@ -49,16 +49,14 @@ const LandingPanel = ({ panelContent }: { panelContent: PanelProps }) => {
   return (
     <>
       <section className={styles.personalIntro}>
-        <Typography>
-          Junior front-end developer living on the (rainy) west coast of Canada.
-        </Typography>
+        <Typography>Full-stack developer living on the (rainy) west coast of Canada.</Typography>
         <Typography>
           Recently I completed an internship at {dovetailLink} where I built a website using Next.js
-          that introduces their {marketMaestroLink} application.
+          and TypeScript that introduces their {marketMaestroLink} application.
         </Typography>
         <Typography>
-          Since then, I&apos;ve been working on refining my skills as a front-end developer,
-          building small projects to teach myself new tech I find neat.
+          Since then, I&apos;ve been working on refining my skills as a developer, building projects
+          to teach myself something new.
         </Typography>
       </section>
       {!isMobile && (

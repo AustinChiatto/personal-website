@@ -2,12 +2,19 @@
   max-width: 100%;
 }
 
-.externalLinkList {
+.linkList,
+.linkListBottom {
   display: flex;
   gap: 0.5rem;
   margin-block: 1rem;
   padding-bottom: 1rem;
   border-bottom: var(--element-border);
+}
+
+.linkListBottom {
+  border-bottom: none;
+  border-top: var(--element-border);
+  padding-block: 1rem;
 }
 
 .sectionWrapper .section :is(h1, h2, h3, h4, h5, h6) + p {
